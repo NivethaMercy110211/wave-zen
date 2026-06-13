@@ -1926,3 +1926,46 @@
     display: block;
   }
 }
+
+/* Instructor team cards: mobile view badges wrap prevention */
+@media screen and (max-width: 768px) {
+  #instructors-team .team-card-body {
+    padding: 1.25rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+  }
+  #instructors-team .team-card-body h3 {
+    height: auto !important;
+    margin-bottom: 0.25rem !important;
+    white-space: normal !important;
+  }
+  #instructors-team .team-card-role {
+    height: auto !important;
+    min-height: auto !important;
+    margin-bottom: 0.75rem !important;
+  }
+  #instructors-team .team-card-description {
+    height: auto !important;
+    min-height: auto !important;
+    margin-bottom: 1rem !important;
+  }
+  #instructors-team .team-card-badges {
+    height: auto !important;
+    min-height: auto !important;
+    flex-wrap: nowrap !important;
+    margin: 0 !important;
+  }
+  #instructors-team .team-card-badges .surf-window-badge {
+    padding: 0.25rem 0.6rem !important;
+    font-size: 0.72rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #instructors-team .team-card-badges .surf-window-badge {
+    padding: 0.2rem 0.45rem !important;
+    font-size: 0.68rem !important;
+  }
+}

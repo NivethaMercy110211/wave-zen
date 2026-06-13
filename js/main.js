@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initStatCounters();
   initEqualHeightTestimonials();
   initScrollReveal();
+  initDestinationPanels();
   styleIcons();
   initBackToTop();
   initFooterIcons();
@@ -101,6 +102,56 @@ function setDirection(dir) {
   const dirLabels = document.querySelectorAll('.dir-toggle-label');
   dirLabels.forEach(label => {
     label.textContent = dir === 'ltr' ? 'RTL' : 'LTR';
+  });
+}
+
+/* ==========================================
+   DESTINATION PANELS (Touch / Keyboard)
+   ========================================== */
+function initDestinationPanels() {
+  const panels = Array.from(document.querySelectorAll('.destination-panel'));
+  if (!panels.length) return;
+
+  const mobileLayout = window.matchMedia('(max-width: 768px)');
+
+  const setActivePanel = (selectedPanel) => {
+    panels.forEach(panel => {
+      const isActive = panel === selectedPanel;
+      panel.classList.toggle('is-active', isActive);
+      panel.setAttribute('aria-expanded', String(isActive));
+    });
+  };
+
+  panels.forEach((panel, index) => {
+    panel.setAttribute('tabindex', '0');
+    panel.setAttribute('role', 'button');
+    panel.setAttribute('aria-expanded', 'false');
+
+    panel.addEventListener('click', event => {
+      if (!mobileLayout.matches || event.target.closest('a')) return;
+      setActivePanel(panel);
+    });
+
+    panel.addEventListener('keydown', event => {
+      if (!mobileLayout.matches || !['Enter', ' '].includes(event.key)) return;
+      event.preventDefault();
+      setActivePanel(panel);
+    });
+
+    if (index === 0 && mobileLayout.matches) {
+      setActivePanel(panel);
+    }
+  });
+
+  mobileLayout.addEventListener('change', event => {
+    if (event.matches) {
+      setActivePanel(panels.find(panel => panel.classList.contains('is-active')) || panels[0]);
+    } else {
+      panels.forEach(panel => {
+        panel.classList.remove('is-active');
+        panel.setAttribute('aria-expanded', 'false');
+      });
+    }
   });
 }
 
@@ -310,7 +361,7 @@ function initTideDashboard() {
     waterTempValue.textContent = '21°C / 70°F';
     scoreValue.textContent = '92';
     labelValue.textContent = 'Excellent for All Levels';
-    labelValue.style.color = '#10b981';
+    labelValue.style.color = '#f59e0b';
   }
 }
 
@@ -427,12 +478,16 @@ function initGalleryFilter() {
   filterGroups.forEach(group => {
     const filterBtns = group.querySelectorAll('.filter-btn');
     const section = group.closest('section') || document;
-    const filterItems = section.querySelectorAll('.gallery-item[data-category], .package-card[data-category]');
+    const isPackageFilter = group.classList.contains('package-filter-tabs');
+    const filterItems = isPackageFilter
+      ? section.querySelectorAll('.package-card[data-category]')
+      : section.querySelectorAll('.gallery-item[data-category]:not(.package-card)');
 
     if (filterBtns.length === 0 || filterItems.length === 0) return;
 
     filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
+      btn.addEventListener('click', event => {
+        event.preventDefault();
         const filterValue = btn.getAttribute('data-filter') || 'all';
 
         filterBtns.forEach(filterBtn => {
@@ -445,7 +500,9 @@ function initGalleryFilter() {
           const categories = (item.getAttribute('data-category') || '').split(/\s+/);
           const shouldShow = filterValue === 'all' || categories.includes(filterValue);
 
+          item.classList.toggle('is-filtered-out', !shouldShow);
           item.hidden = !shouldShow;
+
           if (shouldShow && typeof item.animate === 'function') {
             item.animate(
               [
@@ -469,7 +526,7 @@ function initGalleryFilter() {
    8. LIGHTBOX MODAL IMAGES
    ========================================== */
 function initLightbox() {
-  const galleryItems = document.querySelectorAll('.gallery-item');
+  const galleryItems = document.querySelectorAll('.gallery-item:not(.package-card)');
   
   // Create lightbox markup programmatically if it doesn't exist
   if (galleryItems.length === 0) return;
@@ -735,7 +792,7 @@ function initScrollReveal() {
   };
 
   document.querySelectorAll('.section-header, .section-heading').forEach(element => {
-    setAnimation(element, 'fade-up', 0, 1400);
+    setAnimation(element, 'fade-up', 0, 1800);
   });
 
   document.querySelectorAll('.page-hero-content, #gallery-hero .mosaic-main, .hero-split-content').forEach(element => {
@@ -781,11 +838,63 @@ function initScrollReveal() {
 
   gridSelectors.forEach(gridSelector => {
     document.querySelectorAll(gridSelector).forEach(grid => {
+      // Skip handled grids to avoid double animation overrides
+      if (
+        grid.classList.contains('services-grid') || 
+        grid.classList.contains('grid-3-col') || 
+        grid.classList.contains('grid-2-col') || 
+        grid.classList.contains('values-grid')
+      ) return;
+      
       Array.from(grid.children).forEach((child, index) => {
         if (child.closest('.header')) return;
         const delay = Math.min((index + 1) * 100, 400);
-        setAnimation(child, 'fade-up', delay, 1400);
+        setAnimation(child, 'fade-up', delay, 1600);
       });
+    });
+  });
+
+  // 3-Column Grids (Services and Experience Packages)
+  document.querySelectorAll('.services-grid, .grid-3-col').forEach(grid => {
+    const children = Array.from(grid.children);
+    const isExperiences = grid.closest('#home2-experiences') !== null;
+    children.forEach((child, index) => {
+      if (child.closest('.header')) return;
+      // Staggered slide from left, bottom, and right
+      const animationType = index % 3 === 0 ? 'fade-right' : (index % 3 === 2 ? 'fade-left' : 'fade-up');
+      const delay = (index % 3) * 150;
+      const duration = isExperiences ? 2200 : 1600;
+      setAnimation(child, animationType, delay, duration);
+    });
+  });
+
+  // 2-Column Grids (Hero split, Co-founders cards, split pages content)
+  document.querySelectorAll('.grid-2-col').forEach(grid => {
+    const children = Array.from(grid.children);
+    children.forEach((child, index) => {
+      if (child.closest('.header')) return;
+      const animationType = index % 2 === 0 ? 'fade-right' : 'fade-left';
+      const delay = (index % 2) * 150;
+      setAnimation(child, animationType, delay, 1600);
+    });
+  });
+
+  // 4-Column Grids (Core Values)
+  document.querySelectorAll('.values-grid').forEach(grid => {
+    const children = Array.from(grid.children);
+    children.forEach((child, index) => {
+      if (child.closest('.header')) return;
+      const delay = (index % 4) * 150;
+      setAnimation(child, 'fade-up', delay, 1600);
+    });
+  });
+
+  // Retreat Locations Accordion (Home 1 and Home 2)
+  document.querySelectorAll('.destinations-accordion').forEach(accordion => {
+    const children = Array.from(accordion.children);
+    children.forEach((panel, index) => {
+      const delay = index * 150;
+      setAnimation(panel, 'fade-up', delay, 1800);
     });
   });
 
@@ -801,6 +910,14 @@ function initScrollReveal() {
     if (children.length >= 2) {
       setAnimation(children[0], 'fade-right', 0, 1500);
       setAnimation(children[1], 'fade-left', 100, 1500);
+    }
+  });
+
+  document.querySelectorAll('.story-section').forEach(story => {
+    const children = Array.from(story.children);
+    if (children.length >= 2) {
+      setAnimation(children[0], 'fade-right', 0, 1800);
+      setAnimation(children[1], 'fade-left', 200, 1800);
     }
   });
 
@@ -834,12 +951,13 @@ function initScrollReveal() {
 
   const startAos = () => {
     if (typeof AOS === 'undefined') return;
+    const isMobile = window.innerWidth <= 768;
     AOS.init({
-      duration: 1400,
+      duration: 1600,
       easing: 'ease-out-cubic',
-      once: true,
-      mirror: false,
-      offset: 70,
+      once: false,
+      mirror: true,
+      offset: isMobile ? 80 : 150, // More pronounced scrolling trigger
       anchorPlacement: 'top-bottom',
       disableMutationObserver: false
     });

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Wave & Zen Home 2 — Discover a new wave of beachfront wellness. Private surf coaching, luxury beach yoga retreats, and custom surf-yoga escapes." />
+  <meta name="description"
+    content="Wave & Zen Home 2 — Discover a new wave of beachfront wellness. Private surf coaching, luxury beach yoga retreats, and custom surf-yoga escapes." />
   <title>Wave & Zen | Surf Lessons & Beach Yoga Retreats (Home 2)</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <link rel="stylesheet" href="css/main.css" />
@@ -12,297 +14,437 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/theme.css" />
 </head>
+
 <body>
 
-<!-- ═══════════════ HEADER ═══════════════ -->
-<header class="header" id="main-header">
-  <div class="logo-container" onclick="window.location.href='index.html'" role="link" aria-label="Wave and Zen Home">
-    <div class="logo-text">
-      <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;" />
-      Wave &amp; Zen
-    </div>
-  </div>
-  <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" role="button" tabindex="0">
-    <span></span><span></span><span></span>
-  </div>
-  <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
-    <div class="nav-dropdown" id="home-dropdown">
-      <a href="#" class="nav-link dropdown-toggle active" id="nav-home">Home <span class="arrow">▼</span></a>
-      <div class="dropdown-menu-list">
-        <a href="index.html" class="dropdown-item" id="nav-home1">Home 1</a>
-        <a href="home2.html" class="dropdown-item active" id="nav-home2">Home 2</a>
-      </div>
-    </div>
-    <a href="about.html" class="nav-link" id="nav-about">About</a>
-    <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
-    <a href="tides.html" class="nav-link" id="nav-tides">Tides</a>
-    <a href="packages.html" class="nav-link" id="nav-packages">Packages</a>
-    <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
-    <a href="booking.html" class="nav-link" id="nav-booking">Booking</a>
-    <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
-    <div class="nav-actions">
-      <button class="action-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch to dark theme" title="Dark theme">
-        <svg viewBox="0 0 24 24" class="theme-toggle-icon" aria-hidden="true">
-          <path d="M15.8 3.35a7.2 7.2 0 1 0 4.35 10.95 6.35 6.35 0 0 1-4.35-10.95Z"></path>
-          <path d="m18.8 3.1.35.85.85.35-.85.35-.35.85-.35-.85-.85-.35.85-.35.35-.85Z"></path>
-          <path d="M3 17.15c2.1-1.65 4.2-1.65 6.3 0s4.2 1.65 6.3 0 4.2-1.65 5.4-.7"></path>
-          <path d="M4.5 20.35c1.7-1 3.4-1 5.1 0s3.4 1 5.1 0 3.4-1 4.8-.35"></path>
-        </svg>
-      </button>
-      <button class="action-btn dir-toggle-btn" id="dir-toggle" aria-label="Toggle text direction" title="Toggle RTL/LTR">
-        <span class="dir-toggle-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
-      </button>
-      <a href="login.html" class="login-nav-btn" id="login-nav-btn">Login</a>
-    </div>
-  </nav>
-</header>
-
-<!-- ═══════════════ SECTION 1: ASYMMETRIC MORNING HERO ═══════════════ -->
-<section class="page-hero" id="home2-hero" style="min-height: 90vh;">
-  <video autoplay muted loop playsinline class="hero-video-bg" poster="">
-    <source src="assets/videos/home2_bg.mp4" type="video/mp4">
-  </video>
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content container" style="max-width: 800px;">
-    <span class="section-tag">🌊 Sunrise Coastline Escapes</span>
-    <h1>Connect with the Ocean.<br/>Restore Your Inner Peace.</h1>
-    <p>We blend the adventurous energy of private surf instruction with the serene mindfulness of beach yoga. Discover a premium coastal sanctuary designed to refresh your body and soul.</p>
-    <div class="hero-ctas" style="display:flex;gap:1.25rem;flex-wrap:wrap;">
-      <a href="booking.html" class="btn btn-primary" id="hero2-cta-booking">Plan Your Escape</a>
-      <a href="packages.html" class="btn btn-outline-light" id="hero2-cta-packages">Browse Retreats</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SECTION 2: DAILY RETREAT FLOW (TIMELINE) ═══════════════ -->
-<section id="home2-timeline" style="background-color: var(--bg-primary);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">A Day in Paradise</span>
-      <h2 class="section-title">Your Daily Retreat Flow</h2>
-      <p class="section-desc">Experience the perfect balance of action, mindfulness, and coastal relaxation from dawn to dusk.</p>
-    </div>
-    
-    <div class="milestone-timeline" style="max-width: 800px; margin: 0 auto;">
-      <div class="milestone-item">
-        <span class="milestone-year">06:30 AM</span>
-        <h5>Sunrise Beach Yoga Flow</h5>
-        <p>Awaken your senses with a gentle, invigorating Vinyasa flow directly on the sand. Breathe in the cool sea breeze as the golden sun rises over the horizon.</p>
-      </div>
-      <div class="milestone-item">
-        <span class="milestone-year">08:30 AM</span>
-        <h5>Organic Shoreline Breakfast</h5>
-        <p>Re-energize with fresh tropical fruits, organic acai bowls, locally sourced juices, and freshly brewed coffee overlooking the waves.</p>
-      </div>
-      <div class="milestone-item">
-        <span class="milestone-year">10:00 AM</span>
-        <h5>1-on-1 Personalized Surf Coaching</h5>
-        <p>Head into the water with your dedicated instructor. Master wave selection, perfect your pop-up, and experience the thrill of riding pristine swells.</p>
-      </div>
-      <div class="milestone-item">
-        <span class="milestone-year">01:00 PM</span>
-        <h5>Catered Beachside Lunch &amp; Siesta</h5>
-        <p>Enjoy a delicious, chef-prepared lunch focusing on healthy, seasonal seafood and plant-based dishes, followed by free time to lounge or read in a hammock.</p>
-      </div>
-      <div class="milestone-item">
-        <span class="milestone-year">03:30 PM</span>
-        <h5>Guided Free Surf or Coastline Hike</h5>
-        <p>Practice your surf skills with coaches monitoring from the shore, or explore secret tide pools and sandy cliffs on a guided coastal nature walk.</p>
-      </div>
-      <div class="milestone-item">
-        <span class="milestone-year">06:00 PM</span>
-        <h5>Sunset Meditation &amp; Bonfire Gathering</h5>
-        <p>Wind down with yin yoga and mindfulness meditation as the stars appear, followed by fresh organic cocktails and acoustic music around a beach bonfire.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SECTION 3: POPULAR RETREAT EXPERIENCES (PRICING) ═══════════════ -->
-<section id="home2-experiences" style="background-color: var(--bg-secondary);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Featured Escapes</span>
-      <h2 class="section-title">Popular Retreat Experiences</h2>
-      <p class="section-desc">Choose from our curated beachfront programs, each tailored to deliver private coaching, deep wellness, and luxury lodging.</p>
-    </div>
-    
-    <div class="grid-3-col">
-      <!-- Experience 1 -->
-      <div class="instructor-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.3s,box-shadow 0.3s;">
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="assets/images/packages/beginner_surf.png" alt="Weekend surf retreat" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
-          <div style="position:absolute;top:1rem;inset-inline-end:1rem;background:var(--accent-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.78rem;font-weight:700;">3 Days</div>
-        </div>
-        <div style="padding:1.75rem;flex-grow:1;display:flex;flex-direction:column;">
-          <h3 style="font-size:1.25rem;margin-bottom:0.35rem;">The Weekender Escape</h3>
-          <span style="color:var(--accent-color);font-size:0.95rem;font-weight:700;margin-bottom:1rem;display:block;">$899 / person</span>
-          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">Perfect for busy professionals. Includes 2 private surf coaching sessions, 3 beach yoga classes, organic breakfasts, and standard eco-cabin lodging.</p>
-          <div style="margin-top:1.5rem;">
-            <a href="booking.html" class="btn btn-outline" style="width: 100%; text-align: center;" id="exp-weekend-btn">Book Weekender</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Experience 2 -->
-      <div class="instructor-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.3s,box-shadow 0.3s; position: relative; border-color: var(--coral-color);">
-        <div style="position:absolute;top:1rem;inset-inline-start:1rem;background:var(--coral-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:700;z-index:10;">Most Popular</div>
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="assets/images/packages/beach_yoga.png" alt="Full surf and yoga retreat" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
-          <div style="position:absolute;top:1rem;inset-inline-end:1rem;background:var(--coral-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.78rem;font-weight:700;">5 Days</div>
-        </div>
-        <div style="padding:1.75rem;flex-grow:1;display:flex;flex-direction:column;">
-          <h3 style="font-size:1.25rem;margin-bottom:0.35rem;">The Wave &amp; Flow Retreat</h3>
-          <span style="color:var(--coral-color);font-size:0.95rem;font-weight:700;margin-bottom:1rem;display:block;">$1,450 / person</span>
-          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">Our signature balanced experience. 4 private surf lessons, daily sunrise &amp; sunset yoga, full catering, videography review, and deluxe villa accommodations.</p>
-          <div style="margin-top:1.5rem;">
-            <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;" id="exp-waveflow-btn">Book Signature</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Experience 3 -->
-      <div class="instructor-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.3s,box-shadow 0.3s;">
-        <div style="height:220px;overflow:hidden;position:relative;">
-          <img src="assets/images/packages/intermediate_surf_2.jpg" alt="Premium yoga retreat" style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
-          <div style="position:absolute;top:1rem;inset-inline-end:1rem;background:var(--accent-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.78rem;font-weight:700;">7 Days</div>
-        </div>
-        <div style="padding:1.75rem;flex-grow:1;display:flex;flex-direction:column;">
-          <h3 style="font-size:1.25rem;margin-bottom:0.35rem;">The Deep Zen Sanctuary</h3>
-          <span style="color:var(--accent-color);font-size:0.95rem;font-weight:700;margin-bottom:1rem;display:block;">$1,999 / person</span>
-          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">For total body restoration. 6 advanced yoga &amp; alignment sessions, sound healing, daily massage, eco-surf excursions, and private beachfront bungalows.</p>
-          <div style="margin-top:1.5rem;">
-            <a href="booking.html" class="btn btn-outline" style="width: 100%; text-align: center;" id="exp-deepzen-btn">Book Sanctuary</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SECTION 4: RETREAT VIDEO TOUR ═══════════════ -->
-<section id="home2-tour" style="background-color: var(--bg-primary);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Virtual Experience</span>
-      <h2 class="section-title">Virtual Tour of Wave &amp; Zen</h2>
-      <p class="section-desc">Get a sneak peek of our beautiful oceanfront pavilion, coaching sessions in action, and luxury accommodations.</p>
-    </div>
-    
-    <div class="video-placeholder" id="home2-video-play" style="max-width: 900px; margin: 0 auto;" role="button" aria-label="Play virtual tour video">
-      <img src="assets/images/banners/home_hero.png" alt="Wave and Zen virtual tour cover" loading="lazy" />
-      <div class="video-play-overlay">
-        <div class="play-btn-circle">
-          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SECTION 5: CO-FOUNDERS EDITORIAL TESTIMONIALS ═══════════════ -->
-<section id="home2-founders" style="background-color: var(--bg-secondary);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Our Philosophy</span>
-      <h2 class="section-title">Meet Our Co-Founders</h2>
-      <p class="section-desc">Marcus and Elena combine surf performance coaching with beach mindfulness to create a holistic ocean lifestyle.</p>
-    </div>
-    
-    <div class="grid-2-col">
-      <!-- Marcus Chen Bio -->
-      <div class="testimonial-card" style="flex: 1; min-width: 280px; display: flex; flex-direction: column;">
-        <div style="display:flex; align-items:center; gap: 1rem; margin-bottom: 1.5rem;">
-          <img src="assets/images/instructors/marcus.png" alt="Marcus Chen" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover;" />
-          <div>
-            <h3 style="font-size: 1.15rem; margin: 0;">Marcus Chen</h3>
-            <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 600;">Co-Founder &amp; Head Surf Coach</span>
-          </div>
-        </div>
-        <p class="testimonial-quote" style="font-size: 1rem; flex-grow: 1;">"Surfing is about reading the ocean's rhythm and flowing with its energy. We teach safety first, wave literacy second, and performance third for a lifelong bond."</p>
-      </div>
-      
-      <!-- Elena Vasquez Bio -->
-      <div class="testimonial-card" style="flex: 1; min-width: 280px; display: flex; flex-direction: column;">
-        <div style="display:flex; align-items:center; gap: 1rem; margin-bottom: 1.5rem;">
-          <img src="assets/images/instructors/elena.png" alt="Elena Vasquez" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover;" />
-          <div>
-            <h3 style="font-size: 1.15rem; margin: 0;">Elena Vasquez</h3>
-            <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 600;">Co-Founder &amp; Head Yoga Teacher</span>
-          </div>
-        </div>
-        <p class="testimonial-quote" style="font-size: 1rem; flex-grow: 1;">"Yoga Alliance beach yoga teaches grounding and breath. Practicing on the shoreline, we connect with nature. The ocean's roar becomes our background healing."</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SECTION 6: GOLDEN HOUR CTA BANNER ═══════════════ -->
-<section class="cta-banner" id="home2-cta" style="background-image:url('assets/images/cta/home2_cta.png');" aria-label="Book your experience">
-  <div class="cta-banner-overlay"></div>
-  <div class="cta-banner-content" style="max-width: 800px;">
-    <span class="section-tag" style="color:#fff;opacity:0.8;">Escape to the Coast</span>
-    <h2>Begin Your Personal Surf &amp; Yoga Journey</h2>
-    <p>Sign up for availability alerts on upcoming retreats or request a custom private packages package designed for your family or corporate group.</p>
-    
-    <form id="contact-form" class="cta-enquiry-form" style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; justify-content: center; width: 100%; max-width: 600px; margin-inline: auto;">
-      <input type="text" placeholder="Your Name" required class="form-input" style="flex: 1 1 200px; padding: 0.85rem 1.25rem; border-radius: 30px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff;" />
-      <input type="email" placeholder="Your Email Address" required class="form-input" style="flex: 1 1 200px; padding: 0.85rem 1.25rem; border-radius: 30px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff;" />
-      <button type="submit" class="btn btn-primary" style="padding: 0.85rem 2rem; border-radius: 30px;">Request Info</button>
-    </form>
-  </div>
-</section>
-
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="footer" id="main-footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo-text" style="margin-bottom:1.25rem;">
-        <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;margin-inline-end:0.5rem;" />
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="main-header">
+    <div class="logo-container" onclick="window.location.href='index.html'" role="link" aria-label="Wave and Zen Home">
+      <div class="logo-text">
+        <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo"
+          style="width:32px;height:32px;object-fit:contain;" />
         Wave &amp; Zen
       </div>
-      <p class="footer-tagline">Ride the wave. Find your zen. Experience the coast in its most authentic form.</p>
-      <div class="footer-social">
-        <a href="#" class="social-icon" aria-label="Instagram" id="footer-instagram">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="Facebook" id="footer-facebook">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-        </a>
-        <a href="#" class="social-icon" aria-label="YouTube" id="footer-youtube">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
-        </a>
+    </div>
+    <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+      <div class="nav-dropdown" id="home-dropdown">
+        <a href="#" class="nav-link dropdown-toggle active" id="nav-home">Home <span class="arrow">▼</span></a>
+        <div class="dropdown-menu-list">
+          <a href="index.html" class="dropdown-item" id="nav-home1">Home 1</a>
+          <a href="home2.html" class="dropdown-item active" id="nav-home2">Home 2</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link" id="nav-about">About</a>
+      <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
+      <a href="tides.html" class="nav-link" id="nav-tides">Tides</a>
+      <a href="packages.html" class="nav-link" id="nav-packages">Packages</a>
+      <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
+      <a href="booking.html" class="nav-link" id="nav-booking">Booking</a>
+      <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch to dark theme"
+          title="Dark theme">
+          <svg viewBox="0 0 24 24" class="theme-toggle-icon" aria-hidden="true">
+            <path d="M15.8 3.35a7.2 7.2 0 1 0 4.35 10.95 6.35 6.35 0 0 1-4.35-10.95Z"></path>
+            <path d="m18.8 3.1.35.85.85.35-.85.35-.35.85-.35-.85-.85-.35.85-.35.35-.85Z"></path>
+            <path d="M3 17.15c2.1-1.65 4.2-1.65 6.3 0s4.2 1.65 6.3 0 4.2-1.65 5.4-.7"></path>
+            <path d="M4.5 20.35c1.7-1 3.4-1 5.1 0s3.4 1 5.1 0 3.4-1 4.8-.35"></path>
+          </svg>
+        </button>
+        <button class="action-btn dir-toggle-btn" id="dir-toggle" aria-label="Toggle text direction"
+          title="Toggle RTL/LTR">
+          <span class="dir-toggle-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+        </button>
+        <a href="login.html" class="login-nav-btn" id="login-nav-btn">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ SECTION 1: ASYMMETRIC MORNING HERO ═══════════════ -->
+  <section class="page-hero" id="home2-hero" style="min-height: 90vh;">
+    <video autoplay muted loop playsinline class="hero-video-bg" poster="">
+      <source src="assets/videos/home2_bg.mp4" type="video/mp4">
+    </video>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content container">
+      <span class="section-tag">🌊 Sunrise Coastline Escapes</span>
+      <h1>Connect with the Ocean.<br />Restore Your Inner Peace.</h1>
+      <p>We blend the adventurous energy of private surf instruction with the serene
+        mindfulness of beach yoga. Discover a premium coastal sanctuary designed to refresh your body and soul.</p>
+      <div class="hero-ctas" style="display:flex;gap:1.25rem;flex-wrap:wrap;">
+        <a href="booking.html" class="btn btn-primary" id="hero2-cta-booking">Plan Your Escape</a>
+        <a href="packages.html" class="btn btn-outline-light" id="hero2-cta-packages">Browse Retreats</a>
       </div>
     </div>
-    <div class="footer-links-col">
-      <h4 class="footer-col-title">Explore</h4>
-      <ul class="footer-links">
-        <li><a href="about.html" id="footer-about-link">About Us</a></li>
-        <li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li>
-        <li><a href="packages.html" id="footer-packages-link">Packages</a></li>
-        <li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li>
-        <li><a href="tides.html" id="footer-tides-link">Tide Reports</a></li>
-      </ul>
-    </div>
-    <div class="footer-links-col">
-      <h4 class="footer-col-title">Contact</h4>
-      <ul class="footer-links">
-        <li><a href="contact.html" id="footer-contact-link">Enquiries</a></li>
-        <li><a href="booking.html" id="footer-booking-link">Book a Session</a></li>
-        <li><a href="mailto:hello@waveandzen.com" id="footer-email-link">hello@waveandzen.com</a></li>
-        <li><a href="tel:+1800WAVEZEN" id="footer-phone-link">+1&nbsp;800&nbsp;WAVE&nbsp;ZEN</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Wave &amp; Zen Retreats. All rights reserved.</p>
-    <div style="display:flex;gap:1.5rem;">
-      <a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-privacy">Privacy Policy</a>
-      <a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-terms">Terms of Service</a>
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script src="js/main.js"></script>
+  <!-- ═══════════════ SECTION 2: DAILY RETREAT FLOW (TIMELINE) ═══════════════ -->
+  <section id="home2-timeline" style="background-color: var(--bg-primary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">A Day in Paradise</span>
+        <h2 class="section-title">Your Daily Retreat Flow</h2>
+        <p class="section-desc">Experience the perfect balance of action, mindfulness, and coastal relaxation from dawn
+          to dusk.</p>
+      </div>
+
+      <div class="milestone-timeline" style="max-width: 800px; margin: 0 auto;">
+        <div class="milestone-item">
+          <span class="milestone-year">06:30 AM</span>
+          <h5>Sunrise Beach Yoga Flow</h5>
+          <p>Awaken your senses with a gentle, invigorating Vinyasa flow directly on the sand. Breathe in the cool sea
+            breeze as the golden sun rises over the horizon.</p>
+        </div>
+        <div class="milestone-item">
+          <span class="milestone-year">08:30 AM</span>
+          <h5>Organic Shoreline Breakfast</h5>
+          <p>Re-energize with fresh tropical fruits, organic acai bowls, locally sourced juices, and freshly brewed
+            coffee overlooking the waves.</p>
+        </div>
+        <div class="milestone-item">
+          <span class="milestone-year">10:00 AM</span>
+          <h5>1-on-1 Personalized Surf Coaching</h5>
+          <p>Head into the water with your dedicated instructor. Master wave selection, perfect your pop-up, and
+            experience the thrill of riding pristine swells.</p>
+        </div>
+        <div class="milestone-item">
+          <span class="milestone-year">01:00 PM</span>
+          <h5>Catered Beachside Lunch &amp; Siesta</h5>
+          <p>Enjoy a delicious, chef-prepared lunch focusing on healthy, seasonal seafood and plant-based dishes,
+            followed by free time to lounge or read in a hammock.</p>
+        </div>
+        <div class="milestone-item">
+          <span class="milestone-year">03:30 PM</span>
+          <h5>Guided Free Surf or Coastline Hike</h5>
+          <p>Practice your surf skills with coaches monitoring from the shore, or explore secret tide pools and sandy
+            cliffs on a guided coastal nature walk.</p>
+        </div>
+        <div class="milestone-item">
+          <span class="milestone-year">06:00 PM</span>
+          <h5>Sunset Meditation &amp; Bonfire Gathering</h5>
+          <p>Wind down with yin yoga and mindfulness meditation as the stars appear, followed by fresh organic cocktails
+            and acoustic music around a beach bonfire.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 3: POPULAR RETREAT EXPERIENCES (PRICING) ═══════════════ -->
+  <section id="home2-experiences" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Featured Escapes</span>
+        <h2 class="section-title">Popular Retreat Experiences</h2>
+        <p class="section-desc">Choose from our curated beachfront programs, each tailored to deliver private coaching,
+          deep wellness, and luxury lodging.</p>
+      </div>
+
+      <div class="grid-3-col">
+        <!-- Experience 1 -->
+        <div class="instructor-card"
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.3s,box-shadow 0.3s;">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="assets/images/packages/beginner_surf.png" alt="Weekend surf retreat"
+              style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div
+              style="position:absolute;top:1rem;inset-inline-end:1rem;background:var(--accent-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:700;line-height:1.2;">
+              3 Days</div>
+          </div>
+          <div style="padding:1.75rem;flex-grow:1;display:flex;flex-direction:column;">
+            <h3 style="font-size:1.25rem;margin-bottom:0.35rem;">The Weekender Escape</h3>
+            <span
+              style="color:var(--accent-color);font-size:0.95rem;font-weight:700;margin-bottom:1rem;display:block;">$899
+              / person</span>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">Perfect for busy
+              professionals. Includes 2 private surf coaching sessions, 3 beach yoga classes, organic breakfasts, and
+              standard eco-cabin lodging.</p>
+            <div style="margin-top:1.5rem;">
+              <a href="booking.html" class="btn btn-outline" style="width: 100%; text-align: center;"
+                id="exp-weekend-btn">Book Weekender</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="instructor-card"
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.3s,box-shadow 0.3s; position: relative; border-color: var(--coral-color);">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="assets/images/packages/beach_yoga.png" alt="Full surf and yoga retreat"
+              style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div
+              style="position:absolute;bottom:1rem;inset-inline-start:1rem;background:var(--coral-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:700;z-index:10;line-height:1.2;">
+              Most Popular</div>
+            <div
+              style="position:absolute;top:1rem;inset-inline-end:1rem;background:var(--coral-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:700;line-height:1.2;">
+              5 Days</div>
+          </div>
+          <div style="padding:1.75rem;flex-grow:1;display:flex;flex-direction:column;">
+            <h3 style="font-size:1.25rem;margin-bottom:0.35rem;">The Wave &amp; Flow Retreat</h3>
+            <span
+              style="color:var(--coral-color);font-size:0.95rem;font-weight:700;margin-bottom:1rem;display:block;">$1,450
+              / person</span>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">Our signature balanced
+              experience. 4 private surf lessons, daily sunrise &amp; sunset yoga, full catering, videography review,
+              and deluxe villa accommodations.</p>
+            <div style="margin-top:1.5rem;">
+              <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;"
+                id="exp-waveflow-btn">Book Signature</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 3 -->
+        <div class="instructor-card"
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:transform 0.3s,box-shadow 0.3s;">
+          <div style="height:220px;overflow:hidden;position:relative;">
+            <img src="assets/images/packages/intermediate_surf_2.jpg" alt="Premium yoga retreat"
+              style="width:100%;height:100%;object-fit:cover;" loading="lazy" />
+            <div
+              style="position:absolute;top:1rem;inset-inline-end:1rem;background:var(--accent-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:700;line-height:1.2;">
+              7 Days</div>
+          </div>
+          <div style="padding:1.75rem;flex-grow:1;display:flex;flex-direction:column;">
+            <h3 style="font-size:1.25rem;margin-bottom:0.35rem;">The Deep Zen Sanctuary</h3>
+            <span
+              style="color:var(--accent-color);font-size:0.95rem;font-weight:700;margin-bottom:1rem;display:block;">$1,999
+              / person</span>
+            <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">For total body
+              restoration. 6 advanced yoga &amp; alignment sessions, sound healing, daily massage, eco-surf excursions,
+              and private beachfront bungalows.</p>
+            <div style="margin-top:1.5rem;">
+              <a href="booking.html" class="btn btn-outline" style="width: 100%; text-align: center;"
+                id="exp-deepzen-btn">Book Sanctuary</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 4: RETREAT VIDEO TOUR ═══════════════ -->
+  <section id="home2-tour" style="background-color: var(--bg-primary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Virtual Experience</span>
+        <h2 class="section-title">Virtual Tour of Wave &amp; Zen</h2>
+        <p class="section-desc">Get a sneak peek of our beautiful oceanfront pavilion, coaching sessions in action, and
+          luxury accommodations.</p>
+      </div>
+
+      <div class="video-placeholder" id="home2-video-play" style="max-width: 900px; margin: 0 auto;" role="button"
+        aria-label="Play virtual tour video">
+        <img src="assets/images/banners/home_hero.png" alt="Wave and Zen virtual tour cover" loading="lazy" />
+        <div class="video-play-overlay">
+          <div class="play-btn-circle">
+            <svg viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 5: CO-FOUNDERS EDITORIAL TESTIMONIALS ═══════════════ -->
+  <section id="home2-founders" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Philosophy</span>
+        <h2 class="section-title">Meet Our Co-Founders</h2>
+        <p class="section-desc">Marcus and Elena combine surf performance coaching with beach mindfulness to create a
+          holistic ocean lifestyle.</p>
+      </div>
+
+      <div class="grid-2-col">
+        <!-- Marcus Chen Bio -->
+        <div class="testimonial-card"
+          style="flex: 1; min-width: 280px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <div
+            style="display:flex; flex-direction: column; align-items:center; gap: 0.75rem; margin-bottom: 1.5rem; text-align: center;">
+            <img src="assets/images/instructors/marcus.png" alt="Marcus Chen"
+              style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover;" />
+            <div>
+              <h3 style="font-size: 1.15rem; margin: 0;">Marcus Chen</h3>
+              <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 600;">Co-Founder &amp; Head Surf
+                Coach</span>
+            </div>
+          </div>
+          <p class="testimonial-quote" style="font-size: 1rem; flex-grow: 1; text-align: center;">"Surfing is about
+            reading the ocean's rhythm and flowing with its energy. We teach safety first, wave literacy second, and
+            performance third for a lifelong bond."</p>
+        </div>
+
+        <!-- Elena Vasquez Bio -->
+        <div class="testimonial-card"
+          style="flex: 1; min-width: 280px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+          <div
+            style="display:flex; flex-direction: column; align-items:center; gap: 0.75rem; margin-bottom: 1.5rem; text-align: center;">
+            <img src="assets/images/instructors/elena.png" alt="Elena Vasquez"
+              style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover;" />
+            <div>
+              <h3 style="font-size: 1.15rem; margin: 0;">Elena Vasquez</h3>
+              <span style="font-size: 0.8rem; color: var(--accent-color); font-weight: 600;">Co-Founder &amp; Head Yoga
+                Teacher</span>
+            </div>
+          </div>
+          <p class="testimonial-quote" style="font-size: 1rem; flex-grow: 1; text-align: center;">"Yoga Alliance beach
+            yoga teaches grounding and breath. Practicing on the shoreline, we connect with nature. The ocean's roar
+            becomes our background healing."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 6: RETREAT LOCATIONS ═══════════════ -->
+  <section id="home2-locations" style="background-color: var(--bg-secondary); padding: 6rem 2rem;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Sanctuary Locations</span>
+        <h2 class="section-title">Our Beachfront Destinations</h2>
+        <p class="section-desc">Experience our signature surf and yoga programs set on the world's most pristine
+          coastlines.</p>
+      </div>
+      <div class="destinations-accordion">
+        <!-- Location 1 -->
+        <div class="destination-panel">
+          <img class="destination-panel-bg" src="assets/images/gallery/grid1_home2.jpg" alt="Peniche, Portugal"
+            loading="lazy" />
+          <div class="destination-panel-overlay"></div>
+          <div class="destination-panel-content" style="align-items: center; text-align: center;">
+            <span class="destination-panel-tag">Portugal</span>
+            <h3 class="destination-panel-title">Peniche Cliffs Surf Camp</h3>
+            <p class="destination-panel-desc">Experience Atlantic swells and beautiful coastal yoga flows on the rugged
+              cliffs of Peniche, Europe's premier surfing capital.</p>
+            <div class="destination-panel-btn-wrap" style="justify-content: center; width: 100%;">
+              <a href="booking.html" class="btn btn-outline" style="width:100%;text-align:center;"
+                id="loc-bali-btn-2">View Availability</a>
+            </div>
+          </div>
+        </div>
+        <!-- Location 2 -->
+        <div class="destination-panel">
+          <img class="destination-panel-bg" src="assets/images/gallery/grid2_home2.jpg" alt="North Shore, Hawaii" loading="lazy" />
+          <div
+            style="position:absolute;top:1rem;inset-inline-start:1rem;background:var(--coral-color);color:#fff;padding:0.3rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:700;z-index:10;">
+            Most Popular</div>
+          <div class="destination-panel-overlay"></div>
+          <div class="destination-panel-content" style="align-items: center; text-align: center;">
+            <span class="destination-panel-tag">Hawaii, USA</span>
+            <h3 class="destination-panel-title">North Shore Shoreline</h3>
+            <p class="destination-panel-desc">Master the legendary waves of Oahu with private coaching from local pros,
+              paired with peaceful sunrise meditation sessions.</p>
+            <div class="destination-panel-btn-wrap" style="justify-content: center; width: 100%;">
+              <a href="booking.html" class="btn btn-outline" style="width:100%;text-align:center;"
+                id="loc-costarica-btn-2">View Availability</a>
+            </div>
+          </div>
+        </div>
+        <!-- Location 3 -->
+        <div class="destination-panel">
+          <img class="destination-panel-bg" src="assets/images/gallery/grid_8 (2).jpg" alt="Byron Bay, Australia"
+            loading="lazy" />
+          <div class="destination-panel-overlay"></div>
+          <div class="destination-panel-content" style="align-items: center; text-align: center;">
+            <span class="destination-panel-tag">Australia</span>
+            <h3 class="destination-panel-title">Byron Bay Wellness Shala</h3>
+            <p class="destination-panel-desc">Unwind on the pristine sands of Byron Bay with holistic yoga alignment
+              retreats and beginner-friendly longboard sessions.</p>
+            <div class="destination-panel-btn-wrap" style="justify-content: center; width: 100%;">
+              <a href="booking.html" class="btn btn-outline" style="width:100%;text-align:center;"
+                id="loc-california-btn-2">View Availability</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 7: GOLDEN HOUR CTA BANNER ═══════════════ -->
+  <section class="cta-banner" id="home2-cta" style="background-image:url('assets/images/cta/home2_cta.png');"
+    aria-label="Book your experience">
+    <div class="cta-banner-overlay"></div>
+    <div class="cta-banner-content" style="max-width: 800px;">
+      <span class="section-tag" style="color:#fff;opacity:0.8;">Escape to the Coast</span>
+      <h2>Begin Your Personal Surf &amp; Yoga Journey</h2>
+      <p>Sign up for availability alerts on upcoming retreats or request a custom private packages package designed for
+        your family or corporate group.</p>
+
+      <form id="contact-form" class="cta-enquiry-form"
+        style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; justify-content: center; width: 100%; max-width: 600px; margin-inline: auto;">
+        <input type="text" placeholder="Your Name" required class="form-input"
+          style="flex: 1 1 200px; padding: 0.85rem 1.25rem; border-radius: 30px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff;" />
+        <input type="email" placeholder="Your Email Address" required class="form-input"
+          style="flex: 1 1 200px; padding: 0.85rem 1.25rem; border-radius: 30px; background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); color: #fff;" />
+        <button type="submit" class="btn btn-primary" style="padding: 0.85rem 2rem; border-radius: 30px;">Request
+          Info</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="main-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text" style="margin-bottom:1.25rem;">
+          <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo"
+            style="width:32px;height:32px;object-fit:contain;margin-inline-end:0.5rem;" />
+          Wave &amp; Zen
+        </div>
+        <p class="footer-tagline">Ride the wave. Find your zen. Experience the coast in its most authentic form.</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="Instagram" id="footer-instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="Facebook" id="footer-facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube" id="footer-youtube">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" id="footer-about-link">About Us</a></li>
+          <li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li>
+          <li><a href="packages.html" id="footer-packages-link">Packages</a></li>
+          <li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li>
+          <li><a href="tides.html" id="footer-tides-link">Tide Reports</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html" id="footer-contact-link">Enquiries</a></li>
+          <li><a href="booking.html" id="footer-booking-link">Book a Session</a></li>
+          <li><a href="mailto:hello@waveandzen.com" id="footer-email-link">hello@waveandzen.com</a></li>
+          <li><a href="tel:+1800WAVEZEN" id="footer-phone-link">+1&nbsp;800&nbsp;WAVE&nbsp;ZEN</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Wave &amp; Zen Retreats. All rights reserved.</p>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-privacy">Privacy Policy</a>
+        <a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>

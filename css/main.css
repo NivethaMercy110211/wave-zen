@@ -467,7 +467,7 @@ html[dir="rtl"] .theme-direction-controls-floating {
 .beach-icon-badge svg {
   width: 26px;
   height: 26px;
-  fill: currentColor;
+  fill: #f59e55;
 }
 
 .beach-icon-badge::before {

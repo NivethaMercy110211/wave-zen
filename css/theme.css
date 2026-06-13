@@ -1595,6 +1595,9 @@ textarea:focus {
 }
 
 #packages-grid .section-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
   color: #8a5a12;
   background: rgba(197, 138, 43, 0.14);
 }
@@ -1695,7 +1698,8 @@ textarea:focus {
   box-shadow: 0 18px 38px rgba(65, 45, 20, 0.16);
 }
 
-.packages-card-grid .package-card[hidden] {
+.packages-card-grid .package-card[hidden],
+.packages-card-grid .package-card.is-filtered-out {
   display: none !important;
 }
 
@@ -1913,22 +1917,159 @@ html[dir="rtl"] .package-features li::before {
     flex-basis: 100%;
     width: 100%;
     max-width: 440px;
-    height: 640px;
-    min-height: 640px !important;
-    grid-template-rows: 205px 1fr;
+    height: auto;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
 
   .packages-card-grid .package-card.bg-mode .card-bg-image {
     height: 205px !important;
+    position: relative !important;
+    width: 100% !important;
+    flex-shrink: 0 !important;
   }
 
   .packages-card-grid .package-card.bg-mode .card-body {
-    grid-template-rows: 22px 3.2rem 1fr auto;
-    padding: 1.2rem;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+    padding: 1.25rem !important;
   }
 
   .packages-card-grid .package-card.bg-mode .card-title {
-    height: 3.2rem;
+    height: auto !important;
+    display: block !important;
+    overflow: visible !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .packages-card-grid .package-card.bg-mode .card-text {
+    height: auto !important;
+    display: block !important;
+    overflow: visible !important;
+    margin-bottom: 1rem !important;
+    -webkit-line-clamp: unset !important;
+  }
+
+  .packages-card-grid .package-card.bg-mode .card-footer {
+    margin-top: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+    gap: 1rem !important;
+    padding-top: 1rem !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    border-top: 1px solid var(--border-color) !important;
+  }
+
+  .packages-card-grid .package-card.bg-mode .package-price {
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .packages-card-grid .package-card.bg-mode .btn-primary {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+    width: auto !important;
+    min-width: 125px !important;
+    min-height: 40px !important;
+    margin: 0 !important;
+    padding: 0.5rem 1rem !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #packages-grid {
+    overflow-x: clip;
+  }
+
+  #packages-grid .package-filter-tabs {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 2rem !important;
+    padding: 0.4rem !important;
+    gap: 0.4rem !important;
+    border-radius: 16px !important;
+  }
+
+  #packages-grid .package-filter-tabs .filter-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 46px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0.65rem 0.5rem !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  #packages-grid .packages-card-grid .package-card.gallery-item.bg-mode {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+  #packages-grid .packages-card-grid .package-card.bg-mode:not([hidden]):not(.is-filtered-out) {
+    display: flex !important;
+    flex: 0 1 100% !important;
+    width: 100% !important;
+    max-width: 440px !important;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #packages-grid .packages-card-grid .package-card.bg-mode[hidden],
+  #packages-grid .packages-card-grid .package-card.bg-mode.is-filtered-out {
+    display: none !important;
+  }
+
+  #packages-grid .packages-card-grid .package-card.bg-mode .card-body {
+    position: relative !important;
+    height: auto !important;
+    min-height: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: visible !important;
+  }
+
+  #packages-grid .packages-card-grid .package-features {
+    display: grid !important;
+    height: auto !important;
+    overflow: visible !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .packages-card-grid .package-card.bg-mode .card-footer {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .packages-card-grid .package-card.bg-mode .package-price {
+    width: 100% !important;
+  }
+
+  .packages-card-grid .package-card.bg-mode .btn-primary {
+    width: 100% !important;
+    min-height: 44px !important;
   }
 }
 

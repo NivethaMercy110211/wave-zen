@@ -44,8 +44,8 @@ function initAuthAnimations() {
     AOS.init({
       duration: 1400,
       easing: 'ease-out-cubic',
-      once: true,
-      mirror: false,
+      once: false,
+      mirror: true,
       offset: 40,
       anchorPlacement: 'top-bottom'
     });
