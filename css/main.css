@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* CSS Variables */
+:root {
+  /* Fonts */
+  --font-primary: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --header-height: 80px;
+  --transition-speed: 0.3s;
+  
+  /* Color Palette - Light Theme (Sandy Beach / Clear Ocean) */
+  --bg-primary: #fbfaf7;
+  --bg-secondary: #f3edd8;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  
+  --accent-color: #0ea5e9; /* Ocean Aqua */
+  --accent-hover: #0284c7;
+  --primary-color: #0f172a; /* Deep Navy */
+  --secondary-color: #dfd6bf; /* Sand Beige */
+  --coral-color: #ff7e67; /* Sunset Coral */
+  --coral-hover: #e0634c;
+  
+  --border-color: #e2e8f0;
+  --border-focus: #0ea5e9;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.03);
+  
+  --border-radius-card: 16px;
+  --border-radius-button: 30px;
+  --border-radius-input: 8px;
+}
+
+[data-theme="dark"] {
+  /* Color Palette - Dark Theme (Deep Sea / Starry Night Beach) */
+  --bg-primary: #0a0f1d;
+  --bg-secondary: #12192c;
+  --bg-card: #192239;
+  --bg-input: #12192c;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  
+  --accent-color: #38bdf8; /* Brighter Ocean Aqua for Dark Mode */
+  --accent-hover: #0ea5e9;
+  --primary-color: #f8fafc;
+  --secondary-color: #2e3b5e; /* Deep Sand Blue */
+  --coral-color: #ff9e7d; /* Lighter Sunset Coral for visibility */
+  --coral-hover: #ff7e67;
+  
+  --border-color: #2a3556;
+  --border-focus: #38bdf8;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* RTL Adjustments using CSS Logical Properties */
+html[dir="rtl"] {
+  /* Logical properties will natively support toggles */
+}
+
+/* Core Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-speed), background-color var(--transition-speed);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Header & Sticky Menu */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background-color: #0a0f1d !important;
+  border-bottom: 1px solid #1e293b;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+  box-shadow: var(--shadow-sm);
+  transition: background-color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.header.scrolled {
+  box-shadow: var(--shadow-md);
+  background-color: #0a0f1d !important;
+  backdrop-filter: none !important;
+}
+
+/* Logical properties fallback/util */
+.logo-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  color: var(--accent-color);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-link {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #cbd5e1 !important;
+  position: relative;
+  padding: 0.5rem 1rem !important;
+  border-radius: 8px;
+  transition: all var(--transition-speed) ease;
+}
+
+/* Navigation Dropdown Menu styling */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+}
+
+.dropdown-toggle .arrow {
+  font-size: 0.65rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-menu-list {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: #12192c;
+  border: 1px solid #2a3556;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  min-width: 150px;
+  z-index: 1010;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.dropdown-item {
+  color: #cbd5e1 !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  text-align: start;
+  transition: all var(--transition-speed) ease;
+}
+
+/* Desktop dropdown trigger */
+@media screen and (min-width: 769px) {
+  .nav-dropdown.active .dropdown-menu-list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown.active .dropdown-toggle .arrow {
+    transform: rotate(180deg);
+  }
+}
+
+/* Unified Menu Hover and Active Styles */
+.nav-link:hover {
+  color: #38bdf8 !important;
+  background-color: transparent !important;
+  transform: translateY(-1px);
+}
+
+.dropdown-item:hover,
+.login-nav-btn:hover {
+  color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.12) !important;
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  color: #38bdf8 !important;
+  background-color: transparent !important;
+  font-weight: 700;
+}
+
+.dropdown-item.active {
+  color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.18) !important;
+  font-weight: 700;
+}
+
+/* Navigation Actions (Theme, Language, Login Button) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #2a3556;
+  background-color: #12192c;
+  transition: all var(--transition-speed) ease;
+}
+
+.action-btn:hover {
+  background-color: rgba(56, 189, 248, 0.12);
+  border-color: var(--accent-color);
+}
+
+.action-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #cbd5e1;
+}
+
+.action-btn:hover svg {
+  fill: #38bdf8;
+}
+
+.dir-toggle-label {
+  color: #cbd5e1;
+}
+
+.action-btn:hover .dir-toggle-label {
+  color: #38bdf8;
+}
+
+.login-nav-btn {
+  background-color: var(--accent-color);
+  color: #ffffff !important;
+  padding: 0.55rem 1.5rem;
+  border-radius: var(--border-radius-button);
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.3);
+  transition: all var(--transition-speed) ease;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Hamburger mobile button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: transform var(--transition-speed), opacity var(--transition-speed);
+}
+
+/* Sections Structure & Setup */
+section {
+  padding: 6rem 4rem;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-tag {
+  font-family: var(--font-display);
+  color: var(--accent-color);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.section-desc {
+  color: var(--text-secondary);
+}
+
+/* Floating Controls (Alternative place for widgets if needed, but top header is main) */
+.theme-direction-controls-floating {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+html[dir="rtl"] .theme-direction-controls-floating {
+  right: auto;
+  left: 2rem;
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-speed), background-color var(--transition-speed);
+}
+
+.floating-btn:hover {
+  transform: scale(1.05);
+  background-color: var(--bg-secondary);
+}
+
+.floating-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-primary);
+}
+
+/* Premium Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+
+/* ==========================================
+   PREMIUM BEACH THEME BADGES & CUSTOM ICONS
+   ========================================== */
+.beach-icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(14, 165, 233, 0.08);
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+  transition: transform var(--transition-speed), background var(--transition-speed), color var(--transition-speed);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.08);
+  position: relative;
+}
+
+[data-theme="dark"] .beach-icon-badge {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.beach-icon-badge svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.beach-icon-badge::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px dashed rgba(14, 165, 233, 0.3);
+  transition: transform var(--transition-speed) ease;
+}
+
+.beach-icon-badge:hover {
+  transform: scale(1.08) rotate(5deg);
+  background: var(--accent-color);
+  color: #ffffff;
+}
+
+.beach-icon-badge:hover::before {
+  transform: rotate(-15deg) scale(1.04);
+  border-color: var(--accent-color);
+}
+
+/* Organic liquid badge container */
+.organic-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  background: rgba(255, 126, 103, 0.08);
+  color: var(--coral-color);
+  margin-bottom: 1rem;
+  transition: transform var(--transition-speed), border-radius var(--transition-speed), background var(--transition-speed), color var(--transition-speed);
+  box-shadow: 0 4px 12px rgba(255, 126, 103, 0.08);
+}
+
+[data-theme="dark"] .organic-badge {
+  background: rgba(255, 158, 125, 0.12);
+}
+
+.organic-badge svg {
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+}
+
+.organic-badge:hover {
+  transform: scale(1.08) rotate(-5deg);
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+  background: var(--coral-color);
+  color: #ffffff;
+}
+
+/* Surfboard Outline Badge */
+.surfboard-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 72px;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: rgba(16, 185, 129, 0.08);
+  color: #10b981;
+  margin-bottom: 1rem;
+  transition: transform var(--transition-speed) ease, background var(--transition-speed) ease, color var(--transition-speed) ease;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.surfboard-badge svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.surfboard-badge:hover {
+  transform: scale(1.08) translateY(-4px);
+  background: #10b981;
+  color: #ffffff;
+}
+
+/* Tide Circle / Glow Badge */
+.tide-circle-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform var(--transition-speed) ease;
+  color: var(--accent-color);
+}
+
+.tide-circle-badge::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.4;
+  animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.tide-circle-badge svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 0.2; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* General Layout spacing polish */
+section {
+  overflow: hidden; /* Prevent horizontal overflows at section level */
+}
+
+/* Back to Top Button */
+.back-to-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease, visibility var(--transition-speed) ease, background-color var(--transition-speed) ease;
+}
+
+.back-to-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--bg-secondary);
+  color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+.back-to-top-btn svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+}
+
+/* RTL layout adjustment for Back to Top Button */
+html[dir="rtl"] .back-to-top-btn {
+  right: auto;
+  left: 2rem;
+}

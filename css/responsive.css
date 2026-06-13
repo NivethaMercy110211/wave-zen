@@ -1,0 +1,1928 @@
+/* -------------------------------------------------------------
+   RESPONSIVE DESIGN AND MEDIA QUERIES
+   ------------------------------------------------------------- */
+
+/* Common Container utility */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* 1. Large Screens & Desktop (1440px+) */
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+/* 2. iPad Pro / Large Tablet / Small Laptop (1024px and down) */
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: 0 2rem;
+  }
+
+  section {
+    padding: 5rem 2rem;
+  }
+
+  .about-container {
+    gap: 2rem;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .tide-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .tide-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tide-metric-box {
+    padding: 1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-grid {
+    gap: 2rem;
+  }
+}
+
+/* 3. Tablet (768px and down) */
+@media screen and (max-width: 768px) {
+  /* Header adjustment */
+  .header {
+    padding: 0 1.5rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Navigation Drawer Panel */
+  .nav-menu {
+    position: fixed;
+    top: var(--header-height);
+    right: -100%;
+    width: 320px;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--bg-card);
+    border-inline-start: 1px solid var(--border-color);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem;
+    gap: 1.75rem;
+    box-shadow: var(--shadow-lg);
+    transition: right var(--transition-speed) ease-in-out;
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  html[dir="rtl"] .nav-menu {
+    right: auto;
+    left: -100%;
+    transition: left var(--transition-speed) ease-in-out;
+  }
+
+  .nav-menu.active {
+    right: 0;
+  }
+
+  html[dir="rtl"] .nav-menu.active {
+    right: auto;
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
+    width: 100%;
+  }
+
+  .nav-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  /* Inline toggles in menu */
+  .menu-toggle-row {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .login-nav-btn {
+    width: 100%;
+  }
+
+  /* Hamburger transformations */
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* General Stack Adjustments */
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-images {
+    width: 100%;
+  }
+
+  .about-img-box:nth-child(even) {
+    transform: translateY(0); /* remove offset on tablet */
+  }
+
+  .tide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tide-metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  
+  /* Center final card if odd count in grid container */
+  .grid-container > *:last-child:nth-child(odd) {
+    grid-column: 1; /* Already stacks, centered */
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .form-card {
+    padding: 2rem;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full-width {
+    grid-column: span 1;
+  }
+
+}
+
+/* Home 1 testimonial structure; JavaScript equalizes content-driven heights. */
+#home-testimonials .testimonial-card {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100%;
+}
+
+#home-testimonials .testimonial-stars {
+  flex: 0 0 auto;
+}
+
+#home-testimonials .testimonial-quote {
+  flex: 0 0 auto !important;
+  overflow-wrap: anywhere;
+}
+
+#home-testimonials .testimonial-author {
+  flex: 0 0 auto !important;
+  margin-top: auto;
+  width: 100%;
+}
+
+#home-testimonials .testimonial-author > div {
+  min-width: 0;
+  width: 100%;
+}
+
+@media screen and (max-width: 480px) {
+  #home-testimonials .testimonial-quote,
+  #home-testimonials .testimonial-author,
+  #home-testimonials .testimonial-location {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+}
+
+/* Full Team cards keep equal tracks despite the generic flex-grid utilities above. */
+#instructors-team .grid-3-col {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-auto-rows: 1fr;
+  align-items: stretch !important;
+}
+
+#instructors-team .grid-3-col > .instructor-card {
+  display: flex !important;
+  flex: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: 100% !important;
+  margin: 0 !important;
+}
+
+#instructors-team .team-card-media {
+  flex: 0 0 280px !important;
+  width: 100% !important;
+  height: 280px !important;
+}
+
+#instructors-team .team-card-body {
+  display: grid !important;
+  grid-template-rows: auto 5.5em 1fr auto;
+  flex: 1 1 auto !important;
+  width: 100% !important;
+}
+
+#instructors-team .team-card-role,
+#instructors-team .team-card-description,
+#instructors-team .team-card-badges {
+  width: 100% !important;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+  #instructors-team .grid-3-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #instructors-team .grid-3-col > .instructor-card:last-child {
+    grid-column: 1 / -1 !important;
+    width: calc((100% - 2rem) / 2) !important;
+    justify-self: center;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  #instructors-team .team-card-body {
+    grid-template-rows: 1.75rem 5.5rem minmax(13rem, 1fr) 3.25rem;
+    row-gap: 1rem;
+    align-content: stretch;
+  }
+
+  #instructors-team .team-card-body h3 {
+    min-height: 1.75rem;
+    line-height: 1.35;
+    margin-bottom: 0 !important;
+  }
+
+  #instructors-team .team-card-role {
+    min-height: 5.5rem;
+    line-height: 1.5;
+    margin-bottom: 0 !important;
+  }
+
+  #instructors-team .team-card-description {
+    min-height: 13rem;
+    line-height: 1.65;
+  }
+
+  #instructors-team .team-card-badges {
+    min-height: 3.25rem;
+    margin-top: 0 !important;
+    align-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #instructors-team .grid-3-col {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-rows: auto;
+  }
+
+  #instructors-team .grid-3-col > .instructor-card:last-child {
+    grid-column: auto !important;
+    width: 100% !important;
+  }
+
+  #instructors-team .team-card-body {
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  #instructors-team .team-card-role {
+    min-height: 0;
+  }
+}
+
+/* 4. Mobile Devices (360px × 740px to 480px) */
+@media screen and (max-width: 480px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .current-zone-banner {
+    align-items: start;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .current-zone-icon {
+    font-size: 2rem;
+  }
+
+  .header {
+    padding: 0 1rem;
+  }
+
+  .nav-menu {
+    top: var(--header-height);
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+  }
+
+  section {
+    padding: 4rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .grid-container {
+    max-width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tide-metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .tide-card-main {
+    padding: 1.5rem;
+  }
+
+  .tide-header-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tide-card-side {
+    padding: 1.5rem;
+  }
+
+  .tide-hour-node:nth-child(even) {
+    display: none; /* Hide alternating hours on mobile to avoid overlap */
+  }
+
+  .form-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .auth-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-title {
+    font-size: 1.75rem;
+  }
+
+  .auth-options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer {
+    padding: 3rem 1.5rem 2rem 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-brand,
+  .footer-links-col {
+    width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .footer-brand {
+    gap: 1rem;
+  }
+
+  .footer-brand .logo-text {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .footer-brand p,
+  .footer-tagline,
+  .footer-links a {
+    font-size: 0.8rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .footer-links #footer-phone-link {
+    display: inline-flex;
+    align-items: center;
+    direction: ltr;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-align: left;
+  }
+
+  .footer-col-title {
+    font-size: 0.9rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-links {
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .footer-social {
+    gap: 0.5rem;
+  }
+
+  .footer-social .social-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: start;
+  }
+
+  .footer-bottom > div {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem !important;
+    width: 100%;
+  }
+}
+
+/* ================================================================
+   RESPONSIVE — NEW SECTION COMPONENTS (sections.css additions)
+   ================================================================ */
+
+/* ─── 1024px Breakpoint ─── */
+@media screen and (max-width: 1024px) {
+  /* Page Hero */
+  .page-hero {
+    padding: calc(var(--header-height) + 3rem) 2rem 3rem;
+    min-height: 85vh;
+  }
+  .page-hero-content h1 { font-size: 2.25rem; }
+  .hero-float-badge {
+    position: relative;
+    inset-inline-end: auto;
+    bottom: auto;
+    margin-top: 2rem;
+    max-width: 100%;
+  }
+
+  /* Split Hero */
+  .hero-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 3rem;
+    padding-top: calc(var(--header-height) + 2.5rem);
+    padding-inline: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+  .hero-split-content {
+    padding: 2rem 0;
+  }
+  .hero-split-image {
+    height: 400px;
+    border-radius: 28px;
+  }
+
+  /* Stats Band */
+  .stats-band { padding: 3rem 2rem; }
+  .stats-band-inner { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+
+  /* Testimonials */
+  .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonial-grid > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 1rem);
+    margin: 0 auto;
+  }
+
+  /* Values Grid */
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Story Section */
+  .story-section { grid-template-columns: 1fr; gap: 3rem; }
+
+  /* Methodology */
+  .methodology-row { grid-template-columns: 1fr; gap: 2rem; }
+  .methodology-row.reverse { direction: ltr; }
+  html[dir="rtl"] .methodology-row.reverse { direction: rtl; }
+
+  /* Cert Section */
+  .cert-section { grid-template-columns: 1fr; gap: 3rem; }
+
+  /* Instructor Spotlight */
+  .instructor-spotlight { grid-template-columns: 1fr; gap: 3rem; }
+  .spotlight-image-wrap img {
+    height: 400px;
+    object-position: 42% 22%;
+  }
+  .spotlight-stats { grid-template-columns: repeat(3, 1fr); }
+
+  /* Grid 3-col */
+  .grid-3-col { grid-template-columns: repeat(2, 1fr); }
+  .grid-3-col > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 1rem);
+    margin: 0 auto;
+  }
+
+  /* Safety Zones */
+  .safety-zones-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Surf Windows */
+  .surf-windows-row { grid-template-columns: repeat(2, 1fr); }
+  .surf-windows-row > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 0.75rem);
+    margin: 0 auto;
+  }
+
+  /* Included Strip */
+  .included-strip { grid-template-columns: repeat(2, 1fr); }
+
+  /* Steps Row */
+  .steps-row { grid-template-columns: 1fr; gap: 2rem; }
+  .steps-row::before { display: none; }
+
+  /* Booking Selectors */
+  .booking-selectors { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  /* Availability Cards */
+  .availability-cards { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  /* Itinerary */
+  .itinerary-list { grid-template-columns: repeat(2, 1fr) !important; gap: 1.5rem !important; }
+  .itinerary-list::before { display: none !important; }
+
+  /* Contact Methods */
+  .contact-method-cards { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  /* Highlight Reel */
+  .highlight-reel { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  /* Mosaic Hero */
+  .mosaic-hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px 200px 200px;
+    padding: calc(var(--header-height) + 1.5rem) 2rem 2rem;
+  }
+  .mosaic-main { grid-row: span 1; }
+
+  /* Gallery Featured */
+  .gallery-featured-wrap { grid-template-columns: 1fr; gap: 1rem; }
+  .gallery-featured-side { flex-direction: row; }
+  .gallery-featured-main { min-height: 350px; }
+
+  /* Auth Split */
+  .auth-split-page { grid-template-columns: 1fr; }
+  .auth-split-image-panel { min-height: 360px; }
+  .auth-split-form-panel { padding: 3rem 2rem; }
+
+  /* Quote Wall */
+  .quote-wall { grid-template-columns: repeat(2, 1fr); }
+  .quote-wall-card:nth-child(2) { margin-top: 0; }
+  .quote-wall > *:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: calc(50% - 0.75rem);
+    margin: 0 auto;
+  }
+
+  /* Stats Band Accent */
+  .stats-band-accent { padding: 3rem 2rem; }
+  .stats-band-accent .stats-band-inner { grid-template-columns: repeat(3, 1fr); }
+
+  /* Promo Strip */
+  .promo-strip { flex-direction: column; text-align: center; }
+}
+
+/* ─── 768px Breakpoint ─── */
+@media screen and (max-width: 768px) {
+  /* Stats Band */
+  .stats-band-inner { grid-template-columns: repeat(2, 1fr); }
+  .stat-item { border-inline-end: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .stat-item:last-child { border-bottom: none; }
+
+  /* Testimonials */
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .testimonial-grid > *:last-child:nth-child(odd) {
+    grid-column: 1; max-width: 100%; margin: 0;
+  }
+
+  /* CTA Banner */
+  .cta-banner { background-attachment: scroll; }
+  .cta-banner-content h2 { font-size: 2rem; }
+  .cta-banner-btns { flex-direction: column; align-items: center; }
+
+  /* Values Grid */
+  .values-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  /* Safety Zones */
+  .safety-zones-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+
+  /* Surf Windows */
+  .surf-windows-row { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .surf-windows-row > *:last-child:nth-child(odd) { grid-column: 1; max-width: 100%; margin: 0; }
+
+  /* Included Strip */
+  .included-strip { grid-template-columns: repeat(2, 1fr); }
+
+  /* Grid 3-col */
+  .grid-3-col { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .grid-3-col > *:last-child:nth-child(odd) { grid-column: 1; max-width: 100%; margin: 0; }
+
+  /* Specialties Table */
+  .specialties-table th, .specialties-table td { padding: 0.85rem 1rem; font-size: 0.85rem; }
+
+  /* Quote Wall */
+  .quote-wall { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
+  .quote-wall > *:last-child:nth-child(odd) { grid-column: 1; max-width: 100%; margin: 0; }
+
+  /* Itinerary */
+  .itinerary-list { grid-template-columns: 1fr !important; max-width: 480px !important; margin: 0 auto !important; gap: 1.5rem !important; }
+  .itinerary-item { align-items: center !important; text-align: center !important; }
+  html[dir="rtl"] .itinerary-item { align-items: center !important; text-align: center !important; }
+  .itinerary-item::after { right: 2rem !important; left: auto !important; }
+  html[dir="rtl"] .itinerary-item::after { left: 2rem !important; right: auto !important; }
+
+  /* Booking Selectors */
+  .booking-selectors { max-width: 100%; }
+  .availability-cards { max-width: 100%; grid-template-columns: 1fr; }
+
+  /* Hero float badge */
+  .hero-float-badge { inset-inline-end: 2rem; bottom: 2rem; min-width: 200px; }
+
+  /* Stats Accent band */
+  .stats-band-accent .stats-band-inner { grid-template-columns: 1fr; }
+
+  /* Contact Methods */
+  .contact-method-cards { max-width: 100%; grid-template-columns: 1fr; }
+}
+
+/* ─── 480px Breakpoint (Mobile) ─── */
+@media screen and (max-width: 480px) {
+  /* Page Hero */
+  .page-hero { padding: calc(var(--header-height) + 2rem) 1rem 2rem; min-height: 85vh; }
+  .page-hero-content h1 { font-size: 1.85rem; }
+  .page-hero-content p { font-size: 0.95rem; }
+  .hero-float-badge { display: none; } /* hide float badge on very small screens */
+
+  /* Split Hero */
+  .hero-split {
+    gap: 2rem;
+    padding-top: calc(var(--header-height) + 1.5rem);
+    padding-inline: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .hero-split-content {
+    padding: 1.5rem 0;
+  }
+  .hero-split-content h1 {
+    font-size: 2rem;
+  }
+  .hero-split-image {
+    height: 280px;
+    border-radius: 20px;
+  }
+
+  /* Stats Band */
+  .stats-band { padding: 3rem 1rem; }
+  .stats-band-inner {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1rem !important;
+  }
+  .stat-item {
+    padding: 0.5rem !important;
+  }
+  .stat-number { font-size: 2.75rem; }
+  .stat-label {
+    font-size: 0.8rem !important;
+    letter-spacing: 1px !important;
+    white-space: nowrap !important;
+  }
+
+  /* CTA Banner */
+  .cta-banner-content h2 { font-size: 1.65rem; }
+
+  /* Methodology */
+  .methodology-img img { height: 240px; }
+
+  /* Cert Badges */
+  .cert-badges { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+
+  /* Spotlight */
+  .spotlight-image-wrap img {
+    height: 280px;
+    object-position: 42% 20%;
+  }
+  .spotlight-stats { grid-template-columns: 1fr; gap: 0.75rem; }
+  .spotlight-content h2 { font-size: 1.75rem; }
+
+  /* Included Strip */
+  .included-strip { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; }
+
+  /* Mosaic Hero */
+  .mosaic-hero-grid {
+    grid-template-rows: 260px 160px 160px;
+    padding: calc(var(--header-height) + 1rem) 1rem 1rem;
+    gap: 0.75rem;
+  }
+  .mosaic-overlay-text h1 { font-size: 1.75rem; }
+
+  /* Gallery Featured */
+  .gallery-featured-side { flex-direction: column; }
+
+  /* Video Placeholder */
+  .video-placeholder img { height: 240px; }
+  .highlight-quote-block blockquote { font-size: 1.2rem; }
+
+  /* Selector Card */
+  .selector-img { height: 160px; }
+
+  /* Auth Split */
+  .auth-split-image-panel { min-height: 240px; }
+  .auth-split-form-panel { padding: 2.5rem 1.5rem; }
+  .auth-split-image-panel-overlay { padding: 2rem 1.5rem; }
+  .auth-split-image-panel-overlay blockquote { font-size: 1.15rem; }
+
+  /* Contact Method */
+  .contact-method-card { padding: 1.75rem; }
+
+  /* Map */
+  .map-section-wrap { height: 320px; }
+  .map-pin-card { min-width: 180px; padding: 1.25rem; }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   UNIFIED RESPONSIVE GRID FLEX LAYOUTS (Odd Card Centering, Equal Height/Width)
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* 1. Universal Flex Containers */
+.grid-container,
+.grid-4-col,
+.testimonial-grid,
+.values-grid,
+.grid-3-col,
+.grid-2-col,
+.quote-wall,
+.safety-zones-grid,
+.surf-windows-row,
+.included-strip,
+.steps-row,
+.booking-selectors,
+.availability-cards,
+.itinerary-list,
+.contact-method-cards,
+.gallery-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: stretch !important; /* Forces equal height */
+  gap: 2rem !important;
+  grid-template-columns: none !important; /* Removes grid override */
+}
+
+/* Ensure flex items are displayed as flex blocks to allow full-height inner cards */
+.grid-container > *,
+.grid-4-col > *,
+.testimonial-grid > *,
+.values-grid > *,
+.grid-3-col > *,
+.grid-2-col > *,
+.quote-wall > *,
+.safety-zones-grid > *,
+.surf-windows-row > *,
+.included-strip > *,
+.steps-row > *,
+.booking-selectors > *,
+.availability-cards > *,
+.itinerary-list > *,
+.contact-method-cards > *,
+.gallery-grid > * {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Ensure child card elements grow to fill the container height */
+.grid-container > * > *,
+.grid-4-col > * > *,
+.testimonial-grid > * > *,
+.values-grid > * > *,
+.grid-3-col > * > *,
+.grid-2-col > * > *,
+.quote-wall > * > *,
+.safety-zones-grid > * > *,
+.surf-windows-row > * > *,
+.included-strip > * > *,
+.booking-selectors > * > *,
+.availability-cards > * > *,
+.itinerary-list > * > *,
+.contact-method-cards > * > *,
+.gallery-grid > * > * {
+  flex-grow: 1 !important;
+  width: 100% !important;
+}
+
+/* 2. Desktop Breakpoint (min-width: 1025px) */
+@media screen and (min-width: 1025px) {
+  /* 4 Columns */
+  .grid-4-col > *,
+  .values-grid > *,
+  .safety-zones-grid > *,
+  .included-strip > *,
+  .itinerary-list > * {
+    flex: 0 1 calc(25% - 1.5rem) !important;
+    width: calc(25% - 1.5rem) !important;
+  }
+
+  #booking-itinerary .itinerary-item {
+    padding-inline: 1.4rem;
+  }
+
+  #booking-itinerary .itinerary-item p {
+    width: 100%;
+    min-height: 3.1rem;
+    font-size: 0.82rem;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
+  }
+  
+  /* 3 Columns */
+  .grid-container > *,
+  .testimonial-grid > *,
+  .grid-3-col > *,
+  .quote-wall > *,
+  .surf-windows-row > *,
+  .steps-row > *,
+  .booking-selectors > *,
+  .availability-cards > *,
+  .contact-method-cards > *,
+  .gallery-grid > * {
+    flex: 0 1 calc(33.333% - 1.34rem) !important;
+    width: calc(33.333% - 1.34rem) !important;
+  }
+  
+  /* 2 Columns */
+  .grid-2-col > * {
+    flex: 0 1 calc(50% - 1rem) !important;
+    width: calc(50% - 1rem) !important;
+  }
+}
+
+/* 3. iPad Pro / Large Tablet / Small Laptop / iPad Air (769px to 1024px) */
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+  /* 4 Columns -> 2 Columns */
+  .grid-4-col > *,
+  .values-grid > *,
+  .safety-zones-grid > *,
+  .included-strip > *,
+  .itinerary-list > *,
+  /* 3 Columns -> 2 Columns */
+  .grid-container > *,
+  .testimonial-grid > *,
+  .grid-3-col > *,
+  .quote-wall > *,
+  .surf-windows-row > *,
+  .steps-row > *,
+  .booking-selectors > *,
+  .availability-cards > *,
+  .contact-method-cards > *,
+  .gallery-grid > *,
+  /* 2 Columns -> 2 Columns */
+  .grid-2-col > * {
+    flex: 0 1 calc(50% - 1rem) !important;
+    width: calc(50% - 1rem) !important;
+  }
+
+  /* Your Journey Itinerary alignment for iPad Pro */
+  .itinerary-item {
+    padding: 2.25rem 1.75rem !important;
+  }
+
+  .itinerary-item h4 {
+    min-height: 1.6rem;
+  }
+
+  .itinerary-item p {
+    min-height: 3.1rem; /* Fits exactly 2 lines of text */
+  }
+
+  /* Client Stories alignment for iPad Pro & iPad Air */
+  #home-testimonials .testimonial-card {
+    padding: 2.25rem 1.75rem !important;
+  }
+
+  #home-testimonials .testimonial-quote {
+    font-size: 0.95rem !important;
+    min-height: 6.3rem !important; /* Enforces exactly 4 lines of text */
+  }
+
+  /* Co-Founders bio alignment for iPad Pro & iPad Air */
+  #home2-founders .testimonial-card {
+    padding: 2.25rem 1.75rem !important;
+  }
+
+  #home2-founders .testimonial-quote {
+    font-size: 0.95rem !important;
+    min-height: 8.3rem !important; /* Enforces exactly 5 lines of text */
+  }
+}
+
+/* 4. iPad Mini / Medium Tablet (481px to 768px) */
+@media screen and (max-width: 768px) and (min-width: 481px) {
+  /* 4 Columns -> 2 Columns */
+  .grid-4-col > *,
+  .values-grid > *,
+  .safety-zones-grid > *,
+  .included-strip > *,
+  /* 3 Columns -> 2 Columns */
+  .grid-container > *,
+  .testimonial-grid > *,
+  .grid-3-col > *,
+  .quote-wall > *,
+  .surf-windows-row > *,
+  .steps-row > *,
+  .booking-selectors > *,
+  .availability-cards > *,
+  .contact-method-cards > *,
+  .gallery-grid > *,
+  /* 2 Columns -> 2 Columns */
+  .grid-2-col > * {
+    flex: 0 1 calc(50% - 1rem) !important;
+    width: calc(50% - 1rem) !important;
+  }
+
+  /* Your Journey Itinerary alignment for iPad Mini */
+  .itinerary-list > * {
+    flex: 0 1 100% !important;
+    max-width: 550px !important;
+    width: 100% !important;
+  }
+
+  .itinerary-item {
+    padding: 2.25rem 1.75rem !important;
+  }
+
+  .itinerary-item h4 {
+    min-height: 1.6rem;
+  }
+
+  .itinerary-item p {
+    min-height: 3.1rem; /* Fits exactly 2 lines of text */
+  }
+
+  /* Client Stories alignment for iPad Mini */
+  #home-testimonials .testimonial-card {
+    padding: 2.25rem 1.75rem !important;
+  }
+
+  #home-testimonials .testimonial-quote {
+    font-size: 0.95rem !important;
+  }
+
+  /* Co-Founders bio alignment for iPad Mini */
+  #home2-founders .testimonial-card {
+    padding: 2.25rem 1.75rem !important;
+  }
+
+  #home2-founders .testimonial-quote {
+    font-size: 0.95rem !important;
+    min-height: 11.0rem !important; /* Enforces exactly 7 lines of text */
+  }
+
+  /* Featured Escapes layout alignment for iPad Mini */
+  #home2-experiences .grid-3-col > * {
+    flex: 0 1 100% !important;
+    max-width: 550px !important;
+    width: 100% !important;
+  }
+}
+
+/* 5. Mobile (max-width: 480px) */
+@media screen and (max-width: 480px) {
+  .grid-container,
+  .grid-4-col,
+  .testimonial-grid,
+  .values-grid,
+  .grid-3-col,
+  .grid-2-col,
+  .quote-wall,
+  .safety-zones-grid,
+  .surf-windows-row,
+  .included-strip,
+  .steps-row,
+  .booking-selectors,
+  .availability-cards,
+  .itinerary-list,
+  .contact-method-cards,
+  .gallery-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+  
+  .grid-container > *,
+  .grid-4-col > *,
+  .testimonial-grid > *,
+  .values-grid > *,
+  .grid-3-col > *,
+  .grid-2-col > *,
+  .quote-wall > *,
+  .safety-zones-grid > *,
+  .surf-windows-row > *,
+  .included-strip > *,
+  .steps-row > *,
+  .booking-selectors > *,
+  .availability-cards > *,
+  .itinerary-list > *,
+  .contact-method-cards > *,
+  .gallery-grid > * {
+    flex: 0 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Mobile & Tablet Dropdown Layout */
+@media screen and (max-width: 768px) {
+  .nav-dropdown {
+    width: 100% !important;
+  }
+  .dropdown-menu-list {
+    position: static !important;
+    transform: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    padding: 0 !important;
+    padding-inline-start: 1rem !important;
+    width: 100% !important;
+    max-height: 0 !important;
+    overflow: hidden !important;
+    transition: max-height 0.3s ease, opacity 0.3s ease !important;
+    display: flex !important;
+  }
+  .nav-dropdown.active .dropdown-menu-list {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    max-height: 150px !important;
+    padding: 0.5rem !important;
+    padding-inline-start: 1.5rem !important;
+  }
+  .nav-dropdown.active .dropdown-toggle .arrow {
+    transform: rotate(180deg) !important;
+  }
+}
+
+/* ==========================================
+   TABLET GRID ADJUSTMENTS & CARD CENTERING
+   ========================================== */
+@media screen and (max-width: 991px) and (min-width: 769px) {
+  .grid-container,
+  .grid-3-col,
+  .instructors-grid,
+  .safety-zones-grid,
+  .values-grid,
+  .surf-windows-row,
+  .tide-metrics-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Center the odd final card inside 2-column wrapped grid layouts */
+  .grid-container > *:last-child:nth-child(odd),
+  .grid-3-col > *:last-child:nth-child(odd),
+  .instructors-grid > *:last-child:nth-child(odd),
+  .safety-zones-grid > *:last-child:nth-child(odd),
+  .values-grid > *:last-child:nth-child(odd),
+  .surf-windows-row > *:last-child:nth-child(odd) {
+    grid-column: span 2 !important;
+    max-width: 50% !important;
+    justify-self: center !important;
+    width: 100% !important;
+  }
+}
+
+/* Mobile grid alignment adjustments */
+@media screen and (max-width: 768px) {
+  .grid-container,
+  .grid-3-col,
+  .instructors-grid,
+  .safety-zones-grid,
+  .values-grid,
+  .surf-windows-row,
+  .tide-metrics-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .grid-container > *,
+  .grid-3-col > *,
+  .instructors-grid > *,
+  .safety-zones-grid > *,
+  .values-grid > *,
+  .surf-windows-row > * {
+    grid-column: auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* Tide locations: isolate image cards from the shared surf-window flex rules. */
+#tides-locations .surf-spots-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: initial !important;
+  gap: 1.5rem !important;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+#tides-locations .surf-spots-grid > .surf-spot-card {
+  display: flex !important;
+  flex: none !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  min-height: 260px;
+  margin: 0 !important;
+}
+
+#tides-locations .surf-spots-grid .surf-spot-card-content {
+  display: grid !important;
+  grid-template-rows: 1.6rem 1.35rem 2.65rem;
+  row-gap: 0.45rem;
+  flex: 0 0 auto !important;
+  align-self: stretch;
+  width: auto !important;
+  min-width: 0;
+}
+
+#tides-locations .surf-spot-card-title,
+#tides-locations .surf-spot-card-status {
+  display: block;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#tides-locations .surf-spot-card-title {
+  align-self: start;
+  height: 1.6rem;
+  line-height: 1.25;
+}
+
+#tides-locations .surf-spot-card-status {
+  align-self: start;
+  height: 1.35rem;
+  line-height: 1.5;
+}
+
+#tides-locations .surf-spot-card-desc {
+  display: -webkit-box;
+  align-self: start;
+  width: 100%;
+  height: 2.65rem;
+  margin: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+@media screen and (max-width: 1024px) {
+  #tides-locations .surf-spots-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #tides-locations .surf-spots-grid > .surf-spot-card {
+    min-height: 280px;
+    padding: 2rem 1.5rem;
+  }
+
+  #tides-locations .surf-spots-grid .surf-spot-card-content {
+    grid-template-rows: 1.6rem 1.35rem 2.65rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #tides-locations .surf-spots-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  #tides-locations .surf-spots-grid > .surf-spot-card {
+    min-height: 250px;
+    padding: 1.5rem 1.25rem;
+  }
+
+  #tides-locations .surf-spot-card-content {
+    padding-inline-start: 0.85rem;
+  }
+
+  #tides-locations .surf-spot-card-title {
+    font-size: 1.1rem;
+  }
+
+  #tides-locations .surf-spots-grid .surf-spot-card-content {
+    grid-template-rows: 1.4rem 1.35rem 2.65rem;
+  }
+
+  #tides-locations .surf-spot-card-title {
+    height: 1.4rem;
+  }
+}
+
+/* Optimal session cards: keep every content row aligned and equal. */
+#tides-windows .surf-windows-row {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: initial !important;
+  gap: 1.5rem !important;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+#tides-windows .surf-window-card {
+  display: grid !important;
+  grid-template-rows: 2rem 1.5rem 4.2rem 1.85rem;
+  align-content: start;
+  row-gap: 0.75rem;
+  flex: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  min-height: 190px;
+  margin: 0 !important;
+}
+
+#tides-windows .surf-window-card > * {
+  flex: none !important;
+  flex-grow: 0 !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0;
+}
+
+#tides-windows .surf-window-time,
+#tides-windows .surf-window-label,
+#tides-windows .surf-window-meta {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#tides-windows .surf-window-time {
+  height: 2rem;
+  line-height: 1.3;
+}
+
+#tides-windows .surf-window-label {
+  height: 1.5rem;
+  line-height: 1.5;
+}
+
+#tides-windows .surf-window-meta {
+  display: grid;
+  grid-template-rows: repeat(3, 1.4rem);
+  height: 4.2rem;
+  line-height: 1.6;
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+#tides-windows .surf-window-meta span {
+  display: block;
+  white-space: nowrap;
+}
+
+#tides-windows .surf-window-badge {
+  align-self: start;
+  justify-self: start;
+  height: 1.85rem;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1024px) {
+  #tides-windows .surf-windows-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #tides-windows .surf-windows-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  #tides-windows .surf-window-card {
+    grid-template-rows: 2rem 1.5rem 4.2rem 1.85rem;
+    min-height: 220px;
+    padding: 1.5rem 1.25rem;
+  }
+
+  #tides-windows .surf-window-time {
+    font-size: 1.3rem;
+  }
+
+  #tides-windows .surf-window-time,
+  #tides-windows .surf-window-label {
+    overflow: visible;
+    white-space: nowrap;
+    text-overflow: clip;
+  }
+
+  #tides-windows .surf-window-meta {
+    display: grid;
+    grid-template-rows: repeat(3, 1.4rem);
+    height: 4.2rem;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+    line-height: 1.6;
+  }
+}
+
+/* Instructor team cards: consistent content lines on desktop and iPad. */
+#instructors-team .team-card-body {
+  display: grid !important;
+  grid-template-rows: 1.65rem 2.65rem 7.45rem 2rem !important;
+  row-gap: 0.75rem;
+  align-content: start;
+}
+
+#instructors-team .team-card-body h3,
+#instructors-team .team-card-role,
+#instructors-team .team-card-description {
+  width: 100% !important;
+  min-width: 0;
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+#instructors-team .team-card-body h3 {
+  height: 1.65rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+#instructors-team .team-card-role {
+  display: block !important;
+  height: 2.65rem;
+  min-height: 2.65rem;
+  line-height: 1.5;
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+#instructors-team .team-card-description {
+  display: block;
+  height: 7.45rem;
+  min-height: 7.45rem;
+  line-height: 1.65;
+  overflow: visible;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+#instructors-team .team-card-badges {
+  flex-wrap: nowrap !important;
+  align-items: start !important;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  min-height: 2rem;
+  height: 2rem;
+  margin: 0 !important;
+  overflow: visible;
+}
+
+#instructors-team .team-card-badges .surf-window-badge {
+  flex: 0 1 auto !important;
+  min-width: 0;
+  overflow: visible;
+  white-space: nowrap;
+  text-overflow: clip;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 481px) {
+  #instructors-team .grid-3-col {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+    align-items: stretch !important;
+    max-width: none;
+    margin: 0;
+  }
+
+  #instructors-team .grid-3-col > .instructor-card {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  #instructors-team .grid-3-col > .instructor-card:last-child {
+    grid-column: 1 / -1 !important;
+    width: calc((100% - 2rem) / 2) !important;
+    justify-self: center;
+  }
+
+  #instructors-team .team-card-body {
+    grid-template-rows: 1.65rem 4.25rem 8.9rem 2rem !important;
+  }
+
+  #instructors-team .team-card-role,
+  #instructors-team .team-card-description {
+    display: block !important;
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+  }
+
+  #instructors-team .team-card-role {
+    height: 4.25rem;
+    min-height: 4.25rem;
+  }
+
+  #instructors-team .team-card-description {
+    height: 8.9rem;
+    min-height: 8.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #instructors-team .team-card-body {
+    grid-template-rows: auto auto auto auto !important;
+  }
+
+  #instructors-team .team-card-body h3,
+  #instructors-team .team-card-role,
+  #instructors-team .team-card-description,
+  #instructors-team .team-card-badges {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  #instructors-team .team-card-role {
+    display: block !important;
+  }
+
+  #instructors-team .team-card-description {
+    display: block !important;
+    height: 6.0rem !important;
+    min-height: 6.0rem !important;
+  }
+
+  #instructors-team .team-card-badges {
+    flex-wrap: wrap !important;
+  }
+}
+
+/* Student Voices: equal quote rows with full text visible. */
+#instructors-quotes .quote-wall {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: initial !important;
+  gap: 1.5rem !important;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+#instructors-quotes .quote-wall-card,
+#instructors-quotes .quote-wall-card:nth-child(2) {
+  display: grid !important;
+  grid-template-rows: 3rem minmax(12rem, 1fr) 2.5rem 1.25rem;
+  row-gap: 0.5rem;
+  align-content: start;
+  flex: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  height: 100%;
+  margin: 0 !important;
+}
+
+#instructors-quotes .quote-wall-card > * {
+  flex: none !important;
+  flex-grow: 0 !important;
+  width: 100% !important;
+  min-width: 0;
+  margin: 0;
+}
+
+#instructors-quotes .quote-symbol {
+  height: 3rem;
+}
+
+#instructors-quotes .quote-text {
+  min-height: 12rem;
+  overflow: visible;
+}
+
+#instructors-quotes .quote-author,
+#instructors-quotes .quote-instructor {
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+#instructors-quotes .quote-author {
+  display: flex !important;
+  min-height: 2.5rem;
+}
+
+#instructors-quotes .quote-instructor {
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 1024px) {
+  #instructors-quotes .quote-wall {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #instructors-quotes .quote-wall-card:last-child {
+    grid-column: 1 / -1;
+    width: calc((100% - 1.5rem) / 2) !important;
+    justify-self: center;
+  }
+
+  #instructors-quotes .quote-wall-card,
+  #instructors-quotes .quote-wall-card:nth-child(2) {
+    grid-template-rows: 3rem minmax(12rem, 1fr) 2.5rem 1.25rem;
+  }
+
+  #instructors-quotes .quote-text {
+    min-height: 12rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #instructors-quotes .quote-wall {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  #instructors-quotes .quote-wall-card:last-child {
+    grid-column: auto;
+    width: 100% !important;
+  }
+
+  #instructors-quotes .quote-wall-card,
+  #instructors-quotes .quote-wall-card:nth-child(2) {
+    grid-template-rows: 3rem minmax(13.5rem, 1fr) auto auto;
+    padding: 1.5rem;
+  }
+
+  #instructors-quotes .quote-text {
+    min-height: 13.5rem;
+  }
+
+  #instructors-quotes .quote-author,
+  #instructors-quotes .quote-instructor {
+    white-space: normal;
+    overflow: visible;
+  }
+}
+
+/* About values: balanced card content across desktop and iPad. */
+#about-values .values-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: initial !important;
+  gap: 1.5rem !important;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+#about-values .value-card {
+  display: grid !important;
+  grid-template-rows: 4rem 1.65rem auto;
+  row-gap: 0.75rem;
+  align-content: start;
+  justify-items: center;
+  flex: none !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0;
+  height: 100%;
+  margin: 0 !important;
+  text-align: center;
+}
+
+#about-values .value-card > * {
+  flex: none !important;
+  flex-grow: 0 !important;
+  width: auto !important;
+  min-width: 0;
+  margin: 0;
+}
+
+#about-values .value-icon {
+  width: 64px !important;
+  height: 64px;
+}
+
+#about-values .value-card h4 {
+  width: 100% !important;
+  height: 1.65rem;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+#about-values .value-card p {
+  width: 100% !important;
+  min-height: 8.65rem;
+  margin: 0;
+  text-align: start;
+  text-wrap: pretty;
+  overflow: visible;
+}
+
+@media screen and (max-width: 1024px) {
+  #about-values .values-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #about-values .value-card {
+    grid-template-rows: 4rem 1.65rem auto;
+    padding: 2.25rem;
+  }
+
+  #about-values .value-card p {
+    min-height: 6rem;
+    max-width: 34rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #about-values .values-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+
+  #about-values .value-card {
+    grid-template-rows: 4rem 1.65rem auto;
+    padding: 2rem 1.5rem;
+  }
+
+  #about-values .value-card p {
+    width: min(100%, 250px) !important;
+    min-height: 5.76rem;
+    height: 5.76rem;
+    line-height: 1.6;
+    overflow: visible;
+  }
+
+  #about-values .safety-first-card {
+    padding-bottom: 2.5rem;
+  }
+
+  #about-values .safety-first-text {
+    width: min(100%, 270px) !important;
+    font-size: 0.85rem;
+  }
+
+  #about-values .safety-first-text span {
+    display: block;
+    white-space: nowrap;
+  }
+}
+
+/* Tide safety cards: compact, balanced iPad Mini layout. */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #tides-safety .safety-zones-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    justify-content: initial !important;
+    gap: 1.25rem !important;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  #tides-safety .safety-zone-card {
+    display: grid !important;
+    grid-template-rows: 2.75rem 2.75rem 4.2rem;
+    row-gap: 0.65rem;
+    align-content: start;
+    flex: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0;
+    height: 100%;
+    padding: 1.5rem;
+    margin: 0 !important;
+  }
+
+  #tides-safety .safety-zone-icon {
+    margin: 0 0 0.5rem;
+    align-self: start;
+  }
+
+  #tides-safety .safety-zone-card h4 {
+    display: -webkit-box;
+    height: 2.75rem;
+    margin: 0;
+    overflow: hidden;
+    line-height: 1.35;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+
+  #tides-safety .safety-zone-card p {
+    height: 4.2rem;
+    margin: 0;
+    overflow: visible;
+    line-height: 1.6;
+  }
+}
+
+/* Footer balance for iPad Mini/Air/Pro landscape widths. */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .footer {
+    padding-inline: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns:
+      minmax(260px, 1.35fr)
+      minmax(135px, 0.75fr)
+      minmax(230px, 1.15fr);
+    gap: 1.5rem;
+  }
+
+  .footer-links #footer-phone-link {
+    display: inline-flex;
+    width: max-content;
+    max-width: 100%;
+    align-items: center;
+    direction: ltr;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-align: left;
+  }
+}
+
+/* Home 1: keep the final iPad Mini stat label directly below 10+. */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #home-stats #stat-years ~ .stat-label {
+    display: block;
+    width: 100%;
+    margin-top: 0.75rem;
+    white-space: nowrap;
+    text-align: center;
+  }
+}
+
+/* Booking journey: match the Neutral Good card alignment on mobile. */
+@media screen and (max-width: 480px) {
+  #booking-itinerary .itinerary-list {
+    gap: 1.25rem !important;
+  }
+
+  #booking-itinerary .itinerary-item,
+  html[dir="rtl"] #booking-itinerary .itinerary-item {
+    display: grid !important;
+    grid-template-rows: auto 1.8rem auto;
+    row-gap: 0.75rem;
+    align-content: start;
+    justify-items: center;
+    padding: 2rem 1.5rem !important;
+    text-align: center !important;
+  }
+
+  #booking-itinerary .itinerary-step,
+  #booking-itinerary .itinerary-item h4,
+  #booking-itinerary .itinerary-item p {
+    margin: 0;
+  }
+
+  #booking-itinerary .itinerary-item h4 {
+    width: 100%;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #booking-itinerary .itinerary-item p {
+    width: min(100%, 270px) !important;
+    min-height: 4.8rem;
+    line-height: 1.6;
+    text-align: start;
+    text-wrap: pretty;
+  }
+
+  #booking-itinerary .itinerary-item:nth-child(4) p {
+    width: 100% !important;
+    max-width: 300px;
+  }
+
+  #booking-itinerary .day-seven-desc-full {
+    display: none;
+  }
+
+  #booking-itinerary .day-seven-desc-mobile {
+    display: block;
+  }
+}

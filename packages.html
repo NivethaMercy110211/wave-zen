@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Choose from beginner surf lessons, advanced coaching, sunrise yoga retreats, and full immersion packages. Find the perfect Wave & Zen experience." />
+  <title>Coaching Packages | Wave & Zen</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header class="header" id="main-header">
+  <div class="logo-container" onclick="window.location.href='index.html'" role="link" aria-label="Wave and Zen Home">
+    <div class="logo-text">
+      <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;" />
+      Wave &amp; Zen
+    </div>
+  </div>
+  <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+    <div class="nav-dropdown" id="home-dropdown">
+      <a href="#" class="nav-link dropdown-toggle" id="nav-home">Home <span class="arrow">▼</span></a>
+      <div class="dropdown-menu-list">
+        <a href="index.html" class="dropdown-item" id="nav-home1">Home 1</a>
+        <a href="home2.html" class="dropdown-item" id="nav-home2">Home 2</a>
+      </div>
+    </div>
+    <a href="about.html" class="nav-link" id="nav-about">About</a>
+    <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
+    <a href="tides.html" class="nav-link" id="nav-tides">Tides</a>
+    <a href="packages.html" class="nav-link active" id="nav-packages">Packages</a>
+    <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
+    <a href="booking.html" class="nav-link" id="nav-booking">Booking</a>
+    <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+    <div class="nav-actions">
+      <button class="action-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch to dark theme" title="Dark theme">
+        <svg viewBox="0 0 24 24" class="theme-toggle-icon" aria-hidden="true"><path d="M15.8 3.35a7.2 7.2 0 1 0 4.35 10.95 6.35 6.35 0 0 1-4.35-10.95Z"></path><path d="m18.8 3.1.35.85.85.35-.85.35-.35.85-.35-.85-.85-.35.85-.35.35-.85Z"></path><path d="M3 17.15c2.1-1.65 4.2-1.65 6.3 0s4.2 1.65 6.3 0 4.2-1.65 5.4-.7"></path><path d="M4.5 20.35c1.7-1 3.4-1 5.1 0s3.4 1 5.1 0 3.4-1 4.8-.35"></path></svg>
+      </button>
+      <button class="action-btn dir-toggle-btn" id="dir-toggle" aria-label="Toggle RTL">
+        <span class="dir-toggle-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+      </button>
+      <a href="login.html" class="login-nav-btn" id="login-nav-btn">Login</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════════ SECTION 1: HERO BANNER ═══════════════ -->
+<section class="page-hero" id="packages-hero">
+  <video autoplay muted loop playsinline class="hero-video-bg">
+    <source src="assets/videos/packages.mp4" type="video/mp4">
+  </video>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content container">
+    <span class="section-tag">From First Timers to Wave Chasers</span>
+    <h1>Find Your Perfect Coastal Package</h1>
+    <p>Whether you're a curious beginner, seasoned surfer, or wellness-seeker looking to reset — we have a tailored experience designed exactly for you.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
+      <a href="#packages-grid" class="btn btn-primary" id="packages-hero-view-btn">Browse All Packages</a>
+      <a href="booking.html" class="btn btn-outline-light" id="packages-hero-book-btn">Book Directly</a>
+    </div>
+  </div>
+  <div class="hero-float-badge">
+    <h3>💳 Flexible Payments</h3>
+    <p>Deposit from $99 to secure your booking. Balance due 7 days before arrival.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 2: PACKAGE CARDS GRID ═══════════════ -->
+<section id="packages-grid" style="background-color:var(--bg-primary);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Our Packages</span>
+      <h2 class="section-title">Choose Your Experience</h2>
+      <p class="section-desc">Filter by category or browse all available packages below. Every package includes a safety briefing and post-session debrief.</p>
+    </div>
+    <!-- Filter Tabs -->
+    <div class="gallery-filter-tabs package-filter-tabs" role="group" aria-label="Filter packages">
+      <button class="filter-btn active" type="button" data-filter="all" id="pkg-filter-all" aria-pressed="true">All Packages</button>
+      <button class="filter-btn" type="button" data-filter="surf" id="pkg-filter-surf" aria-pressed="false">Surf</button>
+      <button class="filter-btn" type="button" data-filter="yoga" id="pkg-filter-yoga" aria-pressed="false">Yoga</button>
+      <button class="filter-btn" type="button" data-filter="retreat" id="pkg-filter-retreat" aria-pressed="false">Retreat</button>
+    </div>
+    <!-- Package Cards -->
+    <div class="packages-card-grid" aria-live="polite">
+      <!-- Card 1 -->
+      <div class="package-card gallery-item bg-mode" data-category="surf">
+        <div class="card-bg-image" style="background-image:url('assets/images/packages/first_wave.jpg');"></div>
+        <div class="card-body">
+          <div class="card-tag tag-surf">Surf · Beginner</div>
+          <h3 class="card-title">First Wave Package</h3>
+          <p class="card-text">2-hour private lesson for complete beginners. Board, leash, and rash guard included. Safety briefing, technique coaching, and photo package.</p>
+          <ul class="package-features">
+            <li>Private coaching</li>
+            <li>Board and safety gear</li>
+            <li>Session photo package</li>
+          </ul>
+          <div class="card-footer">
+            <div class="package-price"><span class="card-price">$120</span><span class="card-unit">per person</span></div>
+            <a href="booking.html" class="btn btn-primary" id="pkg-1-book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="package-card gallery-item bg-mode" data-category="surf">
+        <div class="card-bg-image" style="background-image:url('assets/images/packages/intermediate_surf_1.jpg');"></div>
+        <div class="card-body">
+          <div class="card-tag tag-surf">Surf · Intermediate</div>
+          <h3 class="card-title">Wave Progression — 5 Days</h3>
+          <p class="card-text">5-day daily surf coaching with video analysis, technique review, and tide briefings. Equipment included. Perfect for those who can stand but want to improve.</p>
+          <ul class="package-features">
+            <li>Five coached sessions</li>
+            <li>Video technique review</li>
+            <li>Equipment and tide briefings</li>
+          </ul>
+          <div class="card-footer">
+            <div class="package-price"><span class="card-price">$480</span><span class="card-unit">five-day program</span></div>
+            <a href="booking.html" class="btn btn-primary" id="pkg-2-book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="package-card gallery-item bg-mode featured-card" data-category="yoga">
+        <div class="card-bg-image" style="background-image:url('assets/images/packages/sunrise_yoga.jpg');"></div>
+        <div class="card-body">
+          <div class="card-tag tag-yoga">Yoga · All Levels</div>
+          <h3 class="card-title">Sunrise Yoga — 7 Days</h3>
+          <p class="card-text">7 daily sunrise sessions on the beach, breathwork, meditation, guided yoga nidra. Includes a yoga mat, journal, and a welcome kit.</p>
+          <ul class="package-features">
+            <li>Seven sunrise sessions</li>
+            <li>Breathwork and meditation</li>
+            <li>Mat, journal, and welcome kit</li>
+          </ul>
+          <div class="card-footer">
+            <div class="package-price"><span class="card-price">$350</span><span class="card-unit">seven-day program</span></div>
+            <a href="booking.html" class="btn btn-primary" id="pkg-3-book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="package-card gallery-item bg-mode" data-category="retreat">
+        <div class="card-bg-image" style="background-image:url('assets/images/packages/full_retreat.jpg');"></div>
+        <div class="card-body">
+          <div class="card-tag tag-retreat">Retreat · Combo</div>
+          <h3 class="card-title">Wave &amp; Zen Full Retreat — 7 Days</h3>
+          <p class="card-text">Our signature combo experience — morning surf sessions, afternoon yoga, group dinners, excursions, eco-accommodation, and daily coaching.</p>
+          <ul class="package-features">
+            <li>Daily surf and yoga</li>
+            <li>Eco accommodation</li>
+            <li>Dinners and excursions</li>
+          </ul>
+          <div class="card-footer">
+            <div class="package-price"><span class="card-price">$1,299</span><span class="card-unit">seven days, all inclusive</span></div>
+            <a href="booking.html" class="btn btn-primary" id="pkg-4-book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="package-card gallery-item bg-mode" data-category="surf">
+        <div class="card-bg-image" style="background-image:url('assets/images/packages/junior_surf.jpg');"></div>
+        <div class="card-body">
+          <div class="card-tag tag-surf">Family Surf</div>
+          <h3 class="card-title">Family Beach Weekend</h3>
+          <p class="card-text">A 2-day weekend family surf and beach yoga package for groups of 2–6 people. Includes kids surf program, adult sessions, and group activities.</p>
+          <ul class="package-features">
+            <li>Two-day family program</li>
+            <li>Kids and adult coaching</li>
+            <li>Yoga and beach activities</li>
+          </ul>
+          <div class="card-footer">
+            <div class="package-price"><span class="card-price">$399</span><span class="card-unit">per family</span></div>
+            <a href="booking.html" class="btn btn-primary" id="pkg-5-book">Book Now</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="package-card gallery-item bg-mode premium-card" data-category="retreat">
+        <div class="card-bg-image" style="background-image:url('assets/images/packages/surf_team_pack.jpg');"></div>
+        <div class="card-body">
+          <div class="card-tag tag-retreat">Corporate Retreat</div>
+          <h3 class="card-title">Team Bonding — Custom</h3>
+          <p class="card-text">Fully customized corporate surf &amp; yoga retreat for teams of 8–30 people. Team building activities, catering, accommodation, and facilitated workshops.</p>
+          <ul class="package-features">
+            <li>Plans for 8–30 guests</li>
+            <li>Facilitated team activities</li>
+            <li>Catering and accommodation</li>
+          </ul>
+          <div class="card-footer">
+            <div class="package-price"><span class="card-price">Custom</span><span class="card-unit">tailored team quote</span></div>
+            <a href="contact.html" class="btn btn-primary" id="pkg-6-enquire">Get Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 3: WHAT'S INCLUDED STRIP ═══════════════ -->
+<section id="packages-included" style="background-color:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Always Included</span>
+      <h2 class="section-title">Every Package Comes With</h2>
+      <p class="section-desc">No hidden extras. Everything you need for a safe, enjoyable, and memorable ocean experience.</p>
+    </div>
+    <div class="included-showcase">
+      <div class="included-intro">
+        <span class="included-kicker">The Wave &amp; Zen Standard</span>
+        <h3>Prepared. Protected. Supported.</h3>
+        <p>Arrive relaxed and focus fully on the ocean, your movement, and your progress. We take care of the essential details from start to finish.</p>
+        <div class="included-promise"><span aria-hidden="true">✓</span> No hidden equipment or coaching fees</div>
+        <a href="booking.html" class="btn included-cta" id="packages-included-book-btn">Plan Your Experience</a>
+      </div>
+      <div class="included-benefits">
+      <div class="included-item">
+        <div class="included-icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12.75 11.25 15 15 9.75M12 3l7 3v5c0 4.6-2.9 8.1-7 10-4.1-1.9-7-5.4-7-10V6l7-3Z"/></svg>
+        </div>
+        <h4>Certified Instructor</h4>
+        <p>ISA or Yoga Alliance certified coaches for every session</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 19c3-1 4.5-3.5 5.2-7.5L12.5 4M18 19c-3-1-4.5-3.5-5.2-7.5L11.5 4M8.5 8h7M7 14h10"/></svg>
+        </div>
+        <h4>All Equipment</h4>
+        <p>Surfboards, leashes, rash guards, mats — all sizes available</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 20h16L12 3Zm0 6v4M12 17h.01"/></svg>
+        </div>
+        <h4>Safety Briefing</h4>
+        <p>Full ocean safety orientation before every water session</p>
+      </div>
+      <div class="included-item">
+        <div class="included-icon-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l3 3v15H6V3Zm8 0v4h4M9 11h6M9 15h6M9 19h4"/></svg>
+        </div>
+        <h4>Session Report</h4>
+        <p>Written debrief and progress notes sent after each session</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 4: HOW TO BOOK STEPS ═══════════════ -->
+<section id="packages-steps" style="background-color:var(--bg-primary);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">It's Simple</span>
+      <h2 class="section-title">How to Book in 3 Easy Steps</h2>
+      <p class="section-desc">From browsing to boarding — we've made booking your ocean experience as easy as possible.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-item" data-step="01">
+        <div class="step-number-circle">Step 1</div>
+        <h4>Choose Your Package</h4>
+        <p>Browse packages above and select the experience that fits your personal goals and skill level.</p>
+      </div>
+      <div class="step-item" data-step="02">
+        <div class="step-number-circle">Step 2</div>
+        <h4>Pick a Date &amp; Instructor</h4>
+        <p>Choose your preferred date, location, and instructor. We'll confirm your session within 24 hours.</p>
+      </div>
+      <div class="step-item" data-step="03">
+        <div class="step-number-circle">Step 3</div>
+        <h4>Confirm &amp; Arrive</h4>
+        <p>Secure your spot with a deposit. We'll send your full itinerary, packing list, and travel details.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="booking.html" class="btn btn-primary" id="packages-steps-book-btn">Go to Booking Form</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 5: FAQ ACCORDION ═══════════════ -->
+<section id="packages-faq" style="background-color:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Got Questions?</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">Everything you need to know about our packages before you book.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item" id="faq-1">
+        <button class="faq-question">
+          Do I need prior surfing experience to book a package?
+          <span class="faq-question-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolutely not! Our "First Wave Package" is designed specifically for complete beginners with zero ocean experience. Our instructors will start from the very basics — ocean awareness, paddling, pop-up technique — and ensure you're fully prepared before entering the water.</div>
+        </div>
+      </div>
+      <div class="faq-item" id="faq-2">
+        <button class="faq-question">
+          What equipment do I need to bring?
+          <span class="faq-question-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Nothing special! All surf equipment (boards, leashes, rash guards) and yoga equipment (mats, blocks, straps) are provided. Just bring a swimsuit, sunscreen, water, and a sense of adventure. We recommend reef-safe sunscreen for ocean sessions.</div>
+        </div>
+      </div>
+      <div class="faq-item" id="faq-3">
+        <button class="faq-question">
+          What is your cancellation and refund policy?
+          <span class="faq-question-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We offer a full refund for cancellations made 7+ days before your session date. For cancellations within 7 days, we offer a credit that can be applied to any future booking within 12 months. Cancellations due to unsafe ocean conditions (Red Zone) are always fully refunded or rescheduled at no charge.</div>
+        </div>
+      </div>
+      <div class="faq-item" id="faq-4">
+        <button class="faq-question">
+          Are the packages suitable for children?
+          <span class="faq-question-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes! Our Family Beach Weekend package is specifically designed for children aged 6 and above. Amara Williams leads all junior programs with specialized child-friendly coaching methods. We require a parent or guardian present for all children under 14 during water sessions.</div>
+        </div>
+      </div>
+      <div class="faq-item" id="faq-5">
+        <button class="faq-question">
+          Can I customize my package or add extra sessions?
+          <span class="faq-question-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolutely. All packages can be extended by adding extra surf sessions ($80/hour) or yoga sessions ($60/hour). You can also combine surf and yoga packages for a discounted combo rate. Contact us or use our booking enquiry form to discuss your custom requirements.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 6: CTA BANNER ═══════════════ -->
+<section class="cta-banner" id="packages-cta" style="background-image:url('assets/images/cta/packages_cta.png');" aria-label="Start your journey">
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content">
+    <span class="section-tag" style="color:#fff;opacity:0.8;">Your Journey Starts Now</span>
+    <h2>Every Wave Begins with a Single Step</h2>
+    <p>Stop dreaming about it. The ocean, the sunrise, the feeling of freedom — it's all waiting. Book your package today and let us take care of the rest.</p>
+    <div class="cta-banner-btns">
+      <a href="booking.html" class="btn btn-primary" id="packages-cta-book-btn">Book Your Package</a>
+      <a href="contact.html" class="btn btn-outline-light" id="packages-cta-enquire-btn">Ask a Question</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer" id="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text" style="margin-bottom:1.25rem;"><img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;margin-inline-end:0.5rem;" />Wave &amp; Zen</div>
+      <p class="footer-tagline">Ride the wave. Find your zen. Experience the coast in its most authentic form.</p>
+      <div class="footer-social"><a href="#" class="social-icon" aria-label="Instagram" id="footer-instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="#" class="social-icon" aria-label="Facebook" id="footer-facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" class="social-icon" aria-label="YouTube" id="footer-youtube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a></div>
+    </div>
+    <div class="footer-links-col"><h4 class="footer-col-title">Explore</h4><ul class="footer-links"><li><a href="about.html" id="footer-about-link">About Us</a></li><li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li><li><a href="packages.html" id="footer-packages-link">Packages</a></li><li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li><li><a href="tides.html" id="footer-tides-link">Tide Reports</a></li></ul></div>
+    <div class="footer-links-col"><h4 class="footer-col-title">Contact</h4><ul class="footer-links"><li><a href="contact.html" id="footer-contact-link">Enquiries</a></li><li><a href="booking.html" id="footer-booking-link">Book a Session</a></li><li><a href="mailto:hello@waveandzen.com" id="footer-email-link">hello@waveandzen.com</a></li><li><a href="tel:+1800WAVEZEN" id="footer-phone-link">+1&nbsp;800&nbsp;WAVE&nbsp;ZEN</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wave &amp; Zen Retreats. All rights reserved.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-privacy">Privacy Policy</a><a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-terms">Terms of Service</a></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

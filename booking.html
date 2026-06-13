@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book your private surf lesson, beach yoga retreat, or full immersion package with Wave & Zen. Simple, fast online booking with instant confirmation." />
+  <title>Book a Retreat | Wave & Zen</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+<body>
+
+<!-- ═══════════════ HEADER ═══════════════ -->
+<header class="header" id="main-header">
+  <div class="logo-container" onclick="window.location.href='index.html'" role="link" aria-label="Wave and Zen Home">
+    <div class="logo-text">
+      <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;" />
+      Wave &amp; Zen
+    </div>
+  </div>
+  <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+  <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+    <div class="nav-dropdown" id="home-dropdown">
+      <a href="#" class="nav-link dropdown-toggle" id="nav-home">Home <span class="arrow">▼</span></a>
+      <div class="dropdown-menu-list">
+        <a href="index.html" class="dropdown-item" id="nav-home1">Home 1</a>
+        <a href="home2.html" class="dropdown-item" id="nav-home2">Home 2</a>
+      </div>
+    </div>
+    <a href="about.html" class="nav-link" id="nav-about">About</a>
+    <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
+    <a href="tides.html" class="nav-link" id="nav-tides">Tides</a>
+    <a href="packages.html" class="nav-link" id="nav-packages">Packages</a>
+    <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
+    <a href="booking.html" class="nav-link active" id="nav-booking">Booking</a>
+    <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+    <div class="nav-actions">
+      <button class="action-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch to dark theme" title="Dark theme">
+        <svg viewBox="0 0 24 24" class="theme-toggle-icon" aria-hidden="true"><path d="M15.8 3.35a7.2 7.2 0 1 0 4.35 10.95 6.35 6.35 0 0 1-4.35-10.95Z"></path><path d="m18.8 3.1.35.85.85.35-.85.35-.35.85-.35-.85-.85-.35.85-.35.35-.85Z"></path><path d="M3 17.15c2.1-1.65 4.2-1.65 6.3 0s4.2 1.65 6.3 0 4.2-1.65 5.4-.7"></path><path d="M4.5 20.35c1.7-1 3.4-1 5.1 0s3.4 1 5.1 0 3.4-1 4.8-.35"></path></svg>
+      </button>
+      <button class="action-btn dir-toggle-btn" id="dir-toggle" aria-label="Toggle RTL">
+        <span class="dir-toggle-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+      </button>
+      <a href="login.html" class="login-nav-btn" id="login-nav-btn">Login</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ═══════════════ SECTION 1: HERO BANNER ═══════════════ -->
+<section class="page-hero" id="booking-hero">
+  <video autoplay muted loop playsinline class="hero-video-bg" poster="">
+    <source src="assets/videos/booking_bg.mp4" type="video/mp4">
+  </video>
+  <div class="page-hero-overlay" style="background:linear-gradient(135deg,rgba(10,15,29,0.78) 0%,rgba(10,15,29,0.4) 100%);"></div>
+  <div class="page-hero-content container">
+    <span class="section-tag">🌴 Secure Online Booking</span>
+    <h1>Your Next Adventure Awaits.</h1>
+    <p>Choose your experience, pick your dates, and let us take care of everything. From first waves to full retreats — we make booking effortless.</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;">
+      <a href="#booking-selectors" class="btn btn-primary" id="booking-hero-select-btn">Select Your Experience</a>
+      <a href="packages.html" class="btn btn-outline-light" id="booking-hero-packages-btn">Browse Packages First</a>
+    </div>
+  </div>
+  <div class="hero-float-badge">
+    <h3>🔒 Secure Booking</h3>
+    <p>Reserve with a $99 deposit. Full payment required 7 days before arrival. Free cancellation before that.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 2: PACKAGE SELECTOR ═══════════════ -->
+<section id="booking-selectors" style="background-color:var(--bg-primary);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Step 1 — Choose Your Experience</span>
+      <h2 class="section-title">What Are You Looking For?</h2>
+      <p class="section-desc">Click a card to select your preferred experience. This will pre-fill your booking form below.</p>
+    </div>
+    <div class="booking-selectors">
+      <div class="booking-selector-card" data-package="surf-beginner" id="selector-surf" tabindex="0" role="button" aria-label="Select surf coaching">
+        <div class="selector-img">
+          <img src="assets/images/packages/beginner_surf_coaching.jpg" alt="Private surf coaching session" loading="lazy" />
+        </div>
+        <div class="selector-body">
+          <h4>🏄 Surf Coaching</h4>
+          <p class="selector-description"><span>Private or small-group surf lessons.</span> <span>Coaching for every skill level.</span> <span>All required equipment is included.</span></p>
+          <div class="selector-price">From $120</div>
+        </div>
+        <div class="selector-check">✓</div>
+      </div>
+      <div class="booking-selector-card" data-package="yoga-retreat" id="selector-yoga" tabindex="0" role="button" aria-label="Select yoga retreat">
+        <div class="selector-img">
+          <img src="assets/images/packages/beach_yoga.png" alt="Beach yoga retreat session" loading="lazy" />
+        </div>
+        <div class="selector-body">
+          <h4>🧘 Beach Yoga Retreat</h4>
+          <p class="selector-description"><span>Sunrise and sunset beach yoga.</span> <span>Breathwork and guided meditation.</span> <span>A yoga mat is included.</span></p>
+          <div class="selector-price">From $50/session</div>
+        </div>
+        <div class="selector-check">✓</div>
+      </div>
+      <div class="booking-selector-card" data-package="full-retreat" id="selector-full" tabindex="0" role="button" aria-label="Select full retreat">
+        <div class="selector-img">
+          <img src="assets/images/packages/full_retreat.jpg" alt="Full immersion wave and zen retreat" loading="lazy" />
+        </div>
+        <div class="selector-body">
+          <h4>🌴 Full Immersion Retreat</h4>
+          <p class="selector-description"><span>Seven-day surf and yoga retreat.</span> <span>Meals, eco-lodge, and excursions.</span> <span>A complete coastal experience.</span></p>
+          <div class="selector-price">From $1,299/week</div>
+        </div>
+        <div class="selector-check">✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 3: BOOKING FORM ═══════════════ -->
+<section id="booking-form-section" style="background-color:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Step 2 — Complete Your Booking</span>
+      <h2 class="section-title">Fill in Your Details</h2>
+      <p class="section-desc">We'll confirm availability within 24 hours and send your full booking confirmation by email.</p>
+    </div>
+    <div class="form-card" id="booking-form-card">
+      <form id="booking-form" novalidate>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="booking-name">Full Name *</label>
+            <input type="text" id="booking-name" class="form-input" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-email">Email Address *</label>
+            <input type="email" id="booking-email" class="form-input" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-package">Package *</label>
+            <select id="booking-package" class="form-input" required>
+              <option value="">Select a package</option>
+              <option value="surf-beginner">Surf — First Wave (Beginner)</option>
+              <option value="surf-intermediate">Surf — Wave Progression (Intermediate, 5 Days)</option>
+              <option value="yoga-retreat">Yoga — Sunrise Retreat (7 Days)</option>
+              <option value="full-retreat">Full Retreat — Wave &amp; Zen (7 Days)</option>
+              <option value="family">Family Beach Weekend</option>
+              <option value="corporate">Corporate Group Retreat</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-guests">Number of Guests *</label>
+            <select id="booking-guests" class="form-input" required>
+              <option value="">Select guests</option>
+              <option value="1">1 person</option>
+              <option value="2">2 people</option>
+              <option value="3-5">3–5 people</option>
+              <option value="6-10">6–10 people</option>
+              <option value="10+">10+ people</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-date">Preferred Start Date *</label>
+            <input type="date" id="booking-date" class="form-input" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-location">Preferred Location</label>
+            <select id="booking-location" class="form-input">
+              <option value="">Any location</option>
+              <option value="costa-rica">Sunset Bay, Costa Rica</option>
+              <option value="bali">Uluwatu, Bali</option>
+              <option value="portugal">Peniche, Portugal</option>
+              <option value="hawaii">North Shore, Hawaii</option>
+              <option value="australia">Byron Bay, Australia</option>
+              <option value="sri-lanka">Arugam Bay, Sri Lanka</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-instructor">Preferred Instructor</label>
+            <select id="booking-instructor" class="form-input">
+              <option value="">No preference</option>
+              <option value="marcus">Marcus Chen (Surf)</option>
+              <option value="elena">Elena Vasquez (Yoga)</option>
+              <option value="kai">Kai Torres (Advanced Surf)</option>
+              <option value="amara">Amara Williams (Family/Junior)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="booking-phone">Phone Number</label>
+            <input type="tel" id="booking-phone" class="form-input" placeholder="+1 000 000 0000" />
+          </div>
+          <div class="form-group full-width">
+            <label class="form-label" for="booking-message">Special Requests or Questions</label>
+            <textarea id="booking-message" class="form-textarea" rows="4" placeholder="Any dietary requirements, accessibility needs, experience level, or questions for our team..."></textarea>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;justify-content:flex-end;margin-top:1.5rem;flex-wrap:wrap;">
+          <button type="reset" class="btn btn-outline" id="booking-reset-btn">Clear Form</button>
+          <button type="submit" class="btn btn-primary" id="booking-submit-btn">Submit Booking Enquiry →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 4: UPCOMING AVAILABILITY ═══════════════ -->
+<section id="booking-availability" style="background-color:var(--bg-primary);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Next Open Slots</span>
+      <h2 class="section-title">Upcoming Availability</h2>
+      <p class="section-desc">Spots fill fast — especially during peak season. These are our next confirmed available dates.</p>
+    </div>
+    <div class="availability-cards">
+      <div class="availability-card">
+        <div class="avail-month">July 2026</div>
+        <div class="avail-date">12 – 18</div>
+        <div class="avail-package">🌴 Full Retreat — Costa Rica</div>
+        <div class="avail-spots">3 spots remaining</div>
+        <span class="avail-status">Open</span>
+      </div>
+      <div class="availability-card">
+        <div class="avail-month">July 2026</div>
+        <div class="avail-date">19 – 25</div>
+        <div class="avail-package">🏄 Surf Coaching Week — Bali</div>
+        <div class="avail-spots">5 spots remaining</div>
+        <span class="avail-status">Open</span>
+      </div>
+      <div class="availability-card">
+        <div class="avail-month">August 2026</div>
+        <div class="avail-date">02 – 08</div>
+        <div class="avail-package">🧘 Yoga Retreat — Portugal</div>
+        <div class="avail-spots">8 spots remaining</div>
+        <span class="avail-status">Open</span>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--text-secondary);font-size:0.875rem;margin-top:2rem;">
+      Don't see your preferred date? <a href="contact.html" style="color:var(--accent-color);font-weight:600;" id="availability-contact-link">Contact us</a> and we'll do our best to accommodate your schedule.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 5: WHAT TO EXPECT (ITINERARY) ═══════════════ -->
+<section id="booking-itinerary" style="background-color:var(--bg-secondary);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Your Journey</span>
+      <h2 class="section-title">What to Expect When You Arrive</h2>
+      <p class="section-desc">Here's a sample structure for our signature Full Retreat week — every day thoughtfully designed for maximum joy and progress.</p>
+    </div>
+    <div class="itinerary-list">
+      <div class="itinerary-item" data-step="1">
+        <div class="itinerary-step">Day 1</div>
+        <h4>Arrival &amp; Welcome</h4>
+        <p>Airport pickup, check-in, welcome dinner, and meet-the-team evening.</p>
+      </div>
+      <div class="itinerary-item" data-step="2">
+        <div class="itinerary-step">Days 2–6</div>
+        <h4>Morning Surf Sessions</h4>
+        <p>Daily 2-hour surf coaching sessions with skill assessment and training.</p>
+      </div>
+      <div class="itinerary-item" data-step="3">
+        <div class="itinerary-step">Days 2–6</div>
+        <h4>Afternoon Yoga &amp; Rest</h4>
+        <p>Afternoon beach yoga, guided meditation, local tours, and snorkeling.</p>
+      </div>
+      <div class="itinerary-item" data-step="4">
+        <div class="itinerary-step">Day 7</div>
+        <h4>Departure &amp; Memories</h4>
+        <p>
+          <span class="day-seven-desc-full">Final debrief, progress notes, photo package, and farewell sunset ceremony.</span>
+          <span class="day-seven-desc-mobile">Final debrief, progress notes, photo package, and sunset farewell.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTION 6: CTA BANNER ═══════════════ -->
+<section class="cta-banner" id="booking-cta" style="background-image:url('assets/images/cta/booking_cta.png');" aria-label="Questions about booking">
+  <div class="cta-banner-overlay"></div>
+  <div class="cta-banner-content">
+    <span class="section-tag" style="color:#fff;opacity:0.8;">We're Here to Help</span>
+    <h2>Have Questions Before You Book?</h2>
+    <p>Our team is available 7 days a week to answer any questions about packages, locations, skill levels, or logistics. Reach out — we love hearing from future ocean explorers.</p>
+    <div class="cta-banner-btns">
+      <a href="contact.html" class="btn btn-primary" id="booking-cta-contact-btn">Get in Touch</a>
+      <a href="packages.html" class="btn btn-outline-light" id="booking-cta-packages-btn">Browse Packages</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer" id="main-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text" style="margin-bottom:1.25rem;"><img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;margin-inline-end:0.5rem;" />Wave &amp; Zen</div>
+      <p class="footer-tagline">Ride the wave. Find your zen. Experience the coast in its most authentic form.</p>
+      <div class="footer-social"><a href="#" class="social-icon" aria-label="Instagram" id="footer-instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="#" class="social-icon" aria-label="Facebook" id="footer-facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" class="social-icon" aria-label="YouTube" id="footer-youtube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a></div>
+    </div>
+    <div class="footer-links-col"><h4 class="footer-col-title">Explore</h4><ul class="footer-links"><li><a href="about.html" id="footer-about-link">About Us</a></li><li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li><li><a href="packages.html" id="footer-packages-link">Packages</a></li><li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li><li><a href="tides.html" id="footer-tides-link">Tide Reports</a></li></ul></div>
+    <div class="footer-links-col"><h4 class="footer-col-title">Contact</h4><ul class="footer-links"><li><a href="contact.html" id="footer-contact-link">Enquiries</a></li><li><a href="booking.html" id="footer-booking-link">Book a Session</a></li><li><a href="mailto:hello@waveandzen.com" id="footer-email-link">hello@waveandzen.com</a></li><li><a href="tel:+1800WAVEZEN" id="footer-phone-link">+1&nbsp;800&nbsp;WAVE&nbsp;ZEN</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Wave &amp; Zen Retreats. All rights reserved.</p>
+    <div style="display:flex;gap:1.5rem;"><a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-privacy">Privacy Policy</a><a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-terms">Terms of Service</a></div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
