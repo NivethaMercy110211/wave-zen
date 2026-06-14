@@ -1185,6 +1185,31 @@
   }
 }
 
+/* Tide Live Data: keep iPad Pro/tablet cards equal and text rows aligned. */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #tides-dashboard .tide-metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch;
+  }
+
+  #tides-dashboard .tide-metric-box {
+    display: grid;
+    grid-template-rows: auto auto auto minmax(2.5em, auto);
+    align-content: start;
+    min-width: 0;
+    height: 100%;
+  }
+
+  #tides-dashboard .tide-metric-box > div {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  #tides-dashboard .tide-metric-box > div:nth-child(n + 3) {
+    text-wrap: balance;
+  }
+}
+
 /* Mobile grid alignment adjustments */
 @media screen and (max-width: 768px) {
   .grid-container,

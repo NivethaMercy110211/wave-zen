@@ -2366,6 +2366,28 @@ html[dir="rtl"] .itinerary-item::after {
 
 /* ─── Responsive Adjustments ─── */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  #home-locations .destination-panel-content,
+  #home2-locations .destination-panel-content {
+    min-width: 0;
+    padding: 1.35rem;
+  }
+
+  #home-locations .destination-panel-title,
+  #home2-locations .destination-panel-title {
+    max-width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  #home-locations .destination-panel-tag,
+  #home2-locations .destination-panel-tag {
+    max-width: 100%;
+    letter-spacing: 1.25px;
+    overflow-wrap: anywhere;
+  }
+
   .destination-panel-desc {
     display: -webkit-box;
     max-height: calc(1.6em * 3) !important;

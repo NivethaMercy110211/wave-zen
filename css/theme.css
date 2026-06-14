@@ -1197,6 +1197,13 @@ body {
   border-color: var(--accent-color);
 }
 
+#booking-availability .avail-status {
+  width: fit-content !important;
+  max-width: max-content;
+  flex-grow: 0 !important;
+  padding: 0.3rem 0.6rem;
+}
+
 .section-tag,
 .card-tag,
 .testimonial-stars,
@@ -1237,6 +1244,43 @@ body {
 .cta-banner-content h2,
 .cta-banner-content p {
   color: #fff;
+}
+
+/* Keep final-page CTA banners compact and consistent across all pages. */
+.cta-banner {
+  min-height: 330px;
+  padding: 0 2rem !important;
+}
+
+.cta-banner-content {
+  width: 100%;
+  padding: 3rem 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .cta-banner {
+    min-height: 300px;
+    padding-inline: 1.5rem !important;
+  }
+
+  .cta-banner-content {
+    padding: 2.75rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .cta-banner {
+    min-height: 280px;
+    padding-inline: 1rem !important;
+  }
+
+  .cta-banner-content {
+    padding: 2.25rem 0.25rem;
+  }
+
+  .cta-banner-content p {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .beach-icon-badge {
@@ -2313,9 +2357,10 @@ html[dir="rtl"] .package-features li::before {
 
 .included-showcase {
   display: grid;
-  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.55fr);
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.7fr);
   gap: 1.5rem;
-  max-width: 1180px;
+  width: 100%;
+  max-width: none;
   margin: 0 auto;
 }
 
@@ -2424,6 +2469,8 @@ html[dir="rtl"] .package-features li::before {
 .included-benefits {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
   gap: 1.25rem;
   min-width: 0;
 }
@@ -2532,6 +2579,17 @@ html[dir="rtl"] .included-benefits .included-item::after {
 html[dir="rtl"] .included-benefits .included-item h4 {
   padding-right: 0;
   padding-left: 2rem;
+}
+
+@media (min-width: 1025px) {
+  .included-showcase {
+    align-items: center;
+  }
+
+  .included-benefits {
+    grid-auto-rows: auto;
+    align-content: start;
+  }
 }
 
 @media (max-width: 1024px) {

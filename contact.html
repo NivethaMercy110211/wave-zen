@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Get in touch with the Wave & Zen team. Send an enquiry, find our location, or ask about upcoming surf lessons and yoga retreats." />
+  <meta name="description"
+    content="Get in touch with the Wave & Zen team. Send an enquiry, find our location, or ask about upcoming surf lessons and yoga retreats." />
   <title>Contact Us | Wave & Zen</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <link rel="stylesheet" href="css/main.css" />
@@ -12,254 +14,351 @@
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/theme.css" />
 </head>
+
 <body>
 
-<!-- ═══════════════ HEADER ═══════════════ -->
-<header class="header" id="main-header">
-  <div class="logo-container" onclick="window.location.href='index.html'" role="link" aria-label="Wave and Zen Home">
-    <div class="logo-text">
-      <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;" />
-      Wave &amp; Zen
-    </div>
-  </div>
-  <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" role="button" tabindex="0">
-    <span></span><span></span><span></span>
-  </div>
-  <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
-    <div class="nav-dropdown" id="home-dropdown">
-      <a href="#" class="nav-link dropdown-toggle" id="nav-home">Home <span class="arrow">▼</span></a>
-      <div class="dropdown-menu-list">
-        <a href="index.html" class="dropdown-item" id="nav-home1">Home 1</a>
-        <a href="home2.html" class="dropdown-item" id="nav-home2">Home 2</a>
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="main-header">
+    <div class="logo-container" onclick="window.location.href='index.html'" role="link" aria-label="Wave and Zen Home">
+      <div class="logo-text">
+        <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo"
+          style="width:32px;height:32px;object-fit:contain;" />
+        Wave &amp; Zen
       </div>
     </div>
-    <a href="about.html" class="nav-link" id="nav-about">About</a>
-    <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
-    <a href="tides.html" class="nav-link" id="nav-tides">Tides</a>
-    <a href="packages.html" class="nav-link" id="nav-packages">Packages</a>
-    <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
-    <a href="booking.html" class="nav-link" id="nav-booking">Booking</a>
-    <a href="contact.html" class="nav-link active" id="nav-contact">Contact</a>
-    <div class="nav-actions">
-      <button class="action-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch to dark theme" title="Dark theme">
-        <svg viewBox="0 0 24 24" class="theme-toggle-icon" aria-hidden="true"><path d="M15.8 3.35a7.2 7.2 0 1 0 4.35 10.95 6.35 6.35 0 0 1-4.35-10.95Z"></path><path d="m18.8 3.1.35.85.85.35-.85.35-.35.85-.35-.85-.85-.35.85-.35.35-.85Z"></path><path d="M3 17.15c2.1-1.65 4.2-1.65 6.3 0s4.2 1.65 6.3 0 4.2-1.65 5.4-.7"></path><path d="M4.5 20.35c1.7-1 3.4-1 5.1 0s3.4 1 5.1 0 3.4-1 4.8-.35"></path></svg>
-      </button>
-      <button class="action-btn dir-toggle-btn" id="dir-toggle" aria-label="Toggle RTL">
-        <span class="dir-toggle-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
-      </button>
-      <a href="login.html" class="login-nav-btn" id="login-nav-btn">Login</a>
+    <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
     </div>
-  </nav>
-</header>
-
-<!-- ═══════════════ SECTION 1: HERO BANNER ═══════════════ -->
-<section class="page-hero" id="contact-hero">
-  <video autoplay muted loop playsinline class="hero-video-bg" poster="">
-    <source src="assets/videos/contact_bg.mp4" type="video/mp4">
-  </video>
-  <div class="page-hero-overlay" style="background:linear-gradient(135deg,rgba(10,15,29,0.65) 0%,rgba(14,165,233,0.15) 100%);"></div>
-  <div class="page-hero-content container">
-    <span class="section-tag">We'd Love to Hear from You</span>
-    <h1>Let's Start a Conversation</h1>
-    <p>Whether you have questions about our packages, want to plan a custom retreat, or simply want to say hello — our team responds to every message personally and quickly.</p>
-    <a href="#contact-form-section" class="btn btn-primary" id="contact-hero-form-btn" style="margin-top:1rem;">Send an Enquiry</a>
-  </div>
-</section>
-
-<!-- ═══════════════ SECTION 2: CONTACT METHODS ═══════════════ -->
-<section id="contact-methods" style="background-color:var(--bg-primary);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Reach Us Anytime</span>
-      <h2 class="section-title">How to Get in Touch</h2>
-      <p class="section-desc">Our friendly team is available 7 days a week. Pick the contact method that works best for you.</p>
-    </div>
-    <div class="contact-method-cards">
-      <div class="contact-method-card">
-        <div class="method-icon-ring aqua">
-          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+      <div class="nav-dropdown" id="home-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="nav-home">Home <span class="arrow">▼</span></a>
+        <div class="dropdown-menu-list">
+          <a href="index.html" class="dropdown-item" id="nav-home1">Home 1</a>
+          <a href="home2.html" class="dropdown-item" id="nav-home2">Home 2</a>
         </div>
-        <h4>Visit Us</h4>
-        <p>Our main office is based in Sunset Bay, Costa Rica. Walk-ins welcome Mon–Sat, 8am–6pm local time.</p>
-        <p style="margin-top:0.75rem;"><a href="https://maps.google.com" target="_blank" rel="noopener" id="contact-map-link">View on Google Maps →</a></p>
       </div>
-      <div class="contact-method-card">
-        <div class="method-icon-ring coral">
-          <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        </div>
-        <h4>Call Us</h4>
-        <p>Speak directly with our specialists. We answer calls during business hours at every location.</p>
-        <p style="margin-top:0.75rem;"><a href="tel:+1800WAVEZEN" id="contact-phone-link">+1 800 WAVE ZEN →</a></p>
+      <a href="about.html" class="nav-link" id="nav-about">About</a>
+      <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
+      <a href="tides.html" class="nav-link" id="nav-tides">Tides</a>
+      <a href="packages.html" class="nav-link" id="nav-packages">Packages</a>
+      <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
+      <a href="booking.html" class="nav-link" id="nav-booking">Booking</a>
+      <a href="contact.html" class="nav-link active" id="nav-contact">Contact</a>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch to dark theme"
+          title="Dark theme">
+          <svg viewBox="0 0 24 24" class="theme-toggle-icon" aria-hidden="true">
+            <path d="M15.8 3.35a7.2 7.2 0 1 0 4.35 10.95 6.35 6.35 0 0 1-4.35-10.95Z"></path>
+            <path d="m18.8 3.1.35.85.85.35-.85.35-.35.85-.35-.85-.85-.35.85-.35.35-.85Z"></path>
+            <path d="M3 17.15c2.1-1.65 4.2-1.65 6.3 0s4.2 1.65 6.3 0 4.2-1.65 5.4-.7"></path>
+            <path d="M4.5 20.35c1.7-1 3.4-1 5.1 0s3.4 1 5.1 0 3.4-1 4.8-.35"></path>
+          </svg>
+        </button>
+        <button class="action-btn dir-toggle-btn" id="dir-toggle" aria-label="Toggle RTL">
+          <span class="dir-toggle-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+        </button>
+        <a href="login.html" class="login-nav-btn" id="login-nav-btn">Login</a>
       </div>
-      <div class="contact-method-card">
-        <div class="method-icon-ring navy">
-          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </div>
-        <h4>Email Us</h4>
-        <p>Send us your enquiry any time of day. We respond to all emails within 24 hours, usually faster.</p>
-        <p style="margin-top:0.75rem;"><a href="mailto:hello@waveandzen.com" id="contact-email-link">hello@waveandzen.com →</a></p>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ SECTION 1: HERO BANNER ═══════════════ -->
+  <section class="page-hero" id="contact-hero">
+    <video autoplay muted loop playsinline class="hero-video-bg" poster="">
+      <source src="assets/videos/contact_bg.mp4" type="video/mp4">
+    </video>
+    <div class="page-hero-overlay"
+      style="background:linear-gradient(135deg,rgba(10,15,29,0.65) 0%,rgba(14,165,233,0.15) 100%);"></div>
+    <div class="page-hero-content container">
+      <span class="section-tag">We'd Love to Hear from You</span>
+      <h1>Let's Start a Conversation</h1>
+      <p>Whether you have questions about our packages, want to plan a custom retreat, or simply want to say hello — our
+        team responds to every message personally and quickly.</p>
+      <a href="#contact-form-section" class="btn btn-primary" id="contact-hero-form-btn" style="margin-top:1rem;">Send
+        an Enquiry</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 2: CONTACT METHODS ═══════════════ -->
+  <section id="contact-methods" style="background-color:var(--bg-primary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Reach Us Anytime</span>
+        <h2 class="section-title">How to Get in Touch</h2>
+        <p class="section-desc">Our friendly team is available 7 days a week. Pick the contact method that works best
+          for you.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SECTION 3: INQUIRY FORM ═══════════════ -->
-<section id="contact-form-section" style="background-color:var(--bg-secondary);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Send a Message</span>
-      <h2 class="section-title">Contact Our Team Directly</h2>
-      <p class="section-desc">Fill in the form below and a member of our team will get back to you within 24 hours.</p>
-    </div>
-    <div class="form-card" id="contact-form-card">
-      <form id="contact-form" novalidate>
-        <div class="form-grid-2">
-          <div class="form-group">
-            <label class="form-label" for="contact-name">Full Name *</label>
-            <input type="text" id="contact-name" class="form-input" placeholder="Your full name" required />
+      <div class="contact-method-cards">
+        <div class="contact-method-card">
+          <div class="method-icon-ring aqua">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-email">Email Address *</label>
-            <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-phone">Phone Number</label>
-            <input type="tel" id="contact-phone" class="form-input" placeholder="+1 000 000 0000" />
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="contact-activity">Area of Interest *</label>
-            <select id="contact-activity" class="form-input" required>
-              <option value="">Select a topic</option>
-              <option value="surf-lessons">Private Surf Lessons</option>
-              <option value="yoga-retreats">Beach Yoga Retreats</option>
-              <option value="full-retreat">Full Immersion Retreat</option>
-              <option value="corporate">Corporate / Group Bookings</option>
-              <option value="family">Family Programs</option>
-              <option value="general">General Enquiry</option>
-            </select>
-          </div>
-          <div class="form-group full-width">
-            <label class="form-label" for="contact-message">Your Message *</label>
-            <textarea id="contact-message" class="form-textarea" rows="5" placeholder="Tell us about your goals, preferred dates, group size, or any other questions you have..." required></textarea>
-          </div>
+          <h4>Visit Us</h4>
+          <p>Our main office is based in Sunset Bay, Costa Rica. Walk-ins welcome Mon–Sat, 8am–6pm local time.</p>
+          <p style="margin-top:0.75rem;"><a href="https://maps.google.com" target="_blank" rel="noopener"
+              id="contact-map-link">View on Google Maps →</a></p>
         </div>
-        <div style="display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;">
-          <label style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-secondary);cursor:pointer;">
-            <input type="checkbox" id="contact-newsletter" style="width:16px;height:16px;" />
-            Subscribe to our monthly surf &amp; yoga newsletter
-          </label>
-          <button type="submit" class="btn btn-primary" id="contact-submit-btn" style="margin-inline-start:auto;">Send Message →</button>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════ SECTION 4: MAP / LOCATION ═══════════════ -->
-<section id="contact-map" style="background-color:var(--bg-primary);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Find Us</span>
-      <h2 class="section-title">Our Main Beach Location</h2>
-      <p class="section-desc">Our flagship school is located on the beautiful Sunset Bay beach in Costa Rica — easily accessible and surrounded by lush rainforest.</p>
-    </div>
-    <div class="map-section-wrap" aria-label="Map showing Wave and Zen location at Sunset Bay Costa Rica">
-      <div class="map-placeholder">
-        <img src="assets/images/gallery/grid_4.png" alt="Aerial view of Sunset Bay Costa Rica coastline" loading="lazy" />
-        <div class="map-pin-overlay">
-          <div class="map-pin-card">
-            <div style="font-size:2rem;margin-bottom:0.5rem;">📍</div>
-            <h4>Wave &amp; Zen HQ</h4>
-            <p>Sunset Bay Beach,<br/>Guanacaste, Costa Rica</p>
-            <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:1rem;padding:0.5rem 1rem;font-size:0.85rem;display:inline-block;" id="contact-directions-btn">Get Directions →</a>
+        <div class="contact-method-card">
+          <div class="method-icon-ring coral">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" />
+            </svg>
           </div>
+          <h4>Call Us</h4>
+          <p>Speak directly with our specialists. We answer calls during business hours at every location.</p>
+          <p style="margin-top:0.75rem;"><a href="tel:+1800WAVEZEN" id="contact-phone-link">+1 800 WAVE ZEN →</a></p>
+        </div>
+        <div class="contact-method-card">
+          <div class="method-icon-ring navy">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </div>
+          <h4>Email Us</h4>
+          <p>Send us your enquiry any time of day. We respond to all emails within 24 hours, usually faster.</p>
+          <p style="margin-top:0.75rem;"><a href="mailto:hello@waveandzen.com"
+              id="contact-email-link">hello@waveandzen.com →</a></p>
         </div>
       </div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;" class="surf-windows-row">
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-input);padding:1.5rem;text-align:center;">
-        <div style="font-size:1.75rem;margin-bottom:0.5rem;">🕐</div>
-        <h4 style="font-size:1rem;margin-bottom:0.35rem;">Office Hours</h4>
-        <p style="color:var(--text-secondary);font-size:0.875rem;">Mon–Fri: 8am–6pm<br/>Sat–Sun: 8am–4pm</p>
-      </div>
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-input);padding:1.5rem;text-align:center;">
-        <div style="font-size:1.75rem;margin-bottom:0.5rem;">✈️</div>
-        <h4 style="font-size:1rem;margin-bottom:0.35rem;">Nearest Airport</h4>
-        <p style="color:var(--text-secondary);font-size:0.875rem;">Liberia International Airport<br/>45 min transfer</p>
-      </div>
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-input);padding:1.5rem;text-align:center;">
-        <div style="font-size:1.75rem;margin-bottom:0.5rem;">🚗</div>
-        <h4 style="font-size:1rem;margin-bottom:0.35rem;">Airport Transfers</h4>
-        <p style="color:var(--text-secondary);font-size:0.875rem;">Free pickup included in<br/>all multi-day packages</p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════ SECTION 5: QUICK ANSWERS ═══════════════ -->
-<section id="contact-faq" style="background-color:var(--bg-secondary);">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">Before You Write</span>
-      <h2 class="section-title">Quick Answers to Common Questions</h2>
-      <p class="section-desc">Many of our most frequent enquiries are answered right here — check before you send!</p>
+  <!-- ═══════════════ SECTION 3: INQUIRY FORM ═══════════════ -->
+  <section id="contact-form-section" style="background-color:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Send a Message</span>
+        <h2 class="section-title">Contact Our Team Directly</h2>
+        <p class="section-desc">Fill in the form below and a member of our team will get back to you within 24 hours.
+        </p>
+      </div>
+      <div class="form-card" id="contact-form-card">
+        <form id="contact-form" novalidate>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Full Name *</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-email">Email Address *</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="you@example.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" class="form-input" placeholder="+1 000 000 0000" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="contact-activity">Area of Interest *</label>
+              <select id="contact-activity" class="form-input" required>
+                <option value="">Select a topic</option>
+                <option value="surf-lessons">Private Surf Lessons</option>
+                <option value="yoga-retreats">Beach Yoga Retreats</option>
+                <option value="full-retreat">Full Immersion Retreat</option>
+                <option value="corporate">Corporate / Group Bookings</option>
+                <option value="family">Family Programs</option>
+                <option value="general">General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label class="form-label" for="contact-message">Your Message *</label>
+              <textarea id="contact-message" class="form-textarea" rows="5"
+                placeholder="Tell us about your goals, preferred dates, group size, or any other questions you have..."
+                required></textarea>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <label
+              style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;color:var(--text-secondary);cursor:pointer;">
+              <input type="checkbox" id="contact-newsletter" style="width:16px;height:16px;" />
+              Subscribe to our monthly surf &amp; yoga newsletter
+            </label>
+            <button type="submit" class="btn btn-primary" id="contact-submit-btn" style="margin-inline-start:auto;">Send
+              Message →</button>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="faq-list quick-answers">
-      <div class="faq-item" id="cfaq-1">
-        <button class="faq-question">How quickly do you respond to enquiries? <span class="faq-question-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">We respond to all enquiries within 24 hours, Monday through Sunday. During peak booking season (June–September), we typically reply within 4–6 hours during office hours.</div></div>
-      </div>
-      <div class="faq-item" id="cfaq-2">
-        <button class="faq-question">Can I visit without booking in advance? <span class="faq-question-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Walk-ins are welcome at our Costa Rica and Bali locations, but we strongly recommend booking at least 48 hours in advance to guarantee an instructor and equipment availability, especially during peak season.</div></div>
-      </div>
-      <div class="faq-item" id="cfaq-3">
-        <button class="faq-question">Do you offer group discounts? <span class="faq-question-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes! Groups of 4 or more receive a 10% discount on all packages. Groups of 8+ receive a 15% discount plus a complimentary private beach yoga session. Contact us for a custom group quote.</div></div>
-      </div>
-      <div class="faq-item" id="cfaq-4">
-        <button class="faq-question">What languages does your team speak? <span class="faq-question-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Our team collectively speaks English, Spanish, Portuguese, French, and Bahasa Indonesia. Coaching sessions are primarily conducted in English but we can accommodate most international guests.</div></div>
-      </div>
-      <div class="faq-item" id="cfaq-5">
-        <button class="faq-question">Do you have a newsletter or social media we can follow? <span class="faq-question-icon">+</span></button>
-        <div class="faq-answer"><div class="faq-answer-inner">Yes! Follow us on Instagram, Facebook, and YouTube (@WaveAndZen) for daily surf conditions, student stories, and retreat announcements. You can also subscribe to our monthly newsletter using the form on this page.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════ SECTION 6: CTA BANNER ═══════════════ -->
-<section class="cta-banner" id="contact-cta" style="background-image:url('assets/images/cta/contact_cta.png');" aria-label="Visit us in person">
-  <div class="cta-banner-overlay"></div>
-  <div class="cta-banner-content">
-    <span class="section-tag" style="color:#fff;opacity:0.8;">Come Find Us</span>
-    <h2>The Best Conversations Happen at the Beach</h2>
-    <p>Come visit us at Sunset Bay. Bring your curiosity and let the ocean do the rest. We'll have coffee waiting and waves ready to show you.</p>
-    <div class="cta-banner-btns">
-      <a href="booking.html" class="btn btn-primary" id="contact-cta-book-btn">Book a Session</a>
-      <a href="about.html" class="btn btn-outline-light" id="contact-cta-about-btn">Read Our Story</a>
+  <!-- ═══════════════ SECTION 4: MAP / LOCATION ═══════════════ -->
+  <section id="contact-map" style="background-color:var(--bg-primary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Find Us</span>
+        <h2 class="section-title">Our Main Beach Location</h2>
+        <p class="section-desc">Our flagship school is located on the beautiful Sunset Bay beach in Costa Rica — easily
+          accessible and surrounded by lush rainforest.</p>
+      </div>
+      <div class="map-section-wrap" aria-label="Map showing Wave and Zen location at Sunset Bay Costa Rica">
+        <div class="map-placeholder">
+          <img src="assets/images/gallery/grid_4.png" alt="Aerial view of Sunset Bay Costa Rica coastline"
+            loading="lazy" />
+          <div class="map-pin-overlay">
+            <div class="map-pin-card">
+              <div style="font-size:2rem;margin-bottom:0.5rem;">📍</div>
+              <h4>Wave &amp; Zen HQ</h4>
+              <p>Sunset Bay Beach,<br />Guanacaste, Costa Rica</p>
+              <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn-primary"
+                style="margin-top:1rem;padding:0.5rem 1rem;font-size:0.85rem;display:inline-block;"
+                id="contact-directions-btn">Get Directions →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;"
+        class="surf-windows-row">
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-input);padding:1.5rem;text-align:center;">
+          <div style="font-size:1.75rem;margin-bottom:0.5rem;">🕐</div>
+          <h4 style="font-size:1rem;margin-bottom:0.35rem;">Office Hours</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Mon–Fri: 8am–6pm<br />Sat–Sun: 8am–4pm</p>
+        </div>
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-input);padding:1.5rem;text-align:center;">
+          <div style="font-size:1.75rem;margin-bottom:0.5rem;">✈️</div>
+          <h4 style="font-size:1rem;margin-bottom:0.35rem;">Nearest Airport</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Liberia International Airport<br />45 min transfer
+          </p>
+        </div>
+        <div
+          style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-input);padding:1.5rem;text-align:center;">
+          <div style="font-size:1.75rem;margin-bottom:0.5rem;">🚗</div>
+          <h4 style="font-size:1rem;margin-bottom:0.35rem;">Airport Transfers</h4>
+          <p style="color:var(--text-secondary);font-size:0.875rem;">Free pickup included in<br />all multi-day packages
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="footer" id="main-footer">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo-text" style="margin-bottom:1.25rem;"><img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;margin-inline-end:0.5rem;" />Wave &amp; Zen</div>
-      <p class="footer-tagline">Ride the wave. Find your zen. Experience the coast in its most authentic form.</p>
-      <div class="footer-social"><a href="#" class="social-icon" aria-label="Instagram" id="footer-instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="#" class="social-icon" aria-label="Facebook" id="footer-facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" class="social-icon" aria-label="YouTube" id="footer-youtube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a></div>
+  <!-- ═══════════════ SECTION 5: QUICK ANSWERS ═══════════════ -->
+  <section id="contact-faq" style="background-color:var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Before You Write</span>
+        <h2 class="section-title">Quick Answers to Common Questions</h2>
+        <p class="section-desc">Many of our most frequent enquiries are answered right here — check before you send!</p>
+      </div>
+      <div class="faq-list quick-answers">
+        <div class="faq-item" id="cfaq-1">
+          <button class="faq-question">How quickly do you respond to enquiries? <span
+              class="faq-question-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We respond to all enquiries within 24 hours, Monday through Sunday. During
+              peak booking season (June–September), we typically reply within 4–6 hours during office hours.</div>
+          </div>
+        </div>
+        <div class="faq-item" id="cfaq-2">
+          <button class="faq-question">Can I visit without booking in advance? <span
+              class="faq-question-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Walk-ins are welcome at our Costa Rica and Bali locations, but we strongly
+              recommend booking at least 48 hours in advance to guarantee an instructor and equipment availability,
+              especially during peak season.</div>
+          </div>
+        </div>
+        <div class="faq-item" id="cfaq-3">
+          <button class="faq-question">Do you offer group discounts? <span class="faq-question-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! Groups of 4 or more receive a 10% discount on all packages. Groups of 8+
+              receive a 15% discount plus a complimentary private beach yoga session. Contact us for a custom group
+              quote.</div>
+          </div>
+        </div>
+        <div class="faq-item" id="cfaq-4">
+          <button class="faq-question">What languages does your team speak? <span
+              class="faq-question-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Our team collectively speaks English, Spanish, Portuguese, French, and Bahasa
+              Indonesia. Coaching sessions are primarily conducted in English but we can accommodate most international
+              guests.</div>
+          </div>
+        </div>
+        <div class="faq-item" id="cfaq-5">
+          <button class="faq-question">Do you have a newsletter or social media we can follow? <span
+              class="faq-question-icon">+</span></button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes! Follow us on Instagram, Facebook, and YouTube (@WaveAndZen) for daily
+              surf conditions, student stories, and retreat announcements. You can also subscribe to our monthly
+              newsletter using the form on this page.</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="footer-links-col"><h4 class="footer-col-title">Explore</h4><ul class="footer-links"><li><a href="about.html" id="footer-about-link">About Us</a></li><li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li><li><a href="packages.html" id="footer-packages-link">Packages</a></li><li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li><li><a href="tides.html" id="footer-tides-link">Tide Reports</a></li></ul></div>
-    <div class="footer-links-col"><h4 class="footer-col-title">Contact</h4><ul class="footer-links"><li><a href="contact.html" id="footer-contact-link">Enquiries</a></li><li><a href="booking.html" id="footer-booking-link">Book a Session</a></li><li><a href="mailto:hello@waveandzen.com" id="footer-email-link">hello@waveandzen.com</a></li><li><a href="tel:+1800WAVEZEN" id="footer-phone-link">+1&nbsp;800&nbsp;WAVE&nbsp;ZEN</a></li></ul></div>
-  </div>
-  <div class="footer-bottom">
-    <p>© 2026 Wave &amp; Zen Retreats. All rights reserved.</p>
-    <div style="display:flex;gap:1.5rem;"><a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-privacy">Privacy Policy</a><a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-terms">Terms of Service</a></div>
-  </div>
-</footer>
+  </section>
 
-<script src="js/main.js"></script>
+  <!-- ═══════════════ SECTION 6: CTA BANNER ═══════════════ -->
+  <section class="cta-banner" id="contact-cta" style="background-image:url('assets/images/cta/contact_cta.png');"
+    aria-label="Visit us in person">
+    <div class="cta-banner-overlay"></div>
+    <div class="cta-banner-content">
+      <span class="section-tag" style="color:#fff;opacity:0.8;">Come Find Us</span>
+      <h2>The Best Conversations Happen at the Beach</h2>
+      <p>Come visit us at Sunset Bay. Bring your curiosity and let the ocean do the rest. We'll have coffee waiting and
+        waves ready to show you.</p>
+      <div class="cta-banner-btns">
+        <a href="booking.html" class="btn btn-primary" id="contact-cta-book-btn">Book a Session</a>
+        <a href="about.html" class="btn btn-outline-light" id="contact-cta-about-btn">Read Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="main-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text" style="margin-bottom:1.25rem;"><img class="logo-icon" src="assets/images/logo.png"
+            alt="Wave & Zen Logo" style="width:32px;height:32px;object-fit:contain;margin-inline-end:0.5rem;" />Wave
+          &amp; Zen</div>
+        <p class="footer-tagline">Ride the wave. Find your zen. Experience the coast in its most authentic form. Embrace the breeze. Discover coastal beauty at its purest.</p>
+        <div class="footer-social"><a href="#" class="social-icon" aria-label="Instagram" id="footer-instagram"><svg
+              viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a><a href="#" class="social-icon" aria-label="Facebook" id="footer-facebook"><svg
+              viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a><a href="#" class="social-icon" aria-label="YouTube" id="footer-youtube"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+            </svg></a></div>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" id="footer-about-link">About Us</a></li>
+          <li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li>
+          <li><a href="packages.html" id="footer-packages-link">Packages</a></li>
+          <li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li>
+          <li><a href="tides.html" id="footer-tides-link">Tide Reports</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html" id="footer-contact-link">Enquiries</a></li>
+          <li><a href="booking.html" id="footer-booking-link">Book a Session</a></li>
+          <li><a href="mailto:hello@waveandzen.com" id="footer-email-link">hello@waveandzen.com</a></li>
+          <li><a href="tel:+1800WAVEZEN" id="footer-phone-link">+1&nbsp;800&nbsp;WAVE&nbsp;ZEN</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Wave &amp; Zen Retreats. All rights reserved.</p>
+      <div style="display:flex;gap:1.5rem;"><a href="#" style="font-size:0.85rem;color:var(--text-secondary);"
+          id="footer-privacy">Privacy Policy</a><a href="#" style="font-size:0.85rem;color:var(--text-secondary);"
+          id="footer-terms">Terms of Service</a></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
+
 </html>
