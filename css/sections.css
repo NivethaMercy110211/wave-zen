@@ -33,9 +33,9 @@
 .page-hero-overlay {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     url("data:image/svg+xml,%3Csvg width='80' height='40' viewBox='0 0 80 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 20 20, 40 10 T 80 10 M0 30 Q 20 40, 40 30 T 80 30' fill='none' stroke='%2338bdf8' stroke-width='1' stroke-opacity='0.12'/%3E%3C/svg%3E"),
-    linear-gradient(135deg, rgba(10,15,29,0.75) 0%, rgba(10,15,29,0.45) 100%);
+    linear-gradient(135deg, rgba(10, 15, 29, 0.75) 0%, rgba(10, 15, 29, 0.45) 100%);
   z-index: 1;
 }
 
@@ -61,12 +61,12 @@
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 1.25rem;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
 }
 
 .page-hero-content p {
   font-size: 1.15rem;
-  color: rgba(255,255,255,0.88);
+  color: rgba(255, 255, 255, 0.88);
   margin-bottom: 2rem;
   line-height: 1.65;
   margin-inline: auto;
@@ -207,7 +207,7 @@
 
 .stat-item {
   padding: 1rem;
-  border-inline-end: 1px solid rgba(255,255,255,0.06);
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.06);
   transition: transform var(--transition-speed) ease;
 }
 
@@ -357,7 +357,7 @@
 .cta-banner-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10,15,29,0.6) 0%, rgba(10,15,29,0.8) 100%);
+  background: linear-gradient(to bottom, rgba(10, 15, 29, 0.6) 0%, rgba(10, 15, 29, 0.8) 100%);
   z-index: 1;
 }
 
@@ -373,12 +373,12 @@
   font-size: 2.75rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .cta-banner-content p {
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 2rem;
 }
 
@@ -528,7 +528,7 @@
   direction: rtl;
 }
 
-.methodology-row.reverse > * {
+.methodology-row.reverse>* {
   direction: ltr;
 }
 
@@ -540,7 +540,7 @@ html[dir="rtl"] .methodology-row.reverse {
   direction: rtl;
 }
 
-html[dir="rtl"] .methodology-row.reverse > * {
+html[dir="rtl"] .methodology-row.reverse>* {
   direction: rtl;
 }
 
@@ -873,7 +873,7 @@ html[dir="rtl"] .specialties-table td {
 }
 
 .skill-partial {
-  color: #f59e0b;
+  color: rgb(255, 213, 138);
   font-size: 1.2rem;
 }
 
@@ -1094,9 +1094,20 @@ html[dir="rtl"] .specialties-table td {
   align-self: flex-start;
 }
 
-.badge-ideal { background: rgba(16,185,129,0.15); color: #10b981; }
-.badge-good  { background: rgba(14,165,233,0.15); color: var(--accent-color); }
-.badge-fair  { background: rgba(245,158,11,0.15); color: #f59e0b; }
+.badge-ideal {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.badge-good {
+  background: rgba(14, 165, 233, 0.15);
+  color: var(--accent-color);
+}
+
+.badge-fair {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
 
 /* Premium Surf Spot Cards styling */
 .surf-spot-card {
@@ -1161,14 +1172,14 @@ html[dir="rtl"] .specialties-table td {
   font-size: 1.25rem;
   margin-bottom: 0.35rem;
   color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .surf-spot-card-status {
   font-size: 0.88rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .surf-spot-card-status.green-text {
@@ -1189,7 +1200,7 @@ html[dir="rtl"] .specialties-table td {
   margin: 0;
   line-height: 1.5;
   overflow-wrap: anywhere;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* ─────────────────────────────────────────────
@@ -1213,12 +1224,12 @@ html[dir="rtl"] .specialties-table td {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-color), rgba(14,165,233,0.5));
+  background: linear-gradient(135deg, var(--accent-color), rgba(14, 165, 233, 0.5));
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  box-shadow: 0 4px 14px rgba(14,165,233,0.25);
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.25);
 }
 
 .included-icon-circle svg {
@@ -1361,11 +1372,11 @@ html[dir="rtl"] .step-item::after {
     gap: 1.25rem;
     margin-top: 2.5rem;
   }
-  
+
   .step-item {
     padding: 2rem 1.5rem;
   }
-  
+
   .step-item::after {
     font-size: 4.5rem;
   }
@@ -1376,7 +1387,7 @@ html[dir="rtl"] .step-item::after {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .step-item {
     align-items: center;
     text-align: center;
@@ -1385,17 +1396,17 @@ html[dir="rtl"] .step-item::after {
   .step-item h4 {
     justify-content: center;
   }
-  
+
   html[dir="rtl"] .step-item {
     align-items: center;
     text-align: center;
   }
-  
+
   .step-item::after {
     right: 2rem;
     left: auto;
   }
-  
+
   html[dir="rtl"] .step-item::after {
     left: 2rem;
     right: auto;
@@ -1563,7 +1574,7 @@ html[dir="rtl"] .step-item::after {
   inset-inline-start: 0;
   width: 100%;
   padding: 2.5rem;
-  background: linear-gradient(to top, rgba(10,15,29,0.85) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(10, 15, 29, 0.85) 0%, transparent 100%);
   color: #fff;
 }
 
@@ -1574,7 +1585,7 @@ html[dir="rtl"] .step-item::after {
 }
 
 .mosaic-overlay-text p {
-  color: rgba(255,255,255,0.8);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ─────────────────────────────────────────────
@@ -1628,11 +1639,11 @@ html[dir="rtl"] .step-item::after {
 }
 
 .stats-band-accent .stat-label {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .stats-band-accent .stat-item {
-  border-inline-end-color: rgba(255,255,255,0.2);
+  border-inline-end-color: rgba(255, 255, 255, 0.2);
 }
 
 /* ─────────────────────────────────────────────
@@ -1663,7 +1674,7 @@ html[dir="rtl"] .step-item::after {
 .video-play-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10,15,29,0.4);
+  background: rgba(10, 15, 29, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1671,14 +1682,14 @@ html[dir="rtl"] .step-item::after {
 }
 
 .video-placeholder:hover .video-play-overlay {
-  background: rgba(10,15,29,0.55);
+  background: rgba(10, 15, 29, 0.55);
 }
 
 .play-btn-circle {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background-color: rgba(255,255,255,0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1865,7 +1876,7 @@ html[dir="rtl"] .step-item::after {
   border-radius: 20px;
   font-size: 0.78rem;
   font-weight: 700;
-  background: rgba(16,185,129,0.12);
+  background: rgba(16, 185, 129, 0.12);
   color: #10b981;
   align-self: flex-start;
 }
@@ -1962,14 +1973,17 @@ html[dir="rtl"] .itinerary-item::after {
   background: color-mix(in srgb, var(--accent-color) 12%, transparent);
   color: var(--accent-color);
 }
+
 .itinerary-item:nth-child(2) .itinerary-step {
   background: color-mix(in srgb, var(--coral-color) 12%, transparent);
   color: var(--coral-color);
 }
+
 .itinerary-item:nth-child(3) .itinerary-step {
   background: color-mix(in srgb, var(--gold-color) 12%, transparent);
   color: var(--gold-color);
 }
+
 .itinerary-item:nth-child(4) .itinerary-step {
   background: color-mix(in srgb, var(--accent-color) 12%, transparent);
   color: var(--accent-color);
@@ -2046,17 +2060,22 @@ html[dir="rtl"] .itinerary-item::after {
 }
 
 .method-icon-ring.aqua {
-  background: linear-gradient(135deg, rgba(14,165,233,0.15), rgba(14,165,233,0.05));
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.15), rgba(14, 165, 233, 0.05));
   color: var(--accent-color);
 }
 
+.method-icon-ring.yellow {
+  background: linear-gradient(135deg, rgba(242, 198, 109, 0.18), rgba(242, 198, 109, 0.06));
+  color: #f2c66d;
+}
+
 .method-icon-ring.coral {
-  background: linear-gradient(135deg, rgba(255,126,103,0.15), rgba(255,126,103,0.05));
+  background: linear-gradient(135deg, rgba(255, 126, 103, 0.15), rgba(255, 126, 103, 0.05));
   color: var(--coral-color);
 }
 
 .method-icon-ring.navy {
-  background: linear-gradient(135deg, rgba(15,23,42,0.1), rgba(15,23,42,0.05));
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.1), rgba(15, 23, 42, 0.05));
   color: var(--text-primary);
 }
 
@@ -2166,9 +2185,9 @@ html[dir="rtl"] .itinerary-item::after {
 .auth-split-image-panel-overlay {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     url("data:image/svg+xml,%3Csvg width='80' height='40' viewBox='0 0 80 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 20 20, 40 10 T 80 10 M0 30 Q 20 40, 40 30 T 80 30' fill='none' stroke='%2338bdf8' stroke-width='1' stroke-opacity='0.08'/%3E%3C/svg%3E"),
-    linear-gradient(135deg, rgba(10,15,29,0.5) 0%, rgba(14,165,233,0.2) 100%);
+    linear-gradient(135deg, rgba(10, 15, 29, 0.5) 0%, rgba(14, 165, 233, 0.2) 100%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -2186,7 +2205,7 @@ html[dir="rtl"] .itinerary-item::after {
 }
 
 .auth-split-image-panel-overlay cite {
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   font-style: normal;
   font-size: 0.9rem;
 }
@@ -2373,6 +2392,7 @@ html[dir="rtl"] .itinerary-item::after {
 
 /* ─── Responsive Adjustments ─── */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+
   #home-locations .destination-panel-content,
   #home2-locations .destination-panel-content {
     min-width: 0;
@@ -2458,7 +2478,7 @@ html[dir="rtl"] .itinerary-item::after {
     opacity: 1 !important;
     transform: translateY(0) !important;
   }
-  
+
   .destination-panel-content {
     padding: 1.5rem;
   }
