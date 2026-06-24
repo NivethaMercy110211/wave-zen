@@ -1923,6 +1923,7 @@ html[dir="rtl"] .step-item::after {
   position: absolute;
   top: 1rem;
   right: 1.75rem;
+  left: auto;
   font-family: var(--font-display);
   font-size: 5.5rem;
   font-weight: 900;
@@ -1944,29 +1945,34 @@ html[dir="rtl"] .itinerary-item {
 }
 
 html[dir="rtl"] .itinerary-item::after {
-  right: auto;
   left: 1.75rem;
+  right: auto;
+}
+
+html[dir="rtl"] .itinerary-step {
+  align-self: flex-end;
 }
 
 .itinerary-step {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: auto;
+  width: fit-content;
   height: auto;
-  padding: 0.45rem 1rem;
+  padding: 0.35rem 0.8rem;
   border-radius: 999px;
   border: none;
   background: color-mix(in srgb, var(--accent-color) 12%, transparent);
   color: var(--accent-color);
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   box-shadow: none;
   transition: background-color 0.3s ease, color 0.3s ease;
+  align-self: flex-start;
 }
 
 .itinerary-item:nth-child(1) .itinerary-step {
