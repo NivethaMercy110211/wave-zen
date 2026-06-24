@@ -719,10 +719,10 @@
   .itinerary-list { grid-template-columns: 1fr !important; max-width: 480px !important; margin: 0 auto !important; gap: 1.5rem !important; }
   .itinerary-item { align-items: center !important; text-align: center !important; }
   html[dir="rtl"] .itinerary-item { align-items: center !important; text-align: center !important; }
-  .itinerary-item::after { right: 1.25rem !important; left: auto !important; }
-  html[dir="rtl"] .itinerary-item::after { left: 1.25rem !important; right: auto !important; }
-  .itinerary-step { align-self: flex-start !important; }
-  html[dir="rtl"] .itinerary-step { align-self: flex-end !important; }
+  .itinerary-item::after { left: 1.25rem !important; right: auto !important; }
+  html[dir="rtl"] .itinerary-item::after { right: 1.25rem !important; left: auto !important; }
+  .itinerary-step { align-self: flex-end !important; width: 6rem !important; }
+  html[dir="rtl"] .itinerary-step { align-self: flex-start !important; width: 6rem !important; }
 
   /* Booking Selectors */
   .booking-selectors { max-width: 100%; }
@@ -980,6 +980,25 @@
     padding: 2.25rem 1.75rem !important;
   }
 
+  .itinerary-item::after {
+    left: 1.75rem !important;
+    right: auto !important;
+  }
+
+  html[dir="rtl"] .itinerary-item::after {
+    right: 1.75rem !important;
+    left: auto !important;
+  }
+
+  .itinerary-step {
+    align-self: flex-end !important;
+    width: 6rem !important;
+  }
+
+  html[dir="rtl"] .itinerary-step {
+    align-self: flex-start !important;
+  }
+
   .itinerary-item h4 {
     min-height: 1.6rem;
   }
@@ -1042,6 +1061,25 @@
 
   .itinerary-item {
     padding: 2.25rem 1.75rem !important;
+  }
+
+  .itinerary-item::after {
+    left: 1.25rem !important;
+    right: auto !important;
+  }
+
+  html[dir="rtl"] .itinerary-item::after {
+    right: 1.25rem !important;
+    left: auto !important;
+  }
+
+  .itinerary-step {
+    align-self: flex-end !important;
+    width: 6rem !important;
+  }
+
+  html[dir="rtl"] .itinerary-step {
+    align-self: flex-start !important;
   }
 
   .itinerary-item h4 {
@@ -1927,15 +1965,15 @@
   }
 
   #booking-itinerary .itinerary-step {
-    justify-self: start !important;
-    align-self: flex-start !important;
-    width: fit-content !important;
+    justify-self: end !important;
+    align-self: flex-end !important;
+    width: 6rem !important;
   }
 
   html[dir="rtl"] #booking-itinerary .itinerary-step {
-    justify-self: end !important;
-    align-self: flex-end !important;
-    width: fit-content !important;
+    justify-self: start !important;
+    align-self: flex-start !important;
+    width: 6rem !important;
   }
 
   #booking-itinerary .itinerary-item h4 {
