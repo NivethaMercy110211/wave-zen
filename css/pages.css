@@ -196,7 +196,7 @@ html[dir="rtl"] .card-tag {
 
 .hero-ctas {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 1.5rem;
 }
 
@@ -504,11 +504,15 @@ html[dir="rtl"] .card-tag {
 }
 
 .suitability-tips li::before {
-  content: "✓";
+  content: "";
   position: absolute;
-  inset-inline-start: 0;
-  color: #10b981;
-  font-weight: 700;
+  inset-inline-start: 0.2rem;
+  top: 0.15rem;
+  width: 0.38rem;
+  height: 0.7rem;
+  border: solid var(--accent-color);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 /* 5. Lesson Packages Cards Details */

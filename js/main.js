@@ -163,21 +163,33 @@ function initNavigation() {
   const hamburger = document.getElementById('hamburger-menu');
   const navMenu = document.getElementById('nav-menu');
   const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
-  const dropdown = document.querySelector('.nav-dropdown');
-  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdowns = document.querySelectorAll('.nav-dropdown');
 
-  const setDropdownOpen = (open) => {
-    if (!dropdown || !dropdownToggle) return;
-
+  const setSingleDropdownOpen = (dropdown, open) => {
+    const toggle = dropdown.querySelector('.dropdown-toggle');
     const dropdownList = dropdown.querySelector('.dropdown-menu-list');
+    if (!toggle) return;
+
     dropdown.classList.toggle('active', open);
-    dropdownToggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-expanded', String(open));
 
     if (dropdownList && window.innerWidth <= 1100) {
       dropdownList.style.maxHeight = open ? dropdownList.scrollHeight + 'px' : '0';
     } else if (dropdownList) {
       dropdownList.style.removeProperty('max-height');
     }
+  };
+
+  const closeAllDropdowns = () => {
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove('active');
+      const toggle = dropdown.querySelector('.dropdown-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      const dropdownList = dropdown.querySelector('.dropdown-menu-list');
+      if (dropdownList && window.innerWidth <= 1100) {
+        dropdownList.style.maxHeight = '0';
+      }
+    });
   };
   
   // Highlight current page active link dynamically
@@ -235,16 +247,28 @@ function initNavigation() {
     spyScroll();
   });
   
-  // Home dropdown is click-controlled on every screen size.
-  if (dropdownToggle && dropdown) {
-    dropdownToggle.setAttribute('aria-expanded', 'false');
+  // Dropdowns are click-controlled on every screen size.
+  dropdowns.forEach(dropdown => {
+    const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+    if (dropdownToggle) {
+      dropdownToggle.setAttribute('aria-expanded', 'false');
 
-    dropdownToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      setDropdownOpen(!dropdown.classList.contains('active'));
-    });
-  }
+      dropdownToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isActive = dropdown.classList.contains('active');
+
+        // Close other dropdowns first
+        dropdowns.forEach(otherDropdown => {
+          if (otherDropdown !== dropdown) {
+            setSingleDropdownOpen(otherDropdown, false);
+          }
+        });
+
+        setSingleDropdownOpen(dropdown, !isActive);
+      });
+    }
+  });
   
   // Mobile drawer toggle
   if (hamburger && navMenu) {
@@ -262,15 +286,25 @@ function initNavigation() {
       }
       
       // Close dropdown when clicking outside
-      if (dropdown && !dropdown.contains(e.target)) {
-        setDropdownOpen(false);
+      let clickedInsideDropdown = false;
+      dropdowns.forEach(dropdown => {
+        if (dropdown.contains(e.target)) {
+          clickedInsideDropdown = true;
+        }
+      });
+      if (!clickedInsideDropdown) {
+        closeAllDropdowns();
       }
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && dropdown.classList.contains('active')) {
-        setDropdownOpen(false);
-        dropdownToggle.focus();
+      if (e.key === 'Escape') {
+        dropdowns.forEach(dropdown => {
+          if (dropdown.classList.contains('active')) {
+            setSingleDropdownOpen(dropdown, false);
+            dropdown.querySelector('.dropdown-toggle')?.focus();
+          }
+        });
       }
     });
     
@@ -282,12 +316,12 @@ function initNavigation() {
         }
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
-        setDropdownOpen(false);
+        closeAllDropdowns();
       });
     });
 
     window.addEventListener('resize', () => {
-      setDropdownOpen(false);
+      closeAllDropdowns();
     });
   }
 }
@@ -993,17 +1027,36 @@ function styleIcons() {
     palm: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 22c0-4 1-7 3-10M12 22V10c0-2-1.5-4-3-4s-3 2-3 4c0 3 2.5 5.5 5.5 6"/></svg>`,
     leaf: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22C12 22 22 12 22 2c-10 0-20 10-20 20z"/><path d="M9 15l6-6"/></svg>`
   };
+  const LEGACY_ICONS = {
+    surfboard: String.fromCodePoint(0x1f3c4),
+    yoga: String.fromCodePoint(0x1f9d8),
+    wave: String.fromCodePoint(0x1f30a),
+    leaf: String.fromCodePoint(0x1f33f),
+    wind: String.fromCodePoint(0x1f4a8),
+    thermometer: String.fromCodePoint(0x1f321, 0xfe0f),
+    star: String.fromCodePoint(0x2b50),
+    green: String.fromCodePoint(0x1f7e2),
+    blue: String.fromCodePoint(0x1f535),
+    yellow: String.fromCodePoint(0x1f7e1),
+    red: String.fromCodePoint(0x1f534),
+    palm: String.fromCodePoint(0x1f334),
+    pin: String.fromCodePoint(0x1f4cd),
+    time: String.fromCodePoint(0x1f550),
+    plane: String.fromCodePoint(0x2708, 0xfe0f),
+    car: String.fromCodePoint(0x1f697),
+    check: String.fromCharCode(0x2713)
+  };
 
   // 1. Process Certifications badge icons
   document.querySelectorAll('.cert-badge-icon').forEach(el => {
     const emoji = el.textContent.trim();
-    if (emoji === '🏄') {
+    if (emoji === LEGACY_ICONS.surfboard) {
       el.innerHTML = `<span class="surfboard-badge">${SVGS.surfboard}</span>`;
-    } else if (emoji === '🧘') {
+    } else if (emoji === LEGACY_ICONS.yoga) {
       el.innerHTML = `<span class="organic-badge">${SVGS.lotus}</span>`;
-    } else if (emoji === '🌊') {
+    } else if (emoji === LEGACY_ICONS.wave) {
       el.innerHTML = `<span class="beach-icon-badge">${SVGS.wave}</span>`;
-    } else if (emoji === '🌿') {
+    } else if (emoji === LEGACY_ICONS.leaf) {
       el.innerHTML = `<span class="organic-badge">${SVGS.leaf}</span>`;
     }
   });
@@ -1011,21 +1064,21 @@ function styleIcons() {
   // 2. Process Current Surf Metrics
   document.querySelectorAll('.tide-metric-box > div').forEach(el => {
     const emoji = el.textContent.trim();
-    if (emoji === '🌊') {
+    if (emoji === LEGACY_ICONS.wave) {
       el.className = 'beach-icon-badge';
       el.innerHTML = SVGS.wave;
       el.style.fontSize = ''; 
-    } else if (emoji === '💨') {
+    } else if (emoji === LEGACY_ICONS.wind) {
       el.className = 'beach-icon-badge';
       el.innerHTML = SVGS.wind;
       el.style.fontSize = '';
       el.style.color = '#f59e0b';
-    } else if (emoji === '🌡️') {
+    } else if (emoji === LEGACY_ICONS.thermometer) {
       el.className = 'beach-icon-badge';
       el.innerHTML = SVGS.sun;
       el.style.fontSize = '';
       el.style.color = '#10b981';
-    } else if (emoji === '⭐') {
+    } else if (emoji === LEGACY_ICONS.star) {
       el.className = 'beach-icon-badge';
       el.innerHTML = SVGS.star;
       el.style.fontSize = '';
@@ -1037,17 +1090,17 @@ function styleIcons() {
   document.querySelectorAll('.safety-zone-icon').forEach(el => {
     const emoji = el.textContent.trim();
     let color = 'currentColor';
-    if (emoji === '🟢' || emoji.includes('🟢')) color = '#10b981';
-    else if (emoji === '🔵' || emoji.includes('🔵')) color = '#3b82f6';
-    else if (emoji === '🟡' || emoji.includes('🟡')) color = '#f59e0b';
-    else if (emoji === '🔴' || emoji.includes('🔴')) color = '#ef4444';
+    if (emoji === LEGACY_ICONS.green || emoji.includes(LEGACY_ICONS.green)) color = '#10b981';
+    else if (emoji === LEGACY_ICONS.blue || emoji.includes(LEGACY_ICONS.blue)) color = '#3b82f6';
+    else if (emoji === LEGACY_ICONS.yellow || emoji.includes(LEGACY_ICONS.yellow)) color = '#f59e0b';
+    else if (emoji === LEGACY_ICONS.red || emoji.includes(LEGACY_ICONS.red)) color = '#ef4444';
     
     el.innerHTML = `<span class="tide-circle-badge" style="color: ${color};">${SVGS.wave}</span>`;
   });
 
   // 4. Process Selector Checks
   document.querySelectorAll('.selector-check').forEach(el => {
-    if (el.textContent.trim() === '✓') {
+    if (el.textContent.trim() === LEGACY_ICONS.check) {
       el.innerHTML = SVGS.check;
     }
   });
@@ -1055,20 +1108,20 @@ function styleIcons() {
   // 5. Contact Highlights (Time, Plane, Car, Map Pin)
   document.querySelectorAll('.map-pin-card > div, .surf-windows-row > div > div').forEach(el => {
     const emoji = el.textContent.trim();
-    if (emoji === '📍') {
+    if (emoji === LEGACY_ICONS.pin) {
       el.className = 'beach-icon-badge';
       el.style.color = 'var(--coral-color)';
       el.innerHTML = SVGS.pin;
       el.style.fontSize = '';
-    } else if (emoji === '🕐') {
+    } else if (emoji === LEGACY_ICONS.time) {
       el.className = 'beach-icon-badge';
       el.innerHTML = SVGS.time;
       el.style.fontSize = '';
-    } else if (emoji === '✈️') {
+    } else if (emoji === LEGACY_ICONS.plane) {
       el.className = 'beach-icon-badge';
       el.innerHTML = SVGS.plane;
       el.style.fontSize = '';
-    } else if (emoji === '🚗') {
+    } else if (emoji === LEGACY_ICONS.car) {
       el.className = 'beach-icon-badge';
       el.innerHTML = SVGS.car;
       el.style.fontSize = '';
@@ -1079,26 +1132,26 @@ function styleIcons() {
   const headingElements = document.querySelectorAll('h1, h2, h3, h4, h5, .section-tag, .quote-instructor, .avail-package');
   headingElements.forEach(el => {
     let html = el.innerHTML;
-    if (html.includes('🏄')) {
-      html = html.replace(/🏄/g, `<span class="inline-beach-icon" style="color:var(--accent-color);display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.surfboard}</span>`);
+    if (html.includes(LEGACY_ICONS.surfboard)) {
+      html = html.replace(new RegExp(LEGACY_ICONS.surfboard, 'g'), `<span class="inline-beach-icon" style="color:var(--accent-color);display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.surfboard}</span>`);
     }
-    if (html.includes('🧘')) {
-      html = html.replace(/🧘/g, `<span class="inline-beach-icon" style="color:var(--coral-color);display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.lotus}</span>`);
+    if (html.includes(LEGACY_ICONS.yoga)) {
+      html = html.replace(new RegExp(LEGACY_ICONS.yoga, 'g'), `<span class="inline-beach-icon" style="color:var(--coral-color);display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.lotus}</span>`);
     }
-    if (html.includes('🌴')) {
-      html = html.replace(/🌴/g, `<span class="inline-beach-icon" style="color:#10b981;display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.palm}</span>`);
+    if (html.includes(LEGACY_ICONS.palm)) {
+      html = html.replace(new RegExp(LEGACY_ICONS.palm, 'g'), `<span class="inline-beach-icon" style="color:#10b981;display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.palm}</span>`);
     }
-    if (html.includes('🌊')) {
-      html = html.replace(/🌊/g, `<span class="inline-beach-icon" style="color:var(--accent-color);display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.wave}</span>`);
+    if (html.includes(LEGACY_ICONS.wave)) {
+      html = html.replace(new RegExp(LEGACY_ICONS.wave, 'g'), `<span class="inline-beach-icon" style="color:var(--accent-color);display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.wave}</span>`);
     }
-    if (html.includes('⭐')) {
-      html = html.replace(/⭐/g, `<span class="inline-beach-icon" style="color:#f59e0b;display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.star}</span>`);
+    if (html.includes(LEGACY_ICONS.star)) {
+      html = html.replace(new RegExp(LEGACY_ICONS.star, 'g'), `<span class="inline-beach-icon" style="color:#f59e0b;display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.star}</span>`);
     }
-    if (html.includes('📍')) {
-      html = html.replace(/📍/g, `<span class="inline-beach-icon" style="color:var(--coral-color);display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.pin}</span>`);
+    if (html.includes(LEGACY_ICONS.pin)) {
+      html = html.replace(new RegExp(LEGACY_ICONS.pin, 'g'), `<span class="inline-beach-icon" style="color:var(--coral-color);display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.pin}</span>`);
     }
-    if (html.includes('🟢')) {
-      html = html.replace(/🟢/g, `<span class="inline-beach-icon" style="color:#10b981;display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.wave}</span>`);
+    if (html.includes(LEGACY_ICONS.green)) {
+      html = html.replace(new RegExp(LEGACY_ICONS.green, 'g'), `<span class="inline-beach-icon" style="color:#10b981;display:inline-flex;margin-inline-end:0.35rem;vertical-align:middle;width:18px;height:18px;">${SVGS.wave}</span>`);
     }
     el.innerHTML = html;
   });

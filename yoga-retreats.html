@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Beach Yoga Retreats | Wave & Zen — Reconnect and restore with daily beachfront yoga classes, guided meditation, and luxury wellness packages." />
+  <title>Beach Yoga Retreats | Wave & Zen</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+</head>
+
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="header" id="main-header">
+    <div class="logo-container" onclick="window.location.href='index.html'" role="link" aria-label="Wave and Zen Home">
+      <div class="logo-text">
+        <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo"
+          style="width:32px;height:32px;object-fit:contain;" />
+        Wave &amp; Zen
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger-menu" aria-label="Toggle menu" role="button" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+      <div class="nav-dropdown" id="home-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="nav-home">Home <span class="arrow">▼</span></a>
+        <div class="dropdown-menu-list">
+          <a href="index.html" class="dropdown-item" id="nav-home1">Home 1</a>
+          <a href="home2.html" class="dropdown-item" id="nav-home2">Home 2</a>
+        </div>
+      </div>
+      <a href="about.html" class="nav-link" id="nav-about">About</a>
+      <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
+      <div class="nav-dropdown" id="services-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="nav-services">Services <span class="arrow">▼</span></a>
+        <div class="dropdown-menu-list">
+          <a href="surf-lessons.html" class="dropdown-item" id="nav-surf">Surf Lessons</a>
+          <a href="yoga-retreats.html" class="dropdown-item" id="nav-yoga">Yoga Retreats</a>
+        </div>
+      </div>
+      <a href="packages.html" class="nav-link" id="nav-packages">Packages</a>
+      <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
+      <a href="booking.html" class="nav-link" id="nav-booking">Booking</a>
+      <a href="contact.html" class="nav-link" id="nav-contact">Contact</a>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle-btn" id="theme-toggle" aria-label="Switch to dark theme"
+          title="Dark theme">
+          <svg viewBox="0 0 24 24" class="theme-toggle-icon" aria-hidden="true">
+            <path d="M15.8 3.35a7.2 7.2 0 1 0 4.35 10.95 6.35 6.35 0 0 1-4.35-10.95Z"></path>
+            <path d="m18.8 3.1.35.85.85.35-.85.35-.35.85-.35-.85-.85-.35.85-.35.35-.85Z"></path>
+            <path d="M3 17.15c2.1-1.65 4.2-1.65 6.3 0s4.2 1.65 6.3 0 4.2-1.65 5.4-.7"></path>
+            <path d="M4.5 20.35c1.7-1 3.4-1 5.1 0s3.4 1 5.1 0 3.4-1 4.8-.35"></path>
+          </svg>
+        </button>
+        <button class="action-btn dir-toggle-btn" id="dir-toggle" aria-label="Toggle text direction"
+          title="Toggle RTL/LTR">
+          <span class="dir-toggle-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
+        </button>
+        <a href="login.html" class="login-nav-btn" id="login-nav-btn">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════ SECTION 1: HERO BANNER ═══════════════ -->
+  <section class="page-hero" id="yoga-hero" style="min-height: 80vh;">
+    <video autoplay muted loop playsinline class="hero-video-bg">
+      <source src="assets/videos/yoga_bg.mp4" type="video/mp4">
+    </video>
+    <div class="page-hero-overlay" style="background:linear-gradient(135deg,rgba(10,15,29,0.85) 0%,rgba(168,85,247,0.2) 100%);"></div>
+    <div class="page-hero-content container">
+      <span class="section-tag">Mindfulness &amp; Wellness Escapes</span>
+      <h1>Find Your Inner Peace.<br />Flow with the Coast.</h1>
+      <p>Escape the noise and reconnect with your breath on pristine sandy shores. Guided by certified instructors, our beach yoga classes combine restorative flows, ocean meditation, and holistic health practices designed for all levels.</p>
+      <div class="hero-ctas" style="display:flex;gap:1.25rem;flex-wrap:wrap;margin-top:1.5rem;">
+        <a href="#yoga-packages" class="btn btn-primary" id="yoga-hero-pkg-btn">View Yoga Packages</a>
+        <a href="booking.html" class="btn btn-outline-light" id="yoga-hero-book-btn">Book a Session</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 2: INTRO AND BENEFITS ═══════════════ -->
+  <section id="yoga-benefits" style="background-color: var(--bg-primary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Find Your Flow</span>
+        <h2 class="section-title">The Benefits of Beach Yoga</h2>
+        <p class="section-desc">Flowing on the sand next to the ocean provides sensory grounding, fresh sea air to oxygenate the body, and a natural rhythm to sync your breathing.</p>
+      </div>
+
+      <div class="grid-container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;">
+        <!-- Benefit 1 -->
+        <div class="feature-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);padding:2rem;display:flex;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+          <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18h16"/><path d="M7 14a5 5 0 0 1 10 0"/><path d="M12 4v3"/><path d="M5 8l2 2"/><path d="M19 8l-2 2"/><path d="M3 21c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/></svg></div>
+          <h3 style="font-size:1.25rem;margin-bottom:0.75rem;">Sunrise Beach Setting</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">Start your day directly on the sand, breathing in clean ocean breezes and absorbing natural Vitamin D as the sun rises over the horizon.</p>
+        </div>
+        <!-- Benefit 2 -->
+        <div class="feature-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);padding:2rem;display:flex;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+          <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v5"/><path d="M8 11l4 1 4-1"/><path d="M6 19c2.2-3 4.2-4.5 6-4.5S15.8 16 18 19"/><path d="M8 19h8"/></svg></div>
+          <h3 style="font-size:1.25rem;margin-bottom:0.75rem;">Certified Yoga RYT</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">Practice under 500-hour Registered Yoga Teachers (RYT) who design sessions for both absolute beginners and regular practitioners.</p>
+        </div>
+        <!-- Benefit 3 -->
+        <div class="feature-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);padding:2rem;display:flex;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+          <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20C14 20 20 14 20 4 10 4 4 10 4 20Z"/><path d="M9 15l6-6"/><path d="M12 20c0-4 1-7 3-10"/></svg></div>
+          <h3 style="font-size:1.25rem;margin-bottom:0.75rem;">Mind-Body Restoration</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">Combine flow yoga with pranayama breathwork, sound healing bath, and deep meditation for complete nervous system restoration.</p>
+        </div>
+        <!-- Benefit 4 -->
+        <div class="feature-card" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);padding:2rem;display:flex;flex-direction:column;align-items:flex-start;box-shadow:var(--shadow-sm);transition:all 0.3s ease;">
+          <div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3Z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14Z"/><path d="M5 14l.7 1.8L7.5 16.5l-1.8.7L5 19l-.7-1.8-1.8-.7 1.8-.7L5 14Z"/></svg></div>
+          <h3 style="font-size:1.25rem;margin-bottom:0.75rem;">Holistic Care</h3>
+          <p style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;">Each session includes fresh cold-pressed local juices, organic towels, and custom yoga blocks/mats so you can fully let go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 3: DAILY TIMELINE SCHEDULE ═══════════════ -->
+  <section id="yoga-schedule" style="background-color: var(--bg-secondary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Daily Rituals</span>
+        <h2 class="section-title">Daily Yoga &amp; Mindfulness Schedule</h2>
+        <p class="section-desc">We structure our beachfront classes around nature's cycle to capture optimal sun positions and peaceful beach hours.</p>
+      </div>
+
+      <div class="milestone-timeline" style="max-width: 800px; margin: 0 auto;">
+        <!-- Item 1 -->
+        <div class="milestone-item">
+          <span class="milestone-year" >06:30 AM</span>
+          <h5>Sunrise Vinyasa Flow</h5>
+          <p>An energizing, fluid practice syncing breath with movement. Perfect for awakening the spine and warming the muscles as the beach glows in golden light.</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="milestone-item">
+          <span class="milestone-year" >12:00 PM</span>
+          <h5>Breathwork &amp; Midday Meditation</h5>
+          <p>A specialized session centered on pranayama control and mental focus. Take shelter under our beachfront wooden shala to restore mental energy.</p>
+        </div>
+        <!-- Item 3 -->
+        <div class="milestone-item">
+          <span class="milestone-year" >17:30 PM</span>
+          <h5>Sunset Yin &amp; Sound Healing</h5>
+          <p>A slow, grounding practice holding deep poses to release tight joints. Concludes with a resonant crystal bowl sound bath as the stars start to show.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 4: YOGA PACKAGES ═══════════════ -->
+  <section id="yoga-packages" style="background-color: var(--bg-primary);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Wellness Plans</span>
+        <h2 class="section-title">Yoga Retreat Packages</h2>
+        <p class="section-desc">Select from our 7-day daily sunrise flows or choose a fully immersive beachfront luxury sanctuary retreat.</p>
+      </div>
+
+      <div class="packages-card-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2.5rem;max-width:1000px;margin:0 auto;">
+        <!-- Card 1: Sunrise Yoga -->
+        <div class="package-card bg-mode" style="box-shadow:var(--shadow-md);display:flex;flex-direction:column;border-radius:12px;overflow:hidden;background:var(--bg-card);border:1px solid var(--border-color);">
+          <div class="card-bg-image" style="background-image:url('assets/images/packages/sunrise_yoga.jpg');height:240px;background-size:cover;background-position:center;"></div>
+          <div class="card-body" style="padding:2rem;flex-grow:1;display:flex;flex-direction:column;">
+            <div class="card-tag tag-yoga" style="background-color:rgba(168,85,247,0.15);color:#c084fc;align-self:flex-start;padding:0.25rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:700;margin-bottom:1rem;">Yoga · All Levels</div>
+            <h3 class="card-title" style="font-size:1.4rem;margin-bottom:0.75rem;">Sunrise Yoga — 7 Days</h3>
+            <p class="card-text" style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;margin-bottom:1.5rem;">7 daily sunrise sessions on the beach, breathwork, meditation, guided yoga nidra. Includes a premium yoga mat, journal, and a welcome kit.</p>
+            <ul class="package-features" style="list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:0.5rem;color:var(--text-secondary);font-size:0.9rem;">
+              <li style="display:flex;align-items:center;gap:0.5rem;"><span class="feature-check" aria-hidden="true"></span> Seven guided beachfront sessions</li>
+              <li style="display:flex;align-items:center;gap:0.5rem;"><span class="feature-check" aria-hidden="true"></span> Guided pranayama and mindfulness</li>
+              <li style="display:flex;align-items:center;gap:0.5rem;"><span class="feature-check" aria-hidden="true"></span> High-quality mat, blocks &amp; straps</li>
+              <li style="display:flex;align-items:center;gap:0.5rem;"><span class="feature-check" aria-hidden="true"></span> Welcome tea &amp; daily fresh cold juice</li>
+            </ul>
+            <div class="card-footer" style="display:flex;justify-content:between;align-items:center;padding-top:1.5rem;border-top:1px solid var(--border-color);margin-top:auto;">
+              <div class="package-price"><span class="card-price" style="font-size:1.8rem;font-weight:900;color:var(--text-primary);">$350</span><span class="card-unit" style="font-size:0.8rem;color:var(--text-secondary);display:block;margin-top:-0.25rem;">seven-day program</span></div>
+              <a href="booking.html" class="btn btn-primary" id="yoga-pkg1-book-btn">Book Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Deep Zen Sanctuary -->
+        <div class="package-card bg-mode" style="box-shadow:var(--shadow-md);display:flex;flex-direction:column;border-radius:12px;overflow:hidden;background:var(--bg-card);border:1px solid var(--border-color);">
+          <div class="card-bg-image" style="background-image:url('assets/images/packages/full_retreat.jpg');height:240px;background-size:cover;background-position:center;"></div>
+          <div class="card-body" style="padding:2rem;flex-grow:1;display:flex;flex-direction:column;">
+            <div class="card-tag tag-yoga" style="background-color:rgba(168,85,247,0.15);color:#c084fc;align-self:flex-start;padding:0.25rem 0.75rem;border-radius:20px;font-size:0.75rem;font-weight:700;margin-bottom:1rem;">Retreat · Premium</div>
+            <h3 class="card-title" style="font-size:1.4rem;margin-bottom:0.75rem;">Deep Zen Sanctuary</h3>
+            <p class="card-text" style="color:var(--text-secondary);font-size:0.9rem;line-height:1.65;flex-grow:1;margin-bottom:1.5rem;">For total body restoration. 6 advanced yoga &amp; alignment sessions, sound healing, daily massage, eco-surf excursions, and private beachfront bungalows.</p>
+            <ul class="package-features" style="list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:0.5rem;color:var(--text-secondary);font-size:0.9rem;">
+              <li style="display:flex;align-items:center;gap:0.5rem;"><span class="feature-check" aria-hidden="true"></span> Six advanced yoga &amp; alignment classes</li>
+              <li style="display:flex;align-items:center;gap:0.5rem;"><span class="feature-check" aria-hidden="true"></span> Daily 60min massage &amp; spa access</li>
+              <li style="display:flex;align-items:center;gap:0.5rem;"><span class="feature-check" aria-hidden="true"></span> Eco-surf excursion with certified guide</li>
+              <li style="display:flex;align-items:center;gap:0.5rem;"><span class="feature-check" aria-hidden="true"></span> Private luxury beachfront cottage stay</li>
+            </ul>
+            <div class="card-footer" style="display:flex;justify-content:between;align-items:center;padding-top:1.5rem;border-top:1px solid var(--border-color);margin-top:auto;">
+              <div class="package-price"><span class="card-price" style="font-size:1.8rem;font-weight:900;color:var(--text-primary);">$1,999</span><span class="card-unit" style="font-size:0.8rem;color:var(--text-secondary);display:block;margin-top:-0.25rem;">seven-day program</span></div>
+              <a href="booking.html" class="btn btn-primary" id="yoga-pkg2-book-btn">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SECTION 5: CTA BANNER ═══════════════ -->
+  <section class="cta-banner" id="yoga-cta" style="background-image:url('assets/images/packages/beach_yoga.jpg');" aria-label="Book your yoga retreat session">
+    <div class="cta-banner-overlay" style="background:rgba(10,15,29,0.7);"></div>
+    <div class="cta-banner-content">
+      <span class="section-tag" style="color:#fff;opacity:0.85;">Embark on Restoration</span>
+      <h2>Ready to Find Your Zen?</h2>
+      <p>Escape your daily stress. Discover deep mindfulness, dynamic flows, and beachfront wellness settings designed to restore harmony to your mind, body, and spirit.</p>
+      <div class="cta-banner-btns">
+        <a href="booking.html" class="btn btn-primary" id="yoga-cta-book-btn">Book a Session</a>
+        <a href="packages.html" class="btn btn-outline-light" id="yoga-cta-packages-btn">Explore Packages</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="main-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text" style="margin-bottom:1.25rem;">
+          <img class="logo-icon" src="assets/images/logo.png" alt="Wave & Zen Logo"
+            style="width:32px;height:32px;object-fit:contain;margin-inline-end:0.5rem;" />
+          Wave &amp; Zen
+        </div>
+        <p class="footer-tagline">Ride the wave. Find your zen. Experience the coast in its most authentic form. Embrace the breeze. Discover coastal beauty at its purest.</p>
+        <div class="footer-social">
+          <a href="#" class="social-icon" aria-label="Instagram" id="footer-instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg></a>
+          <a href="#" class="social-icon" aria-label="Facebook" id="footer-facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg></a>
+          <a href="#" class="social-icon" aria-label="YouTube" id="footer-youtube">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z" />
+            </svg></a>
+        </div>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="about.html" id="footer-about-link">About Us</a></li>
+          <li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li>
+          <li><a href="packages.html" id="footer-packages-link">Packages</a></li>
+          <li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li>
+          <li><a href="surf-lessons.html" id="footer-surf-link">Surf Lessons</a></li>
+          <li><a href="yoga-retreats.html" id="footer-yoga-link">Yoga Retreats</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h4 class="footer-col-title">Contact</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html" id="footer-contact-link">Enquiries</a></li>
+          <li><a href="booking.html" id="footer-booking-link">Book a Session</a></li>
+          <li><a href="mailto:hello@waveandzen.com" id="footer-email-link">hello@waveandzen.com</a></li>
+          <li><a href="tel:+1800WAVEZEN" id="footer-phone-link">+1&nbsp;800&nbsp;WAVE&nbsp;ZEN</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Wave &amp; Zen Retreats. All rights reserved.</p>
+      <div style="display:flex;gap:1.5rem;">
+        <a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-privacy">Privacy Policy</a>
+        <a href="#" style="font-size:0.85rem;color:var(--text-secondary);" id="footer-terms">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

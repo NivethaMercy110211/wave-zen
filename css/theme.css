@@ -1058,6 +1058,7 @@ body {
   height: auto;
   padding: calc(var(--header-height) + 4rem) 4rem 5rem !important;
   align-items: center;
+  justify-content: center;
   background-color: var(--nav-bg);
   background-position: center;
   isolation: isolate;
@@ -1084,6 +1085,11 @@ body {
   max-width: 760px;
   min-width: 0;
   color: #fff;
+  text-align: center;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-hero-content .section-tag {
@@ -1103,6 +1109,7 @@ body {
   color: #f4f8f5;
   font-size: clamp(1rem, 1.4vw, 1.2rem);
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.58);
+  margin-inline: auto;
 }
 
 .hero-float-badge {
@@ -1125,14 +1132,16 @@ body {
 }
 
 .btn-primary {
-  color: #fff;
-  background: var(--accent-color);
-  box-shadow: 0 6px 18px rgba(8, 127, 140, 0.28);
+  color: #fff !important;
+  border-color: var(--accent-color) !important;
+  background: var(--accent-color) !important;
+  box-shadow: 0 6px 18px rgba(8, 127, 140, 0.28) !important;
 }
 
 .btn-primary:hover {
-  color: #fff;
-  background: var(--accent-hover);
+  color: #fff !important;
+  border-color: var(--accent-hover) !important;
+  background: var(--accent-hover) !important;
 }
 
 .btn-accent {
@@ -1451,15 +1460,18 @@ textarea:focus {
   .page-hero,
   #home-hero,
   #home2-hero {
-    min-height: 100svh !important;
+    min-height: 75svh !important;
     padding: calc(var(--header-height) + 3rem) 2rem 4rem !important;
   }
 
   .hero-float-badge {
-    position: absolute;
-    inset-inline-end: 2rem;
-    bottom: 2rem;
-    max-width: 300px;
+    position: absolute !important;
+    inset-inline-end: 2rem !important;
+    bottom: 2rem !important;
+    display: block !important;
+    inset-inline-start: auto !important;
+    margin: 0 !important;
+    max-width: 380px !important;
   }
 }
 
@@ -1554,7 +1566,7 @@ textarea:focus {
   .page-hero,
   #home-hero,
   #home2-hero {
-    min-height: 100svh !important;
+    min-height: 75svh !important;
     padding: calc(var(--header-height) + 3rem) 1.5rem 3rem !important;
   }
 
@@ -1563,7 +1575,13 @@ textarea:focus {
   }
 
   .hero-float-badge {
-    display: none;
+    position: absolute !important;
+    inset-inline-end: 2rem !important;
+    bottom: 2rem !important;
+    display: block !important;
+    inset-inline-start: auto !important;
+    margin: 0 !important;
+    max-width: 350px !important;
   }
 }
 
@@ -1576,8 +1594,10 @@ textarea:focus {
   .page-hero,
   #home-hero,
   #home2-hero {
-    min-height: 100svh !important;
+    min-height: 75svh !important;
     padding: calc(var(--header-height) + 2.25rem) 1rem 2.5rem !important;
+    flex-direction: column !important;
+    justify-content: center !important;
   }
 
   .page-hero-content {
@@ -1603,6 +1623,17 @@ textarea:focus {
 
   .page-hero .hero-ctas .btn {
     width: 100%;
+  }
+
+  .hero-float-badge {
+    position: relative !important;
+    inset-inline-end: auto !important;
+    bottom: auto !important;
+    margin: 1.5rem auto 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
   }
 
   #register-form > div[style*="grid-template-columns"] {
@@ -1642,13 +1673,13 @@ textarea:focus {
   display: inline-block;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
-  color: #8a5a12;
-  background: rgba(197, 138, 43, 0.14);
+  color: #8a5a12 !important;
+  background: rgba(197, 138, 43, 0.14) !important;
 }
 
 [data-theme="dark"] #packages-grid .section-tag {
-  color: #f4d38a;
-  background: rgba(242, 198, 109, 0.14);
+  color: #f4d38a !important;
+  background: rgba(242, 198, 109, 0.14) !important;
 }
 
 .package-filter-tabs {
@@ -1880,16 +1911,10 @@ textarea:focus {
   width: 100%;
   min-height: 44px;
   padding: 0.65rem 1rem;
-  color: #17343c !important;
-  border: 1px solid #e2b252 !important;
-  background: linear-gradient(135deg, #f5d98f, #e8b957) !important;
-  box-shadow: 0 5px 14px rgba(157, 103, 20, 0.18) !important;
 }
 
 .packages-card-grid .package-card.bg-mode .btn-primary:hover {
-  color: #102f3b !important;
-  background: linear-gradient(135deg, #fae4a8, #edc46c) !important;
-  box-shadow: 0 8px 18px rgba(157, 103, 20, 0.25) !important;
+  box-shadow: 0 8px 18px rgba(8, 127, 140, 0.28) !important;
 }
 
 [data-theme="dark"] .packages-card-grid .package-card.bg-mode,
@@ -2694,6 +2719,225 @@ html[dir="rtl"] .included-benefits .included-item h4 {
     margin-top: 2rem !important;
   }
 }
+
+/* Service detail pages: Surf Lessons and Yoga Retreats */
+#surf-benefits .grid-container,
+#yoga-benefits .grid-container {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+#surf-benefits .feature-card,
+#yoga-benefits .feature-card {
+  display: grid !important;
+  grid-template-rows: 58px minmax(3.1rem, auto) minmax(6.8rem, auto);
+  align-content: start;
+  min-width: 0;
+  width: 100% !important;
+  max-width: none !important;
+  flex: none !important;
+  height: 100%;
+  padding: 1.65rem !important;
+  text-align: left;
+}
+
+.service-icon {
+  display: inline-flex;
+  width: 52px !important;
+  height: 52px;
+  flex: 0 0 52px !important;
+  flex-grow: 0 !important;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  border: 1px solid rgba(8, 127, 140, 0.18);
+  border-radius: 16px;
+  background: rgba(8, 127, 140, 0.1);
+}
+
+.service-icon svg {
+  width: 27px;
+  height: 27px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+#surf-benefits .feature-card h3,
+#yoga-benefits .feature-card h3 {
+  margin: 0;
+  font-size: 1.08rem !important;
+  line-height: 1.35;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+#surf-benefits .feature-card p,
+#yoga-benefits .feature-card p {
+  margin: 0 !important;
+  font-size: 0.88rem !important;
+  line-height: 1.55 !important;
+  overflow-wrap: anywhere;
+}
+
+#surf-packages .packages-card-grid,
+#yoga-packages .packages-card-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: 2rem !important;
+}
+
+#surf-packages .package-card,
+#yoga-packages .package-card {
+  min-width: 0;
+  width: 100% !important;
+  max-width: none !important;
+  flex: none !important;
+  height: 100%;
+}
+
+#surf-packages .package-card .card-body,
+#yoga-packages .package-card .card-body {
+  display: grid !important;
+  grid-template-rows: auto minmax(3.5rem, auto) minmax(5rem, auto) 1fr auto;
+}
+
+#surf-packages .package-card .card-title,
+#yoga-packages .package-card .card-title,
+#surf-packages .package-card .card-text,
+#yoga-packages .package-card .card-text {
+  overflow-wrap: anywhere;
+}
+
+#surf-schedule .surf-windows-row {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+}
+
+#surf-schedule .surf-window-card {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  align-content: start !important;
+  align-items: start !important;
+  width: 100% !important;
+  max-width: none !important;
+  flex: none !important;
+  gap: 1rem !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+#surf-schedule .surf-window-card > div {
+  min-width: 0;
+  width: 100% !important;
+  flex: none !important;
+}
+
+#surf-schedule .surf-window-card > span {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: max-content !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  justify-self: flex-start;
+  text-align: center;
+  color: #fff !important;
+  border: 1px solid var(--accent-color) !important;
+  background: var(--accent-color) !important;
+  box-shadow: 0 6px 16px rgba(8, 127, 140, 0.18);
+}
+
+#surf-schedule .surf-window-card:hover > span {
+  border-color: var(--accent-hover) !important;
+  background: var(--accent-hover) !important;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #surf-benefits .grid-container,
+  #yoga-benefits .grid-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #surf-benefits .feature-card,
+  #yoga-benefits .feature-card {
+    grid-template-rows: 58px minmax(2.6rem, auto) minmax(5.8rem, auto);
+    padding: 1.5rem !important;
+  }
+
+  #surf-packages .packages-card-grid,
+  #yoga-packages .packages-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+
+  #surf-packages .package-card .card-body,
+  #yoga-packages .package-card .card-body {
+    padding: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #surf-benefits .grid-container,
+  #yoga-benefits .grid-container,
+  #surf-packages .packages-card-grid,
+  #yoga-packages .packages-card-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+  }
+
+  #surf-benefits .feature-card,
+  #yoga-benefits .feature-card {
+    grid-template-rows: auto auto auto;
+    gap: 0.85rem;
+  }
+
+  #surf-packages .package-card .card-body,
+  #yoga-packages .package-card .card-body {
+    grid-template-rows: auto auto auto auto auto;
+  }
+}
+
+@media screen and (min-width: 700px) and (max-width: 768px) {
+  #surf-benefits .grid-container,
+  #yoga-benefits .grid-container,
+  #surf-packages .packages-card-grid,
+  #yoga-packages .packages-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    max-width: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #surf-benefits .feature-card,
+  #yoga-benefits .feature-card {
+    padding: 1.35rem !important;
+  }
+
+  #surf-packages .package-card .card-footer,
+  #yoga-packages .package-card .card-footer {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  #surf-packages .package-card .btn-primary,
+  #yoga-packages .package-card .btn-primary {
+    width: 100%;
+  }
+}
 /* AOS motion is intentionally restrained to avoid layout shifts on small screens. */
 html body [data-aos="fade-up"].aos-init {
   transform: translate3d(0, 24px, 0);
@@ -2733,6 +2977,344 @@ html body [data-aos="fade-left"].aos-animate {
     transform: none !important;
     transition: none !important;
   }
+}
+
+/* Final CTA consistency: every primary CTA keeps the same site color. */
+a.btn-primary,
+button.btn-primary,
+.package-card.bg-mode .btn-primary,
+.packages-card-grid .package-card.bg-mode .btn-primary {
+  color: #fff !important;
+  border-color: var(--accent-color) !important;
+  background: var(--accent-color) !important;
+  box-shadow: 0 6px 18px rgba(8, 127, 140, 0.28) !important;
+}
+
+a.btn-primary:hover,
+button.btn-primary:hover,
+.package-card.bg-mode .btn-primary:hover,
+.packages-card-grid .package-card.bg-mode .btn-primary:hover {
+  color: #fff !important;
+  border-color: var(--accent-hover) !important;
+  background: var(--accent-hover) !important;
+  box-shadow: 0 8px 18px rgba(8, 127, 140, 0.32) !important;
+}
+
+/* Remove warm button variants: action buttons stay on brand blue. */
+.btn-accent,
+.included-cta,
+.filter-btn.active,
+.package-filter-tabs .filter-btn.active,
+.beach-stories-filters .filter-btn.active,
+.login-nav-btn {
+  color: #fff !important;
+  border-color: var(--accent-color) !important;
+  background: var(--accent-color) !important;
+  box-shadow: 0 6px 18px rgba(8, 127, 140, 0.24) !important;
+}
+
+.btn-accent:hover,
+.included-cta:hover,
+.filter-btn:hover,
+.filter-btn.active:hover,
+.package-filter-tabs .filter-btn:hover,
+.package-filter-tabs .filter-btn.active:hover,
+.beach-stories-filters .filter-btn:hover,
+.beach-stories-filters .filter-btn.active:hover,
+.login-nav-btn:hover {
+  color: #fff !important;
+  border-color: var(--accent-hover) !important;
+  background: var(--accent-hover) !important;
+  box-shadow: 0 8px 18px rgba(8, 127, 140, 0.3) !important;
+}
+
+/* Brand-blue labels used as visual CTAs/highlights. */
+.section-header .section-tag,
+.step-number-circle,
+.itinerary-step,
+.gallery-badge,
+#gallery-masonry .gallery-badge,
+.highlight-card-content .gallery-badge,
+.package-card.bg-mode .card-tag,
+.packages-card-grid .package-card.bg-mode .card-tag {
+  color: #fff !important;
+  border-color: var(--accent-color) !important;
+  background: var(--accent-color) !important;
+}
+
+.section-header .section-tag {
+  color: var(--accent-color) !important;
+  background: transparent !important;
+}
+
+.step-item:hover .step-number-circle,
+.itinerary-item:hover .itinerary-step,
+.gallery-item:hover .gallery-badge,
+.package-card.bg-mode:hover .card-tag,
+.packages-card-grid .package-card.bg-mode:hover .card-tag {
+  color: #fff !important;
+  border-color: var(--accent-hover) !important;
+  background: var(--accent-hover) !important;
+}
+
+/* Site-wide compact label boxes: consistent blue, text-sized width, centered copy. */
+.card-tag,
+.gallery-tag,
+.gallery-badge,
+#gallery-masonry .gallery-badge,
+.highlight-card-content .gallery-badge,
+.surf-window-badge,
+.badge-ideal,
+.badge-good,
+.badge-fair,
+.tide-status-badge,
+.surf-spot-card-status,
+.avail-status,
+#booking-availability .avail-status,
+.destination-panel-tag,
+.spotlight-badge,
+.package-card.bg-mode .card-tag,
+.packages-card-grid .package-card.bg-mode .card-tag {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: max-content !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: flex-start;
+  text-align: center !important;
+  white-space: normal;
+  padding: 0.35rem 0.85rem !important;
+  color: #fff !important;
+  border: 1px solid var(--accent-color) !important;
+  border-radius: 999px !important;
+  background: var(--accent-color) !important;
+  box-shadow: 0 6px 16px rgba(8, 127, 140, 0.18) !important;
+  text-shadow: none !important;
+}
+
+.gallery-item:hover .gallery-badge,
+.surf-window-card:hover .surf-window-badge,
+.surf-spot-card:hover .surf-spot-card-status,
+.package-card.bg-mode:hover .card-tag,
+.packages-card-grid .package-card.bg-mode:hover .card-tag,
+.destination-card:hover .destination-panel-tag,
+.spotlight-card:hover .spotlight-badge {
+  color: #fff !important;
+  border-color: var(--accent-hover) !important;
+  background: var(--accent-hover) !important;
+  box-shadow: 0 8px 18px rgba(8, 127, 140, 0.28) !important;
+}
+
+.packages-card-grid .package-card.bg-mode .card-body {
+  grid-template-rows: auto 3.5rem 1fr auto !important;
+}
+
+.section-tag,
+.section-header .section-tag {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: #0369a1 !important; /* Deeper ocean blue for high contrast on light backgrounds */
+}
+
+[data-theme="dark"] .section-tag,
+[data-theme="dark"] .section-header .section-tag {
+  color: var(--accent-color) !important;
+}
+
+.page-hero-content .section-tag {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: #ffd58a !important; /* Elegant gold for dark hero banner visibility */
+}
+
+.cta-banner .section-tag,
+.footer .section-tag {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: #ffffff !important;
+  opacity: 0.9 !important;
+}
+
+.section-tag .professional-icon {
+  color: currentColor !important;
+}
+
+.section-header .section-tag {
+  margin-inline: auto;
+}
+
+/* Professional icon replacements for decorative emoji symbols. */
+.professional-icon,
+.metric-icon,
+.zone-icon,
+.window-label-icon,
+.location-title-icon,
+.feature-check {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+}
+
+.professional-icon svg,
+.metric-icon svg,
+.zone-icon svg,
+.window-label-icon svg,
+.location-title-icon svg {
+  width: 1em;
+  height: 1em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.metric-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0 auto 0.75rem;
+  font-size: 1.8rem;
+  border: 1px solid rgba(8, 127, 140, 0.18);
+  border-radius: 999px;
+  background: rgba(8, 127, 140, 0.1);
+}
+
+.metric-icon.metric-wind,
+.metric-icon.metric-rating {
+  color: var(--accent-color);
+}
+
+.zone-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.6rem;
+  border-radius: 999px;
+  background: rgba(8, 127, 140, 0.1);
+}
+
+.zone-icon.zone-green,
+.status-dot.status-green {
+  color: #10b981;
+}
+
+.zone-icon.zone-blue,
+.status-dot.status-blue {
+  color: #38bdf8;
+}
+
+.zone-icon.zone-yellow,
+.status-dot.status-yellow {
+  color: #f59e0b;
+}
+
+.zone-icon.zone-red,
+.status-dot.status-red {
+  color: #ef4444;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 0.65rem;
+  height: 0.65rem;
+  flex: 0 0 0.65rem;
+  margin-inline-end: 0.4rem;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 0 3px color-mix(in srgb, currentColor 18%, transparent);
+}
+
+.current-zone-icon .status-dot {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0;
+}
+
+.window-label-icon,
+.location-title-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-inline-end: 0.45rem;
+  vertical-align: -0.12em;
+}
+
+.surf-window-label,
+.surf-spot-card-title,
+.surf-spot-card-status,
+.section-tag {
+  gap: 0.45rem;
+}
+
+.feature-check {
+  width: 1rem;
+  height: 1rem;
+  color: var(--accent-color) !important;
+}
+
+.feature-check::before {
+  content: "";
+  width: 0.38rem;
+  height: 0.7rem;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+
+/* Final typography consistency for readable hierarchy. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.card-title,
+.destination-panel-title,
+.cta-banner-content h2,
+.page-hero-content h1,
+.hero-split-content h1,
+.mosaic-overlay-text h1 {
+  font-weight: 600 !important;
+}
+
+p,
+.section-desc,
+.card-text,
+.testimonial-quote,
+.footer-tagline,
+.destination-panel-desc,
+.cta-banner-content p,
+.page-hero-content p,
+.hero-split-content p,
+.mosaic-overlay-text p,
+.included-intro > p,
+.included-benefits .included-item p,
+.feature-card p,
+.value-card p,
+.safety-zone-card p,
+.itinerary-item p,
+.contact-method-card p,
+.map-pin-card p,
+.promo-strip-text p,
+.milestone-item p,
+.selector-body p {
+  font-weight: 400 !important;
 }
 
 /* Theme switch: identical moon/sun sizing and interaction in every layout. */

@@ -39,7 +39,13 @@
       </div>
       <a href="about.html" class="nav-link" id="nav-about">About</a>
       <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
-      <a href="tides.html" class="nav-link" id="nav-tides">Tides</a>
+      <div class="nav-dropdown" id="services-dropdown">
+        <a href="#" class="nav-link dropdown-toggle" id="nav-services">Services <span class="arrow">▼</span></a>
+        <div class="dropdown-menu-list">
+          <a href="surf-lessons.html" class="dropdown-item" id="nav-surf">Surf Lessons</a>
+          <a href="yoga-retreats.html" class="dropdown-item" id="nav-yoga">Yoga Retreats</a>
+        </div>
+      </div>
       <a href="packages.html" class="nav-link" id="nav-packages">Packages</a>
       <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
       <a href="booking.html" class="nav-link active" id="nav-booking">Booking</a>
@@ -70,17 +76,17 @@
     <div class="page-hero-overlay"
       style="background:linear-gradient(135deg,rgba(10,15,29,0.78) 0%,rgba(10,15,29,0.4) 100%);"></div>
     <div class="page-hero-content container">
-      <span class="section-tag">🌴 Secure Online Booking</span>
+      <span class="section-tag"><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 21c2.7-5.5 5.3-10.8 9-16M9 6c2.3-2.4 5.5-3.1 9-2-1.7 2.7-4.4 4.3-8 4.5M14 6c2.6.2 4.7 1.4 6 3.5-2.9.7-5.4.2-7.4-1.5M12 10c-2.4-.9-4.4-2.6-6-5 3.5-.5 6.2.5 8.2 3" /></svg></span> Secure Online Booking</span>
       <h1>Your Next Adventure Awaits.</h1>
       <p>Choose your experience, pick your dates, and let us take care of everything. From first waves to full retreats
         — we make booking effortless.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;">
+      <div class="hero-ctas" style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:0.5rem;">
         <a href="#booking-selectors" class="btn btn-primary" id="booking-hero-select-btn">Select Your Experience</a>
         <a href="packages.html" class="btn btn-outline-light" id="booking-hero-packages-btn">Browse Packages First</a>
       </div>
     </div>
     <div class="hero-float-badge">
-      <h3>🔒 Secure Booking</h3>
+      <h3><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 11V8a5 5 0 0 1 10 0v3M6 11h12v10H6V11Zm6 4v2" /></svg></span> Secure Booking</h3>
       <p>Reserve with a $99 deposit. Full payment required 7 days before arrival. Free cancellation before that.</p>
     </div>
   </section>
@@ -102,12 +108,12 @@
               loading="lazy" />
           </div>
           <div class="selector-body">
-            <h4>🏄 Surf Coaching</h4>
+            <h4><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3C8 6.4 6 10.2 6 14.2A6 6 0 0 0 18 14.2C18 10.2 16 6.4 12 3Z" /><path d="M12 3v18" /></svg></span> Surf Coaching</h4>
             <p class="selector-description"><span>Private or small-group surf lessons.</span> <span>Coaching for every
                 skill level.</span> <span>All required equipment is included.</span></p>
             <div class="selector-price">From $120</div>
           </div>
-          <div class="selector-check">✓</div>
+          <div class="selector-check"><span class="feature-check" aria-hidden="true"></span></div>
         </div>
         <div class="booking-selector-card" data-package="yoga-retreat" id="selector-yoga" tabindex="0" role="button"
           aria-label="Select yoga retreat">
@@ -115,12 +121,12 @@
             <img src="assets/images/packages/beach_yoga.png" alt="Beach yoga retreat session" loading="lazy" />
           </div>
           <div class="selector-body">
-            <h4>🧘 Beach Yoga Retreat</h4>
+            <h4><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6c-1.3 2-2.3 3.5-2.3 5.3S10.6 14 12 14s2.3-.9 2.3-2.7S13.3 8 12 6Z" /><path d="M7 15c2.2 0 3.8 1 5 3 1.2-2 2.8-3 5-3M5 20h14" /></svg></span> Beach Yoga Retreat</h4>
             <p class="selector-description"><span>Sunrise and sunset beach yoga.</span> <span>Breathwork and guided
                 meditation.</span> <span>A yoga mat is included.</span></p>
             <div class="selector-price">From $50/session</div>
           </div>
-          <div class="selector-check">✓</div>
+          <div class="selector-check"><span class="feature-check" aria-hidden="true"></span></div>
         </div>
         <div class="booking-selector-card" data-package="full-retreat" id="selector-full" tabindex="0" role="button"
           aria-label="Select full retreat">
@@ -129,12 +135,12 @@
               loading="lazy" />
           </div>
           <div class="selector-body">
-            <h4>🌴 Full Immersion Retreat</h4>
+            <h4><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 21c2.7-5.5 5.3-10.8 9-16M9 6c2.3-2.4 5.5-3.1 9-2-1.7 2.7-4.4 4.3-8 4.5M14 6c2.6.2 4.7 1.4 6 3.5-2.9.7-5.4.2-7.4-1.5M12 10c-2.4-.9-4.4-2.6-6-5 3.5-.5 6.2.5 8.2 3" /></svg></span> Full Immersion Retreat</h4>
             <p class="selector-description"><span>Seven-day surf and yoga retreat.</span> <span>Meals, eco-lodge, and
                 excursions.</span> <span>A complete coastal experience.</span></p>
             <div class="selector-price">From $1,299/week</div>
           </div>
-          <div class="selector-check">✓</div>
+          <div class="selector-check"><span class="feature-check" aria-hidden="true"></span></div>
         </div>
       </div>
     </div>
@@ -221,7 +227,7 @@
           </div>
           <div style="display:flex;gap:1rem;justify-content:flex-end;margin-top:1.5rem;flex-wrap:wrap;">
             <button type="reset" class="btn btn-outline" id="booking-reset-btn">Clear Form</button>
-            <button type="submit" class="btn btn-primary" id="booking-submit-btn">Submit Booking Enquiry →</button>
+            <button type="submit" class="btn btn-primary" id="booking-submit-btn">Submit Booking Enquiry</button>
           </div>
         </form>
       </div>
@@ -241,21 +247,21 @@
         <div class="availability-card">
           <div class="avail-month">July 2026</div>
           <div class="avail-date">12 – 18</div>
-          <div class="avail-package">🌴 Full Retreat — Costa Rica</div>
+          <div class="avail-package"><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 21c2.7-5.5 5.3-10.8 9-16M9 6c2.3-2.4 5.5-3.1 9-2-1.7 2.7-4.4 4.3-8 4.5M14 6c2.6.2 4.7 1.4 6 3.5-2.9.7-5.4.2-7.4-1.5M12 10c-2.4-.9-4.4-2.6-6-5 3.5-.5 6.2.5 8.2 3" /></svg></span> Full Retreat — Costa Rica</div>
           <div class="avail-spots">3 spots remaining</div>
           <span class="avail-status">Open</span>
         </div>
         <div class="availability-card">
           <div class="avail-month">July 2026</div>
           <div class="avail-date">19 – 25</div>
-          <div class="avail-package">🏄 Surf Coaching Week — Bali</div>
+          <div class="avail-package"><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3C8 6.4 6 10.2 6 14.2A6 6 0 0 0 18 14.2C18 10.2 16 6.4 12 3Z" /><path d="M12 3v18" /></svg></span> Surf Coaching Week — Bali</div>
           <div class="avail-spots">5 spots remaining</div>
           <span class="avail-status">Open</span>
         </div>
         <div class="availability-card">
           <div class="avail-month">August 2026</div>
           <div class="avail-date">02 – 08</div>
-          <div class="avail-package">🧘 Yoga Retreat — Portugal</div>
+          <div class="avail-package"><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 6c-1.3 2-2.3 3.5-2.3 5.3S10.6 14 12 14s2.3-.9 2.3-2.7S13.3 8 12 6Z" /><path d="M7 15c2.2 0 3.8 1 5 3 1.2-2 2.8-3 5-3M5 20h14" /></svg></span> Yoga Retreat — Portugal</div>
           <div class="avail-spots">8 spots remaining</div>
           <span class="avail-status">Open</span>
         </div>
@@ -351,7 +357,8 @@
           <li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li>
           <li><a href="packages.html" id="footer-packages-link">Packages</a></li>
           <li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li>
-          <li><a href="tides.html" id="footer-tides-link">Tide Reports</a></li>
+          <li><a href="surf-lessons.html" id="footer-surf-link">Surf Lessons</a></li>
+          <li><a href="yoga-retreats.html" id="footer-yoga-link">Yoga Retreats</a></li>
         </ul>
       </div>
       <div class="footer-links-col">

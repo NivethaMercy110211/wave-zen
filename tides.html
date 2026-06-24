@@ -35,7 +35,13 @@
     </div>
     <a href="about.html" class="nav-link" id="nav-about">About</a>
     <a href="instructors.html" class="nav-link" id="nav-instructors">Instructors</a>
-    <a href="tides.html" class="nav-link active" id="nav-tides">Tides</a>
+    <div class="nav-dropdown" id="services-dropdown">
+      <a href="#" class="nav-link dropdown-toggle" id="nav-services">Services <span class="arrow">▼</span></a>
+      <div class="dropdown-menu-list">
+        <a href="surf-lessons.html" class="dropdown-item" id="nav-surf">Surf Lessons</a>
+        <a href="yoga-retreats.html" class="dropdown-item" id="nav-yoga">Yoga Retreats</a>
+      </div>
+    </div>
     <a href="packages.html" class="nav-link" id="nav-packages">Packages</a>
     <a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a>
     <a href="booking.html" class="nav-link" id="nav-booking">Booking</a>
@@ -59,10 +65,10 @@
   </video>
   <div class="page-hero-overlay" style="background:linear-gradient(135deg,rgba(10,15,29,0.82) 0%,rgba(14,165,233,0.25) 100%);"></div>
   <div class="page-hero-content container">
-    <span class="section-tag">🌊 Updated Daily at 6:00 AM</span>
+    <span class="section-tag"><span class="professional-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17c2.4 1.8 4.8 1.8 7.2 0s4.8-1.8 7.2 0c1 .7 2 .9 3 .7M3 12c2.4 1.8 4.8 1.8 7.2 0s4.8-1.8 7.2 0c1 .7 2 .9 3 .7M4 7c2.1 1.3 4.2 1.3 6.3 0 2.2-1.4 4.4-1.4 6.6 0" /></svg></span> Updated Daily at 6:00 AM</span>
     <h1>Today's Ocean Conditions</h1>
     <p>Real-time tide data, swell reports, wind readings, and surf suitability scores to help you plan the perfect wave session.</p>
-    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
+    <div class="hero-ctas" style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
       <div style="background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:1rem 1.5rem;color:#fff;">
         <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;opacity:0.75;margin-bottom:0.25rem;">Location</div>
         <div style="font-weight:700;font-size:1.1rem;">Sunset Bay, Costa Rica</div>
@@ -85,25 +91,25 @@
     </div>
     <div class="tide-metrics-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:3rem;">
       <div class="tide-metric-box" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);padding:2rem;text-align:center;border-top:4px solid var(--accent-color);">
-        <div style="font-size:2rem;margin-bottom:0.5rem;">🌊</div>
+        <div class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17c2.4 1.8 4.8 1.8 7.2 0s4.8-1.8 7.2 0c1 .7 2 .9 3 .7M3 12c2.4 1.8 4.8 1.8 7.2 0s4.8-1.8 7.2 0c1 .7 2 .9 3 .7" /></svg></div>
         <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:900;color:var(--accent-color);" id="swell-height">2.4 m</div>
         <div style="font-weight:700;margin-bottom:0.25rem;">Swell Height</div>
         <div style="font-size:0.8rem;color:var(--text-secondary);">12s period · WNW direction</div>
       </div>
       <div class="tide-metric-box" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);padding:2rem;text-align:center;border-top:4px solid #f59e0b;">
-        <div style="font-size:2rem;margin-bottom:0.5rem;">💨</div>
+        <div class="metric-icon metric-wind" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 8h9a3 3 0 1 0-3-3M4 13h13a3 3 0 1 1-3 3M4 18h6" /></svg></div>
         <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:900;color:#f59e0b;" id="wind-dir">12 kts</div>
         <div style="font-weight:700;margin-bottom:0.25rem;">Wind Speed</div>
         <div style="font-size:0.8rem;color:var(--text-secondary);">ESE offshore — favourable</div>
       </div>
       <div class="tide-metric-box" style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--border-radius-card);padding:2rem;text-align:center;border-top:4px solid #10b981;">
-        <div style="font-size:2rem;margin-bottom:0.5rem;">🌡️</div>
+        <div class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 14.5V5a3 3 0 1 1 6 0v9.5a5 5 0 1 1-6 0ZM13 9v7" /></svg></div>
         <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:900;color:#10b981;" id="water-temp">21°C</div>
         <div style="font-weight:700;margin-bottom:0.25rem;">Water Temp</div>
         <div style="font-size:0.8rem;color:var(--text-secondary);">Warm — no wetsuit needed</div>
       </div>
       <div class="tide-metric-box" style="background:linear-gradient(135deg,var(--accent-color),#0369a1);border-radius:var(--border-radius-card);padding:2rem;text-align:center;">
-        <div style="font-size:2rem;margin-bottom:0.5rem;">⭐</div>
+        <div class="metric-icon metric-rating" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6-5.4-2.9-5.4 2.9 1-6-4.4-4.3 6.1-.9L12 3Z" /></svg></div>
         <div style="font-family:var(--font-display);font-size:2.5rem;font-weight:900;color:#fff;" id="suitability-score">92</div>
         <div style="font-weight:700;color:#fff;margin-bottom:0.25rem;">Suitability Score</div>
         <div style="font-size:0.8rem;color:rgba(255,255,255,0.8);" id="suitability-label">Excellent for All Levels</div>
@@ -134,30 +140,30 @@
     </div>
     <div class="safety-zones-grid">
       <div class="safety-zone-card green">
-        <div class="safety-zone-icon">🟢</div>
+        <div class="safety-zone-icon zone-icon zone-green" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 12.8 11.2 15 15.5 9M12 3l7 3v5c0 4.6-2.9 8.1-7 10-4.1-1.9-7-5.4-7-10V6l7-3Z" /></svg></div>
         <h4>Green Zone — All Clear</h4>
         <p>Swell under 1.5m, light offshore winds, water temp 20–26°C. Ideal for beginners and first-time surfers. All levels welcome.</p>
       </div>
       <div class="safety-zone-card blue">
-        <div class="safety-zone-icon">🔵</div>
+        <div class="safety-zone-icon zone-icon zone-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 20h16L12 3Zm0 6v4M12 17h.01" /></svg></div>
         <h4>Blue Zone — Intermediate</h4>
         <p>Swell 1.5–2.5m with moderate winds. Best for intermediate surfers; beginners should remain near shore with an instructor.</p>
       </div>
       <div class="safety-zone-card yellow">
-        <div class="safety-zone-icon">🟡</div>
+        <div class="safety-zone-icon zone-icon zone-yellow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.3 3.9 2.9 17.2A2 2 0 0 0 4.6 20h14.8a2 2 0 0 0 1.7-2.8L13.7 3.9a2 2 0 0 0-3.4 0Z" /></svg></div>
         <h4>Yellow Zone — Advanced Only</h4>
         <p>Swell 2.5–3.5m with stronger currents. Experienced surfers only; always surf with a partner and notify a lifeguard.</p>
       </div>
       <div class="safety-zone-card red">
-        <div class="safety-zone-icon">🔴</div>
+        <div class="safety-zone-icon zone-icon zone-red" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" /></svg></div>
         <h4>Red Zone — Do Not Enter</h4>
         <p>Swell above 3.5m, strong rip currents, dangerous reef conditions. No water entry permitted. Sessions will be rescheduled.</p>
       </div>
     </div>
     <div class="current-zone-banner">
-      <div class="current-zone-icon" aria-hidden="true">🟢</div>
+      <div class="current-zone-icon" aria-hidden="true"><span class="status-dot status-green"></span></div>
       <div class="current-zone-content">
-        <h4 style="margin-bottom:0.35rem;">Today's Zone: <span style="color:#10b981;">🟢 Green — All Clear</span></h4>
+        <h4 style="margin-bottom:0.35rem;">Today's Zone: <span style="color:#10b981;"><span class="status-dot status-green" aria-hidden="true"></span>Green — All Clear</span></h4>
         <p style="color:var(--text-secondary);font-size:0.9rem;">Based on current swell height of 2.4m and offshore ESE wind of 12kts. All skill levels may enter the water safely. Surf with supervision if under 16.</p>
       </div>
     </div>
@@ -175,43 +181,43 @@
     <div class="surf-windows-row surf-spots-grid">
       <div class="surf-spot-card" style="background-image:url('assets/images/gallery/grid_7.png');">
         <div class="surf-spot-card-content green-spot">
-          <div class="surf-spot-card-title">🇨🇷 Sunset Bay, Costa Rica</div>
-          <div class="surf-spot-card-status green-text">🟢 Excellent — 2.4m swell</div>
+          <div class="surf-spot-card-title"><span class="location-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg></span>Sunset Bay, Costa Rica</div>
+          <div class="surf-spot-card-status green-text"><span class="status-dot status-green" aria-hidden="true"></span>Excellent — 2.4m swell</div>
           <p class="surf-spot-card-desc">Long rolling waves, gentle beaches. Best for beginners and yoga retreats.</p>
         </div>
       </div>
       <div class="surf-spot-card" style="background-image:url('assets/images/gallery/grid_2.png');">
         <div class="surf-spot-card-content yellow-spot">
-          <div class="surf-spot-card-title">🇮🇩 Uluwatu, Bali</div>
-          <div class="surf-spot-card-status yellow-text">🟡 Advanced — 3.2m swell</div>
+          <div class="surf-spot-card-title"><span class="location-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg></span>Uluwatu, Bali</div>
+          <div class="surf-spot-card-status yellow-text"><span class="status-dot status-yellow" aria-hidden="true"></span>Advanced — 3.2m swell</div>
           <p class="surf-spot-card-desc">World-class reef break. Advanced surfers only. Yoga retreat sessions at sunrise.</p>
         </div>
       </div>
       <div class="surf-spot-card" style="background-image:url('assets/images/gallery/grid_4.png');">
         <div class="surf-spot-card-content blue-spot">
-          <div class="surf-spot-card-title">🇵🇹 Peniche, Portugal</div>
-          <div class="surf-spot-card-status blue-text">🔵 Good — 1.8m swell</div>
+          <div class="surf-spot-card-title"><span class="location-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg></span>Peniche, Portugal</div>
+          <div class="surf-spot-card-status blue-text"><span class="status-dot status-blue" aria-hidden="true"></span>Good — 1.8m swell</div>
           <p class="surf-spot-card-desc">Consistent beach break. Great for intermediate surfers and group sessions.</p>
         </div>
       </div>
       <div class="surf-spot-card" style="background-image:url('assets/images/gallery/grid_9.png');">
         <div class="surf-spot-card-content green-spot">
-          <div class="surf-spot-card-title">🇺🇸 North Shore, Hawaii</div>
-          <div class="surf-spot-card-status green-text">🟢 Excellent   — 2.1m swell</div>
+          <div class="surf-spot-card-title"><span class="location-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg></span>North Shore, Hawaii</div>
+          <div class="surf-spot-card-status green-text"><span class="status-dot status-green" aria-hidden="true"></span>Excellent — 2.1m swell</div>
           <p class="surf-spot-card-desc">Iconic surf destination. All levels catered to. Excellent visibility and warm water.</p>
         </div>
       </div>
       <div class="surf-spot-card" style="background-image:url('assets/images/gallery/grid_3.png');">
         <div class="surf-spot-card-content yellow-spot">
-          <div class="surf-spot-card-title">🇦🇺 Byron Bay, Australia</div>
-          <div class="surf-spot-card-status yellow-text">🟡 Advanced — 1.9m swell</div>
+          <div class="surf-spot-card-title"><span class="location-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg></span>Byron Bay, Australia</div>
+          <div class="surf-spot-card-status yellow-text"><span class="status-dot status-yellow" aria-hidden="true"></span>Advanced — 1.9m swell</div>
           <p class="surf-spot-card-desc">Beautiful bay with consistent waves and a thriving surf culture. Family-friendly.</p>
         </div>
       </div>
       <div class="surf-spot-card" style="background-image:url('assets/images/gallery/grid_6.png');">
         <div class="surf-spot-card-content blue-spot">
-          <div class="surf-spot-card-title">🇱🇰 Arugam Bay, Sri Lanka</div>
-          <div class="surf-spot-card-status blue-text">🔵 Good — 1.6m swell</div>
+          <div class="surf-spot-card-title"><span class="location-title-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.2 7-11a7 7 0 0 0-14 0c0 5.8 7 11 7 11Z" /><circle cx="12" cy="10" r="2.5" /></svg></span>Arugam Bay, Sri Lanka</div>
+          <div class="surf-spot-card-status blue-text"><span class="status-dot status-blue" aria-hidden="true"></span>Good — 1.6m swell</div>
           <p class="surf-spot-card-desc">Tropical surf paradise. Long rights, warm water. Ideal for beginners & wellness retreats.</p>
         </div>
       </div>
@@ -230,37 +236,37 @@
     <div class="surf-windows-row">
       <div class="surf-window-card">
         <div class="surf-window-time">06:00 – 08:30</div>
-        <div class="surf-window-label">✨ Dawn Patrol</div>
+        <div class="surf-window-label"><span class="window-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" /></svg></span>Dawn Patrol</div>
         <div class="surf-window-meta"><span>Swell: 2.1m ·</span><span>Wind: 8kts</span><span>Offshore · Tide: Rising</span></div>
         <span class="surf-window-badge badge-ideal">Ideal</span>
       </div>
       <div class="surf-window-card">
         <div class="surf-window-time">09:00 – 11:30</div>
-        <div class="surf-window-label">✨ Morning Session</div>
+        <div class="surf-window-label"><span class="window-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" /></svg></span>Morning Session</div>
         <div class="surf-window-meta"><span>Swell: 2.4m ·</span><span>Wind: 12kts</span><span>Offshore · Tide: High</span></div>
         <span class="surf-window-badge badge-ideal">Ideal</span>
       </div>
       <div class="surf-window-card">
         <div class="surf-window-time">13:00 – 15:00</div>
-        <div class="surf-window-label">✨ Afternoon Break</div>
+        <div class="surf-window-label"><span class="window-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" /></svg></span>Afternoon Break</div>
         <div class="surf-window-meta"><span>Swell: 1.9m ·</span><span>Wind: 15kts</span><span>Onshore · Tide: Falling</span></div>
         <span class="surf-window-badge badge-good">Good</span>
       </div>
       <div class="surf-window-card">
         <div class="surf-window-time">15:30 – 17:30</div>
-        <div class="surf-window-label">✨ Afternoon Glass</div>
+        <div class="surf-window-label"><span class="window-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" /></svg></span>Afternoon Glass</div>
         <div class="surf-window-meta"><span>Swell: 2.2m ·</span><span>Wind: 8kts</span><span>Light · Tide: Low</span></div>
         <span class="surf-window-badge badge-ideal">Ideal</span>
       </div>
       <div class="surf-window-card">
         <div class="surf-window-time">17:00 – 19:00</div>
-        <div class="surf-window-label">✨ Sunset Session</div>
+        <div class="surf-window-label"><span class="window-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" /></svg></span>Sunset Session</div>
         <div class="surf-window-meta"><span>Swell: 1.5m ·</span><span>Wind: 5kts</span><span>Calm · Tide: Rising</span></div>
         <span class="surf-window-badge badge-good">Good</span>
       </div>
       <div class="surf-window-card">
         <div class="surf-window-time">Tomorrow 06:30</div>
-        <div class="surf-window-label">✨ Tomorrow's Best</div>
+        <div class="surf-window-label"><span class="window-label-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Z" /></svg></span>Tomorrow's Best</div>
         <div class="surf-window-meta"><span>Forecast: 2.8m ·</span><span>Wind: Offshore</span><span>Excellent outlook</span></div>
         <span class="surf-window-badge badge-ideal">Forecast</span>
       </div>
@@ -290,7 +296,7 @@
       <p class="footer-tagline">Ride the wave. Find your zen. Experience the coast in its most authentic form. Embrace the breeze. Discover coastal beauty at its purest.</p>
       <div class="footer-social"><a href="#" class="social-icon" aria-label="Instagram" id="footer-instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a><a href="#" class="social-icon" aria-label="Facebook" id="footer-facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" class="social-icon" aria-label="YouTube" id="footer-youtube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg></a></div>
     </div>
-    <div class="footer-links-col"><h4 class="footer-col-title">Explore</h4><ul class="footer-links"><li><a href="about.html" id="footer-about-link">About Us</a></li><li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li><li><a href="packages.html" id="footer-packages-link">Packages</a></li><li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li><li><a href="tides.html" id="footer-tides-link">Tide Reports</a></li></ul></div>
+    <div class="footer-links-col"><h4 class="footer-col-title">Explore</h4><ul class="footer-links"><li><a href="about.html" id="footer-about-link">About Us</a></li><li><a href="instructors.html" id="footer-instructors-link">Our Instructors</a></li><li><a href="packages.html" id="footer-packages-link">Packages</a></li><li><a href="gallery.html" id="footer-gallery-link">Gallery</a></li><li><a href="surf-lessons.html" id="footer-surf-link">Surf Lessons</a></li><li><a href="yoga-retreats.html" id="footer-yoga-link">Yoga Retreats</a></li></ul></div>
     <div class="footer-links-col"><h4 class="footer-col-title">Contact</h4><ul class="footer-links"><li><a href="contact.html" id="footer-contact-link">Enquiries</a></li><li><a href="booking.html" id="footer-booking-link">Book a Session</a></li><li><a href="mailto:hello@waveandzen.com" id="footer-email-link">hello@waveandzen.com</a></li><li><a href="tel:+1800WAVEZEN" id="footer-phone-link">+1&nbsp;800&nbsp;WAVE&nbsp;ZEN</a></li></ul></div>
   </div>
   <div class="footer-bottom">
