@@ -719,10 +719,10 @@
   .itinerary-list { grid-template-columns: 1fr !important; max-width: 480px !important; margin: 0 auto !important; gap: 1.5rem !important; }
   .itinerary-item { align-items: center !important; text-align: center !important; }
   html[dir="rtl"] .itinerary-item { align-items: center !important; text-align: center !important; }
-  .itinerary-item::after { left: 1.25rem !important; right: auto !important; }
-  html[dir="rtl"] .itinerary-item::after { right: 1.25rem !important; left: auto !important; }
-  .itinerary-step { align-self: flex-end !important; width: 6rem !important; }
-  html[dir="rtl"] .itinerary-step { align-self: flex-start !important; width: 6rem !important; }
+  .itinerary-item::after { right: 1.25rem !important; left: auto !important; }
+  html[dir="rtl"] .itinerary-item::after { left: 1.25rem !important; right: auto !important; }
+  .itinerary-item .itinerary-step { align-self: center !important; width: 6rem !important; flex-grow: 0 !important; }
+  html[dir="rtl"] .itinerary-item .itinerary-step { align-self: center !important; width: 6rem !important; flex-grow: 0 !important; }
 
   /* Booking Selectors */
   .booking-selectors { max-width: 100%; }
@@ -981,22 +981,23 @@
   }
 
   .itinerary-item::after {
-    left: 1.75rem !important;
-    right: auto !important;
-  }
-
-  html[dir="rtl"] .itinerary-item::after {
     right: 1.75rem !important;
     left: auto !important;
   }
 
-  .itinerary-step {
-    align-self: flex-end !important;
-    width: 6rem !important;
+  html[dir="rtl"] .itinerary-item::after {
+    left: 1.75rem !important;
+    right: auto !important;
   }
 
-  html[dir="rtl"] .itinerary-step {
-    align-self: flex-start !important;
+  .itinerary-item .itinerary-step {
+    align-self: center !important;
+    width: 6rem !important;
+    flex-grow: 0 !important;
+  }
+
+  html[dir="rtl"] .itinerary-item .itinerary-step {
+    align-self: center !important;
   }
 
   .itinerary-item h4 {
@@ -1064,22 +1065,23 @@
   }
 
   .itinerary-item::after {
-    left: 1.25rem !important;
-    right: auto !important;
-  }
-
-  html[dir="rtl"] .itinerary-item::after {
     right: 1.25rem !important;
     left: auto !important;
   }
 
-  .itinerary-step {
-    align-self: flex-end !important;
-    width: 6rem !important;
+  html[dir="rtl"] .itinerary-item::after {
+    left: 1.25rem !important;
+    right: auto !important;
   }
 
-  html[dir="rtl"] .itinerary-step {
-    align-self: flex-start !important;
+  .itinerary-item .itinerary-step {
+    align-self: center !important;
+    width: 6rem !important;
+    flex-grow: 0 !important;
+  }
+
+  html[dir="rtl"] .itinerary-item .itinerary-step {
+    align-self: center !important;
   }
 
   .itinerary-item h4 {
@@ -1965,15 +1967,17 @@
   }
 
   #booking-itinerary .itinerary-step {
-    justify-self: end !important;
-    align-self: flex-end !important;
+    justify-self: center !important;
+    align-self: center !important;
     width: 6rem !important;
+    flex-grow: 0 !important;
   }
 
   html[dir="rtl"] #booking-itinerary .itinerary-step {
-    justify-self: start !important;
-    align-self: flex-start !important;
+    justify-self: center !important;
+    align-self: center !important;
     width: 6rem !important;
+    flex-grow: 0 !important;
   }
 
   #booking-itinerary .itinerary-item h4 {

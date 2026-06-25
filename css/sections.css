@@ -1922,8 +1922,8 @@ html[dir="rtl"] .step-item::after {
   content: "0" attr(data-step);
   position: absolute;
   top: 1rem;
-  left: 1.75rem !important;
-  right: auto !important;
+  right: 1.75rem !important;
+  left: auto !important;
   font-family: var(--font-display);
   font-size: 3.5rem !important;
   font-weight: 900;
@@ -1945,15 +1945,15 @@ html[dir="rtl"] .itinerary-item {
 }
 
 html[dir="rtl"] .itinerary-item::after {
-  right: 1.75rem !important;
-  left: auto !important;
+  left: 1.75rem !important;
+  right: auto !important;
 }
 
-html[dir="rtl"] .itinerary-step {
-  align-self: flex-start !important;
+html[dir="rtl"] .itinerary-item .itinerary-step {
+  align-self: center !important;
 }
 
-.itinerary-step {
+.itinerary-item .itinerary-step {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1972,7 +1972,8 @@ html[dir="rtl"] .itinerary-step {
   margin-bottom: 1.5rem;
   box-shadow: none;
   transition: background-color 0.3s ease, color 0.3s ease;
-  align-self: flex-end !important;
+  align-self: center !important;
+  flex-grow: 0 !important;
 }
 
 .itinerary-item:nth-child(1) .itinerary-step {
